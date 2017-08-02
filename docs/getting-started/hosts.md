@@ -56,7 +56,7 @@ Will be available soon:
 
 Each host has logs (server logs).
 
-The line which has elision marks, in the end, can be opened with a mouse click.
+The line which has ellipsis marks, in the end, can be opened with a mouse click.
 
 ![Hosts](../img/host_logs.png)
 

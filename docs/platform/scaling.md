@@ -4,7 +4,7 @@ D2C was designed to provide easy scaling for applications and hosts. Check your 
 
 ## Horizontal scaling
 
-Horizontal scaling means increasing number of containers and copies all the information from the donor.
+Horizontal scaling means increasing number of containers.
 You may scale horizontal almost all [services](/getting-started/services/#native-support) in D2C. Open a service page and click **Scale**.
 
 ![Horizontal scaling](../img/horizontal_scaling.png)
@@ -26,3 +26,5 @@ Vertical scaling means increasing power of a host (CPU, RAM). The process is qui
 ### EBS
 
 Amazon EC2 provides additional storage which calls [Amazon Elastic Block Storage](https://aws.amazon.com/ebs/?nc1=h_ls) (EBS). You may add additional EBS for your AWS hosts without stops of hosts.
+
+![EBS](../img/scaling_ebs.png)

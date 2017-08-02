@@ -17,6 +17,10 @@ All services and services' settings which D2C supports through the interface can
 
 ## Creating a stack file
 
+### What you need to know before creating a stack file
+
+
+
 ## Data services
 
 | Parameter      | Required     | Default     | Comments |
@@ -25,52 +29,53 @@ All services and services' settings which D2C supports through the interface can
 | type          | Yes      |           | A service you want to deploy       |
 | version       | No       |           | You may specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
 | configuration | No       | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
-| password      | No       | generated | Root password. Required for some configurations, e.g. MongoDB Replica Set        |
-| username      | No       | null      | Create a database after deploying. Username = Database name        |
-| userPassword  | No       | null      | Password for the created database        |
-| ports         | No       | Default port | Specify ports for your service     |
+| password      | No       |           | Root password. Required for some configurations, e.g. MongoDB Replica Set.        |
+| username      | No       |           | Create a user after deploying. Database will be created with the same name        |
+| userPassword  | No       |           | Password for the created database        |
+| ports         | No       | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
 | env | No |  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
 | remoteAccess  | No       | Disabled  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports |
-| configFiles.dest | No |  | Name and path to a config file in the container |
+| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
 | configFiles.src  | No |  | A path to a config file in your stack folder |
 | volumes.directory | No   |           | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync  | Yes      |           | `True` if you need to sync files between containers |
-| deployTo      | No       | null      | You may specify recommended environment for a service.  If you leave it empty, you should choose (or create) a host(s) during importing your stack via interface       |
+| volumes.sync  | No       | False     | `True` if you need to sync files between containers |
+| deployTo      | No       |           | A list of hosts for deploying a service     |
 
-### Example
+### Examples
 
-~~~yaml
-services:
-  - name: db
-    type: mysql
-    version: 8.0
-    configuration: MasterSlave
-    username: wordpress
-    userPassword: null
-    ports:
-      - 3306
-    remoteAccess: false
-    configFiles:
-      - dest: my.cnf
-        src: ./configs/my.cnf
-    deployTo:
-      - main-1
-      - main-2
+```yml
+name: db
+type: mysql
+version: 8.0
+configuration: MasterSlave
+username: wordpress
+userPassword: null
+ports:
+  - 3306
+remoteAccess: false
+configFiles:
+  - dest: my.cnf
+    src: ./configs/my.cnf
+deployTo:
+  - main-1
+  - main-2
+```
 
-  - name: mongo
-    type: mongodb
-    version: 3.4
-    configuration: StandAlone
-    password: null
-    ports:
-      - 27017
-    remoteAccess: false
-    configFiles:
-      - dest: my.cnf
-        src: ./configs/my.cnf
-    deployTo:
-      - db
-~~~
+```yaml
+name: mongo
+type: mongodb
+version: 3.4
+configuration: StandAlone
+password: null
+ports:
+  - 27017
+remoteAccess: false
+configFiles:
+  - dest: my.cnf
+    src: ./configs/my.cnf
+deployTo:
+  - db
+```
 
 ## Application services
 
@@ -79,78 +84,78 @@ services:
 | name              | Yes |  |The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface |
 | type              | Yes | No | A service you want to deploy |
 | version           | No       |  | You may specify any of [supported versions](/getting-started/services/#app-services) here. Usually, it is the most stable one by default |
-| source.type       | Yes | | choices: git, download(url) <br> <br>  |
+| source.type       | Yes |  | choices: git, download(url) <br> <br>  |
 | source.url        | Yes |  | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)  |
 | extensions        | No  |  | Option for PHP-FPM and PHP-Apache services. `mysqli` and `opcache` selects by default  |
 | pecl              | No  |  |Option for PHP-FPM and PHP-Apache services |
-| ports             | No  | Default port | Specify ports for your service   |
+| ports             | No  | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)   |
 | env               | No  |  | Environment variables for your application. Check the way of adding environments at the example  |
 | volumes.directory | No  |  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync      | Yes | | `True` if you need to sync files between containers |
+| volumes.sync      | No  | False  | `True` if you need to sync files between containers |
 | globalDeps        | No  |  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
 | localDeps         | No  |  | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
-| startCommand      | No  |  | [Start commands](/getting-started/deployment/#running) of your application |
-| configFiles.dest  | No  |  | Name and path to a config file in the container |
+| startCommand      | No  |  | [Start commands](/getting-started/deployment/#running) of your application. Required for **PHP-FPM** and **PHP-Apache** |
+| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
 | configFiles.src   | No  |  | A path to a config file in your stack folder |
-| deployTo          | No  | null | Specify recommended configuration of a host(s) for your service. If you leave it empty, you should choose (or create) a host(s) during importing your stack via interface |
+| deployTo          | No  |  | A list of hosts for deploying a service  |
 
 ### Examples
 
-~~~yaml
-services:
-  - name: mongo-express
-    type: nodejs
-    version: 8
-    ports:
-      - 8081
-    source:
-      type: git
-      url: https://github.com/mongo-express/mongo-express
-    localDeps: "npm install\nnpm run build"
-    env:
-      ME_CONFIG_MONGODB_SERVER: "{{=service('mongo').getMasterAlias()}}"
-      ME_CONFIG_MONGODB_AUTH_USERNAME: root
-      ME_CONFIG_MONGODB_AUTH_PASSWORD: "{{=service('mongo').get('password')}}"
-      ME_CONFIG_MONGODB_PORT: "{{=service('mongo').getMainPort()}}"
-      ME_CONFIG_MONGODB_ENABLE_ADMIN: true
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: null
-      VCAP_APP_HOST: 0.0.0.0
-      VCAP_APP_PORT: 8081
-    deployTo:
-      - app
-
-  - name: blog
-    type: php
-    version: 7.1
-    source:
-      type: download
-      url: https://wordpress.org/latest.tar.gz
-    extensions:
-      - mysqli
-      - opcache
-    pecl:
-      - redis
-    env:
-      DEBUG: true
-    volumes:
-      - directory: $MAIN_PATH/wp-content/uploads
-        sync: true
-      - directory: $MAIN_PATH/wp-content/plugins
-        sync: true
-    configFiles:
-      - dest: php-fpm.conf
-        src: ./configs/php.conf
-      - dest: $MAIN_PATH/wp-config.php
-        src: ./configs/wp-config.php
-      - dest: $MAIN_PATH/db-config.php
-        src: ./configs/db-config.php
-      - dest: $MAIN_PATH/wp-content/db.php
-        src: ./configs/db.php
-    deployTo:
-      - main-1
-      - main-2  
-~~~
+```yaml
+name: mongo-express
+type: nodejs
+version: 8
+ports:
+  - 8081
+source:
+  type: git
+  url: https://github.com/mongo-express/mongo-express
+localDeps: "npm install\nnpm run build"
+env:
+  ME_CONFIG_MONGODB_SERVER: "{{=service('mongo').getMasterAlias()}}"
+  ME_CONFIG_MONGODB_AUTH_USERNAME: root
+  ME_CONFIG_MONGODB_AUTH_PASSWORD: "{{=service('mongo').get('password')}}"
+  ME_CONFIG_MONGODB_PORT: "{{=service('mongo').getMainPort()}}"
+  ME_CONFIG_MONGODB_ENABLE_ADMIN: true
+  ME_CONFIG_BASICAUTH_USERNAME: admin
+  ME_CONFIG_BASICAUTH_PASSWORD: null
+  VCAP_APP_HOST: 0.0.0.0
+  VCAP_APP_PORT: 8081
+deployTo:
+  - app
+```
+```yaml
+name: blog
+type: php
+version: 7.1
+source:
+  type: download
+  url: https://wordpress.org/latest.tar.gz
+extensions:
+  - mysqli
+  - opcache
+pecl:
+  - redis
+env:
+  DEBUG: true
+volumes:
+  - directory: $MAIN_PATH/wp-content/uploads
+    sync: true
+  - directory: $MAIN_PATH/wp-content/plugins
+    sync: true
+configFiles:
+  - dest: php-fpm.conf
+    src: ./configs/php.conf
+  - dest: $MAIN_PATH/wp-config.php
+    src: ./configs/wp-config.php
+  - dest: $MAIN_PATH/db-config.php
+    src: ./configs/db-config.php
+  - dest: $MAIN_PATH/wp-content/db.php
+    src: ./configs/db.php
+deployTo:
+  - main-1
+  - main-2  
+```
 
 ## Other services
 
@@ -159,50 +164,50 @@ services:
 | name               | Yes      |   | The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface     |  
 | type               | Yes      |  | A service you want to deploy       |
 | version            | No       | | You may specify any of [supported versions](/getting-started/services/#data-services) here. Usually it is the most stable one by default       |
-| ports              | No       | Default port | Specify ports for your service     |
+| ports              | No       | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
 | remoteAccess       | No       | Disabled | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports       |
 | env                | No  |     | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
 | volumes.directory  | No  |     | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync       | No  |     | `True` if you need to sync files between containers |
+| volumes.sync       | Yes | False    | `True` if you need to sync files between containers |
 | globalDeps         | No  |     | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
 | serviceFiles.name  | No  |     | A name of service which NGINX or HAProxy should serve  |
 | serviceFiles.src   | No  |     | A path to a config file in your stack folder. Leave it empty if you need an automatically generated config |
-| configFiles.dest   | No  |     | Name and path to a config file in the container |
+| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
 | configFiles.src    | No  |     | A path to a config file in your stack folder |
-| deployTo           | No  | null | You may specify a recommended configuration for a service.  If you leave it empty, you should choose (or create) a host(s) during importing your stack via interface       |
+| deployTo           | No  |     | A list of hosts for deploying a service        |
 
 ### Examples
 
-~~~yaml
-services:
-  - name: proxy
-    type: nginx
-    version: 1.13
-    ports:
-      - 80
-      - 443
-    remoteAccess: true
-    serviceFiles:
-      - name: blog
-        src: ./configs/blog.conf
-      - name: mongo-express
-        src: ./configs/mongo-express.conf
-    deployTo:
-      - edge
-
-  - name: balancer
-    type: haproxy
-    version: 1.7
-    ports:
-      - 80
-      - 443
-    remoteAccess: false
-    serviceFiles:
-      - name: cluster
-        src: ./configs/cluster.conf
-    deployTo:
-      - edge
-~~~
+```yaml
+name: proxy
+type: nginx
+version: 1.13
+ports:
+  - 80
+  - 443
+remoteAccess: true
+serviceFiles:
+  - name: blog
+    src: ./configs/blog.conf
+  - name: mongo-express
+    src: ./configs/mongo-express.conf
+deployTo:
+  - edge
+```
+```yaml
+name: balancer
+type: haproxy
+version: 1.7
+ports:
+  - 80
+  - 443
+remoteAccess: false
+serviceFiles:
+  - name: cluster
+    src: ./configs/cluster.conf
+deployTo:
+  - edge
+```
 
 ## Docker services
 
@@ -216,39 +221,37 @@ services:
 | source.url        | No |      | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)  |
 | extensions        | No |      | Option for PHP-FPM and PHP-Apache services. `mysqli` and `opcache` selects by default  |
 | pecl              | No |      |Option for PHP-FPM and PHP-Apache services |
-| ports             | No | Default port | Specify ports for your service   |
+| ports             | No | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)   |
 | env               | No |      | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
 | volumes.directory | No |      | A path to [Persistant data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync      | No |      | `True` if you need to sync files between containers |
+| volumes.sync      | No | False | `True` if you need to sync files between containers |
 | globalDeps        | No |      | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
 | localDeps         | No |      | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
 | startCommand      | No |      | [Start commands](/getting-started/deployment/#running) of your application |
-| configFiles.dest  | No |      | Name and path to a config file in the container |
+| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
 | configFiles.src   | No |      | A path to a config file in your stack folder |
-| deployTo          | No | null | Specify a recommended configuration of a host(s) for your service. If you leave it empty, you should choose (or create) a host(s) during importing your stack via interface |
+| deployTo          | No |      | A list of hosts for deploying a service  |
 
 ### Example
-
-~~~yaml
-services:
-  - name: varnish
-    type: docker
-    image: debian
-    version: jessie
-    ports:
-      - 80
-    remoteAccess: false
-    configFiles:
-      - dest: /etc/varnish/default.vcl
-        src: ./configs/default.vcl
-    globalDeps: |
-      apt-get install wget
-      wget -qO- https://packagecloud.io/install/repositories/varnishcache/varnish51/script.deb.sh | bash
-      apt-get install varnish
-        : varnishd -j unix,user=vcache -F -f /etc/varnish/default.vcl -s malloc,100m -a 0.0.0.0:80
-    deployTo:
-      - edge
-~~~
+``yaml
+name: varnish
+type: docker
+image: debian
+version: jessie
+ports:
+  - 80
+remoteAccess: false
+configFiles:
+  - dest: /etc/varnish/default.vcl
+    src: ./configs/default.vcl
+globalDeps: |
+  apt-get install wget
+  wget -qO- https://packagecloud.io/install/repositories/varnishcache/varnish51/script.deb.sh | bash
+  apt-get install varnish
+startCommand:  : varnishd -j unix,user=vcache -F -f /etc/varnish/default.vcl -s malloc,100m -a 0.0.0.0:80
+deployTo:
+  - edge
+```
 
 ## Hosts
 
@@ -256,12 +259,12 @@ services:
 | :------------- | :------------- | :------------- |:------------- |
 | name        | yes |    | The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface |
 | instance    | Yes |    | A type of instance. Examples for AWS: t2.small, t2.2xlarge. For DO: 1 gb, 16gb   |
-| storageSize | yes | No | Recommended storage size for a host |
+| storageSize | yes |    | Recommended storage size for a host |
 | storageType | No  |    | Recommended type of storage. Check types of [AWS volumes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) |
 
-### Examples
+### Example
 
-~~~yaml
+```yaml
 hosts:
   - name: main-1
     instance:
@@ -281,4 +284,4 @@ hosts:
     instance:
       AWS: t2.micro
       DO: 1gb
-~~~
+```

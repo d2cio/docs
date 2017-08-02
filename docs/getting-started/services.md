@@ -7,50 +7,46 @@ Once you may deploy up to 50 containers (except services, which have their limit
 
 ## Naming
 
-Each service has its **unique** name. We use them to create links like: **_servicename-www.accountID.at.d2c.io_** for your applications.
+Each service has its **unique** name. Services can communicate with each other by service names (or alias-names, e.g. `servicename-1` or `servicename`). It doesn't matter on which host the app is running – all [private network](/platform/private-network/) intercommunication is transparent for applications. Moreover, we use them to create public domains like: **_servicename-www.accountID.at.d2c.io_** for your applications which are served by NGINX or HAProxy.
 
-The name should starts with a letter and contain maximum 16 characters (initial, capital latin symbols or numbers).
-
-Apps can reference each other by service name. It doesn't matter on which host the app is running – all private network intercommunication is transparent for applications.
+The name should starts with a letter and contain maximum 16 characters (initial, capital Latin symbols or numbers).
 
 ## Native support
 
 ### Data services
 
-| Name                                                   | Configuration               | Scalable         | Supported versions  |
-| :-----------                                           | :-------------              | :------------- | | :------------- |
-| [MongoDB](/getting-started/data-services/mongodb/)     | StandAlone or ReplicaSet    | Yes |              2.6, 3.0, 3.2, 3.4 |
-| [MySQL](/getting-started/data-services/mysql/)         | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7, 8.0 |
-| [MariaDB](/getting-started/data-services/mariadb/)     | StandAlone or MasterSlave   | Yes |              5.5, 10.0, 10.1, 10.2, 10.3 |
-| [Percona](/getting-started/data-services/percona/)     | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7 |
-| [PostgreSQL](/getting-started/data-services/postgresql/) | StandAlone or MasterSlave | Yes |              9.3, 9.4, 9.5, 9.6 |
-| [Crate](/getting-started/data-services/crate/)         | StandAlone                  | No  |              0.57, 1.0 |
-| [Redis](/getting-started/data-services/redis/)         |                             | Yes |              2.8, 3.0, 3.2 |
-| [Memcached](/getting-started/data-services/memcached/) |                             | Yes |              1.4 |
-| [ElasticSearch](/getting-started/data-services/elasticsearch/) | StandAlone          | No  |              1.4, 1.5, 1.6, 1.7, 2.0, 2.1, 2.2, 2.3, 2.4, 5.0, 5.1, 5.2, 5.3 |
+| Name          | Configuration               | Scalable         | Supported versions  |
+| :-----------  | :-------------              | :------------- | |
+| **MongoDB**       | StandAlone or ReplicaSet    | Yes |              2.6, 3.0, 3.2, 3.4 |
+| **MySQL**         | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7, 8.0 |
+| **MariaDB**       | StandAlone or MasterSlave   | Yes |              5.5, 10.0, 10.1, 10.2, 10.3 |
+| **Percona**       | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7 |
+| **PostgreSQL**    | StandAlone or MasterSlave   | Yes |              9.3, 9.4, 9.5, 9.6 |
+| **Crate**         | StandAlone                  | No  |              0.57, 1.0 |
+| **Redis**         |                             | Yes |              2.8, 3.0, 3.2 |
+| **Memcached**     |                             | Yes |              1.4 |
+| **ElasticSearch** | StandAlone                  | No  |              1.x, 2.x, 5.x |
 
 ### Application services
 
-| Name                                                    | Scalable      | Supported versions |
-| :-----------      | :-------------| :-------------      |
-| [Node.js](/getting-started/app-services/nodejs/)        | Yes           | 0.12, 4, 6, 7, 8   |
-| [Python](/getting-started/app-services/python/)         | Yes           | 2.7, 3.3, 3.4, 3.5, 3.6 |
-| [Go](/getting-started/app-services/golang/)             | Yes           | 1.6, 1.7, 1.8  |
-| [Ruby](/getting-started/app-services/ruby/)             | Yes           | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4 |
-| [PHP-FPM](/getting-started/app-services/php-fpm/)       | Yes           | 5.6, 7.1 |
-| [APACHE+PHP](/getting-started/app-services/php-apache/) | Yes           | 5.6, 7.1 |
+| Name          | Scalable      | Supported versions |
+| :---------    | :-------------| :-------------      |
+| **Node.js**       | Yes           | 0.12, 4, 6, 7, 8   |
+| **Python**        | Yes           | 2.7, 3.3, 3.4, 3.5, 3.6 |
+| **Go**            | Yes           | 1.6, 1.7, 1.8  |
+| **Ruby**          | Yes           | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4 |
+| **PHP-FPM**       | Yes           | 5.6, 7.1 |
+| **APACHE+PHP**    | Yes           | 5.6, 7.1 |
 
 ### Other services
 
-| Name                                                                                        | Scalable      | Supported versions |
-| :-----------      | :-------------| :-------------     |
-| [NGINX](/getting-started/other-services/nginx/)                                             | No            | 1.9, 1.10, 1.11, 1.12, 1.13 |
-| [NGINX-Cluster](/getting-started/other-services/nginx-cluster/)                             | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |
-| [NGINX-Static](/getting-started/other-services/nginx-static/)                               | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |
-| [HAProxy](/getting-started/other-services/haproxy/)                                         | No            | 1.7 |
-| [Docker](/getting-started/other-services/docker-service/) (Services based on Docker Images) | Yes           |  |
-
-
+| Name                                                                                        | Scalable      | Supported versions |  Comments
+| :-----------      | :-------------| :-------------     | :-------------     |
+| **NGINX**                                            | No            | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+| **NGINX-Cluster**                            | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your application does not return static files or you need to serve more than one PHP-FPM container.
+| **NGINX-Static**                             | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.).  It cannot serve other services.
+| **HAProxy**                                       | No            | 1.7 |
+| **Docker** (Services based on Docker Images) | Yes           |  |
 
 ## Actions
 
@@ -61,8 +57,13 @@ Actions which have all services:
 - Stop (Start)
 - Clone
 - Destroy (+force destroy)
+- Edit settings
+- Scale (except some services e.g. NGINX)
+- Add [load-balancer](/platform/balancing/)
+- Execute - executing a command inside all running service containers.
 
-![Standart service actions](../img/standart_actions.png)
+
+![Standard service actions](../img/standart_actions.png)
 
 All **application services** have smart update feature which you may choose separately or combine with each other:
 
@@ -73,6 +74,12 @@ All **application services** have smart update feature which you may choose sepa
 - Include .git folder
 
 ![Application actions](../img/app_actions.png)
+
+
+### Interacting with service
+
+
+
 
 ## System Logs
 

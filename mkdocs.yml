@@ -68,4 +68,5 @@ markdown_extensions:
   - toc:
       permalink: True
 
+
 copyright: Copyright&copy; 2017 <a href="https://d2c.io">D2C.io</a>

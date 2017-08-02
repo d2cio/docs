@@ -6,7 +6,7 @@ D2C does not provide its computing resources – it automates the provisioning p
 
 | Free                          | Pro                               | Enterprise   |
 | :------------- |              :------------- |                    :------------- |
-| 1 cloud host up to 1GB RAM    | Unlimited cloud and own hosts     |  Pro features                        |
+| 1 cloud host                  | Unlimited cloud and own hosts     |  Pro features                        |
 | Low priority in task queue    | High priority in task queue       |  Private Cloud                       |
 |                               | [Database Replication](/platform/scaling/)              |  Role-based Access control           |
 |                               | [Vertical and horizontal Scaling](/platform/scaling/)   |  Managed Orchestrator                |
@@ -19,7 +19,7 @@ D2C does not provide its computing resources – it automates the provisioning p
 
 1. Priority in task queue means how fast task (create services, update services, etc.) will be processed. If you would like to manage priority yourself, you need Managed Orchestrator which is available in Enterprise plan.
 2. **Private cloud** means the ability to run D2C platform in your environment.
-3. You can not change Pro plan to Free yourself. [Contact us](mailto:support@d2c.io) if you want to do it. The account should have not more than one cloud host up to 1GB RAM.
+3. You can not change Pro plan to Free yourself. [Contact us](mailto:support@d2c.io) if you want to do it. The account should have not more than one cloud host.
 4. We accept PayPal payments only from Personal [PayPal accounts](https://www.paypal.com/ca/webapps/mpp/account-selection). If you would like to use PayPal business account for payments - [contact us](mailto:support@d2c.io), and we create a bill from a personal PayPal account.
 5. Customers from Russia may make a payment using ChronoPay or bank transfer ([Send](mailto:support@d2c.io) your company details and subscription duration for making the invoice).
 5. We never delete any data from your hosts after cancelling a subscription. You may continue to manage them manually.

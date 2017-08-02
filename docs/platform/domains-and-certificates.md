@@ -4,7 +4,7 @@
 
 Ensure that DNS-record for additional domains has the same IP-address as a host of NGINX or HAProxy.
 
-## How to add additional domains
+## How to add additional domains and certificates
 
 The process is almost the same for NGINX and HAProxy. The difference is that using NGINX you may add domains and certificates while creating or editing and HAProxy only during editing. To add domain or  TLS certificate, you should have:
 
