@@ -7,14 +7,14 @@ repo_url: https://github.com/d2cio/docs/
 
 pages:
 - Introduction: index.md
-- Getting started:
+- Getting started:  
   - 'Projects': 'getting-started/projects.md'
   - 'Hosts': 'getting-started/hosts.md'
   - 'Cloud providers': 'getting-started/cloud-providers.md'
   - 'Services': 'getting-started/services.md'
   - 'Containers': 'getting-started/containers.md'
   - 'Creating services': 'getting-started/creating-services.md'
-  - 'Stacks': 'getting-started/stacks.md'
+# - 'Stacks': 'getting-started/stacks.md'
 #  - 'Application services':
 #    - 'Node.js': 'getting-started/app-services/nodejs.md'
 #    - 'Python': 'getting-started/app-services/python.md'

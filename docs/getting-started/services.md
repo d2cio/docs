@@ -3,7 +3,7 @@ Service is an application deployed in D2C.
 
 D2C executes your services/applications inside containers. We use Docker as our containerization platform. Each app is a separate container: web-app, database, load-balancer, etc. Docker is installed and configured on the hosts that are managed by D2C automatically. When you deploy your application, all the necessary files are delivered to the host, and container images are built locally on the host and then run by Docker daemon. D2C configures the environment automatically, so we do not recommend to add your current development boxes as managed hosts, to prevent any configuration conflicts.
 
-Once you may deploy up to 50 containers (except services, which have their limitations).
+Once you can deploy up to 50 containers (except services, which have their limitations).
 
 ## Naming
 
@@ -55,17 +55,17 @@ Actions which have all services:
 - Update version
 - Restart
 - Stop (Start)
-- Clone
+- [Clone](/platform/cloning-apps/)
 - Destroy (+force destroy)
 - Edit settings
-- Scale (except some services e.g. NGINX)
+- [Scale](/platform/scaling/) (except some services e.g. NGINX)
 - Add [load-balancer](/platform/balancing/)
 - Execute - executing a command inside all running service containers.
 
 
 ![Standard service actions](../img/standart_actions.png)
 
-All **application services** have smart update feature which you may choose separately or combine with each other:
+All [**application services**](/getting-started/services/#application-services) have smart update feature which you can choose separately or combine with each other:
 
 - Update version (data and other services have only this one)
 - Update global dependencies
@@ -85,7 +85,7 @@ All **application services** have smart update feature which you may choose sepa
 
 Each service has system logs (deploy logs).
 
-The line which has elision marks, in the end, can be opened with a mouse click.
+The line which has ellipsis marks, in the end, can be opened with a mouse click.
 
 ![Build log](../img/build_log.png)
 

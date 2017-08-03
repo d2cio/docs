@@ -9,7 +9,7 @@ D2C supports load balancing provided by [HAProxy](http://www.haproxy.org/). It w
 3. Choose a mode and a host
 4. Click **Add load balancer**
 
-If you use HTTPS HAProxy will be deployed with [Let's Encrypt](https://letsencrypt.org/) certificate (you may also add own certificate [after deploying](/platform/balancing/#edit-load-balancer)). Specify any additional ports if it needs. You may also disable access from the Internet (it is enabled by default).
+If you use HTTPS HAProxy will be deployed with [Let's Encrypt](https://letsencrypt.org/) certificate (you can also add own certificate [after deploying](/platform/balancing/#edit-load-balancer)). Specify any additional ports if it needs. You can also disable access from the Internet (it is enabled by default).
 
 ![Load balancing](../img/balancing.png)
 
@@ -19,11 +19,11 @@ If you use HTTPS HAProxy will be deployed with [Let's Encrypt](https://letsencry
 
 ## Edit load balancer
 
-You may change a mode (config) after deploying. For this purpose open an HAProxy service, click **Edit settings**.
+You can change settings of load balancer after deploying. For this purpose open an HAProxy service, click **Edit settings**.
 
 ![Load balancing - editing](../img/balancing_editing.png)
 
-Find a Configure services block and click on **Generate new config** icon.
+To change mode or set your own certificate find a `Configure services` block and click on **Generate new config** icon.
 
 ![Load balancing - generate new config](../img/balancing_editing_new_config.png)
 
@@ -31,7 +31,7 @@ Choose a mode and click **Generate new config**.
 
 ![Load balancing - choose a mode](../img/balancing_editing_new_config_2.png)
 
-If you need HTTPS, you may an add own certificate or use free automatically updated certificates provided by [Let's Encrypt](https://letsencrypt.org/).
+If you need HTTPS, you cad add an own certificate or use free automatically updated certificates provided by [Let's Encrypt](https://letsencrypt.org/).
 
 Click **Update service**.
 

@@ -9,7 +9,7 @@ _**0.12, 4, 6, 7, 8**_
 1. Service names should be unique across your account
 2. If you use private repository you should add a SSH key to your account
 3. Directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) should be specifying as Volumes in Persistant Data volumes block. Check sync if you want to synchronize files between all containers. Do not use it for database files.
-4. All services in a project are visible for each other inside. Access from the internet is disabled for most of applications (except NGINX and HAProxy) by default. You may open access from the Internet in "Ports" block.
+4. All services in a project are visible for each other inside. Access from the internet is disabled for most of applications (except NGINX and HAProxy) by default. You can open access from the Internet in "Ports" block.
 5. Application should listen on 0.0.0.0:3000 (not 127.0.0.1:3000)
 
 ### Simple deployment

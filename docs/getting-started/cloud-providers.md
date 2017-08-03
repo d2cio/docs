@@ -4,8 +4,8 @@ In this page, we describe how to generate credentials of cloud providers and use
 
 ## Supported cloud providers
 
-- Amazon Web Services
-- Digital Ocean
+- **Amazon Web Services**
+- **Digital Ocean**
 
 Will be available soon:
 
@@ -39,27 +39,27 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 3. Select **Create Your Own Policy**.
 4. Enter a name (e.g. d2c-policy).
 5. You can generate your own policy [here](https://awspolicygen.s3.amazonaws.com). Here is a simple example with the regions limit (replace "eu-west-1" with regions you want to use):
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
+
         {
-            "Action": [
-                "ec2:*"
-            ],
-            "Effect": "Allow",
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:Region": "eu-west-1"
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Action": [
+                        "ec2:*"
+                    ],
+                    "Effect": "Allow",
+                    "Resource": "*",
+                    "Condition": {
+                        "StringEquals": {
+                            "ec2:Region": "eu-west-1"
+                        }
+                    }
                 }
-            }
+            ]
         }
-    ]
-}
-```
+
 6. Click **Create policy**
-7. Now you may [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
+7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
 
 ## Digital Ocean
 

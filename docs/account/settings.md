@@ -1,6 +1,6 @@
 # Introduction
 
-To create D2C account follow this [link](https://panel.d2c.io/account/signup). You may use any of social profiles (Google, Facebook, GitHub, BitBucket) or your email and password.
+To create D2C account follow this [link](https://panel.d2c.io/account/signup). You can use any of social profiles (Google, Facebook, GitHub, BitBucket) or your email and password.
 
 In account settings you can:
 

@@ -16,7 +16,9 @@ When you **connect** your own host it should have:
 - Opened incoming ssh port
 - For the Weave network to work, you must open ports 6783, 6784 (TCP/UDP)
 
-D2C does not support hosts with installed Docker to prevent any configuration conflicts.
+!!! note
+
+    D2C does not support hosts with installed Docker to prevent any configuration conflicts.
 
 ## How to connect own host
 
@@ -51,6 +53,14 @@ Will be available soon:
 - Stop (Start)
 - Update system requirements
 - Destroy (+force destroy)
+- [Instance Resize](/platform/scaling/#vertical-scaling) (not for own hosts)
+- Volume Resize (for AWS hosts)
+
+## AWS EBS
+
+Amazon EC2 provides additional storage which calls [Amazon Elastic Block Storage](https://aws.amazon.com/ebs/?nc1=h_ls) (EBS). You can add additional EBS without stops of hosts.
+
+![EBS](../img/scaling_ebs.png)
 
 ## Logs
 

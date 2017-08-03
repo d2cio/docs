@@ -19,20 +19,33 @@ All services and services' settings which D2C supports through the interface can
 
 ### What you need to know before creating a stack file
 
+For matching variables from other services you can use next templates:
 
+| Template       | Comments    |
+| :------------- | :------------- |
+| `{{=service('serviceName').get('fieldName')}}`        | Returns a variable of a service |
+| `{{=service('serviceName').getMainPort()}}`           | Returns the main port   |
+| `{{=service(serviceName).getAppAlias()}}`             | Returns a container alias of an [application service](/getting-started/services/#application-services))      |
+| `{{=service('serviceName').getMasterAlias()}}`        | Returns an alias of Master-container (for [data services](/getting-started/services/#data-services))      |
+| `{{=service(serviceName).getSlaveAlias()}}`           | Returns an alias of Slave-container (for [data services](/getting-started/services/#data-services))      |
+| `{{=service('serviceName').getContainerName(num)}}`   | Returns a container name of a service with number `num`  |
+
+!!! note
+
+    You can use `null` as a value for parameters. It means that you fill in these parameters via interface during importing a stack
 
 ## Data services
 
 | Parameter      | Required     | Default     | Comments |
 | :------------- | :------------- | :------------- |:------------- |
-| name          |   Yes    |           | The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface     |  
+| name          |   Yes    |           | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface     |  
 | type          | Yes      |           | A service you want to deploy       |
-| version       | No       |           | You may specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
+| version       | No       |           | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
 | configuration | No       | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
 | password      | No       |           | Root password. Required for some configurations, e.g. MongoDB Replica Set.        |
 | username      | No       |           | Create a user after deploying. Database will be created with the same name        |
 | userPassword  | No       |           | Password for the created database        |
-| ports         | No       | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
+| ports         | No       | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
 | env | No |  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
 | remoteAccess  | No       | Disabled  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports |
 | configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
@@ -81,14 +94,14 @@ deployTo:
 
 | Parameter       | Required     | Default     | Comments |
 | :------------- | :------------- | :------------- |:------------- |
-| name              | Yes |  |The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface |
+| name              | Yes |  |The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface |
 | type              | Yes | No | A service you want to deploy |
-| version           | No       |  | You may specify any of [supported versions](/getting-started/services/#app-services) here. Usually, it is the most stable one by default |
+| version           | No       |  | You can specify any of [supported versions](/getting-started/services/#app-services) here. Usually, it is the most stable one by default |
 | source.type       | Yes |  | choices: git, download(url) <br> <br>  |
 | source.url        | Yes |  | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)  |
 | extensions        | No  |  | Option for PHP-FPM and PHP-Apache services. `mysqli` and `opcache` selects by default  |
 | pecl              | No  |  |Option for PHP-FPM and PHP-Apache services |
-| ports             | No  | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)   |
+| ports             | No  | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)   |
 | env               | No  |  | Environment variables for your application. Check the way of adding environments at the example  |
 | volumes.directory | No  |  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
 | volumes.sync      | No  | False  | `True` if you need to sync files between containers |
@@ -161,17 +174,17 @@ deployTo:
 
 | Parameter       | Required     | Default     | Comments |
 | :------------- | :------------- | :------------- |:------------- |
-| name               | Yes      |   | The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface     |  
+| name               | Yes      |   | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface     |  
 | type               | Yes      |  | A service you want to deploy       |
-| version            | No       | | You may specify any of [supported versions](/getting-started/services/#data-services) here. Usually it is the most stable one by default       |
-| ports              | No       | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
+| version            | No       | | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually it is the most stable one by default       |
+| ports              | No       | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
 | remoteAccess       | No       | Disabled | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports       |
 | env                | No  |     | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
 | volumes.directory  | No  |     | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
 | volumes.sync       | Yes | False    | `True` if you need to sync files between containers |
 | globalDeps         | No  |     | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
 | serviceFiles.name  | No  |     | A name of service which NGINX or HAProxy should serve  |
-| serviceFiles.src   | No  |     | A path to a config file in your stack folder. Leave it empty if you need an automatically generated config |
+| serviceFiles.src   | No  |     | A path to a config file in your stack folder |
 | configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
 | configFiles.src    | No  |     | A path to a config file in your stack folder |
 | deployTo           | No  |     | A list of hosts for deploying a service        |
@@ -213,7 +226,7 @@ deployTo:
 
 | Parameter       | Required     | Default     | Comments |
 | :------------- | :------------- | :------------- |:------------- |
-| name              | Yes |     | The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface |
+| name              | Yes |     | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface |
 | type              | Yes       |  | A service you want to deploy       |
 | image             | Yes | No  | Docker image of an app from [DockerHub](https://hub.docker.com/).<br>Examples: openjdk, million12/varnish, quay.io/letsencrypt/dnsmasq |
 | version           | No |      | Set a version of an application |
@@ -221,7 +234,7 @@ deployTo:
 | source.url        | No |      | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)  |
 | extensions        | No |      | Option for PHP-FPM and PHP-Apache services. `mysqli` and `opcache` selects by default  |
 | pecl              | No |      |Option for PHP-FPM and PHP-Apache services |
-| ports             | No | Default port | Specify ports for your service. Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)   |
+| ports             | No | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
 | env               | No |      | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
 | volumes.directory | No |      | A path to [Persistant data volume](/getting-started/containers/#persistent-data)  |
 | volumes.sync      | No | False | `True` if you need to sync files between containers |
@@ -233,7 +246,8 @@ deployTo:
 | deployTo          | No |      | A list of hosts for deploying a service  |
 
 ### Example
-``yaml
+
+```yaml
 name: varnish
 type: docker
 image: debian
@@ -257,7 +271,7 @@ deployTo:
 
 | Parameter       | Requiered     | Default     | Comments |
 | :------------- | :------------- | :------------- |:------------- |
-| name        | yes |    | The name should be unique across your account. If you use a name which is already in use, you may change it during importing your stack via interface |
+| name        | yes |    | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface |
 | instance    | Yes |    | A type of instance. Examples for AWS: t2.small, t2.2xlarge. For DO: 1 gb, 16gb   |
 | storageSize | yes |    | Recommended storage size for a host |
 | storageType | No  |    | Recommended type of storage. Check types of [AWS volumes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) |

@@ -13,7 +13,7 @@ There are some  definitions which should be explained.
 
 - Directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) should be specified as Volumes in Persistent Data volumes block. Check sync if you want to [synchronize](/getting-started/containers/#synchronizing) files between all containers of service. Do not use it for database files.
 
-- All services in a project are visible for each other inside. Access from the internet is disabled by default (except NGINX and HAProxy). You may open access from the Internet in "Ports" block.
+- All services in a project are visible for each other inside. Access from the internet is disabled by default (except NGINX and HAProxy). You can open access from the Internet in "Ports" block.
 
 ### Application services
 
@@ -35,11 +35,11 @@ There are some  definitions which should be explained.
 | :------------- | :------------- | :------------- |:------------- |
 | Name                | Yes      |           | The name should be unique across your account. More about [Naming](/getting-started/services/#naming) |
 | Configuration       | Yes      | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
-| Version             | Yes      |           | You may specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
+| Version             | Yes      |           | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
 | Password/Root password | No    |           | Root password. Required for some configurations, e.g. MongoDB Replica Set |
 | Username            | No       |           | Create a user during deploying service. Database will be created with the same name    |
 | UserPassword        | No       |           | Password for the created database     |
-| Preinstall          | No       |           | Additional software which you may want to install with your app    |
+| Preinstall          | No       |           | Additional software which you can want to install with your app    |
 | Extensions and Pecl packages   | No |      | Additional modules for PHP-FPM and PHP-Apache services. |
 | Global dependencies | No       |           | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g**   |
 
@@ -52,14 +52,14 @@ Only for [Application](/getting-started/services/#application-services) and base
 | Parameter               | Required         | Comments |
 | :------------- | :------------- | :------------- |
 | Git/Repository URL      | No | Example: [https://github.com/d2cio/nodejs-hello-world](https://github.com/d2cio/nodejs-hello-world) |
-| Git \| branch\tag\commit  | No | You can specify branch, tag or commit. Example: `master`, `tag v1.4`, `first commit`  |
+| Git \| branch\tag\commit  | No | You can specify branch, tag or commit. Examples:<br>branch `master`, tag `v1.4`, commit `62d2272bbf7f1c6841c70dd09657df78836fda9c`  |
 | Git/Auth method         | No | Choices: **SSH** (recommended), **Login/Password**.<br>If you specify private repository and SSH, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
 | Git/Repository login    | No | Login for base auth or for FTP server  |
 | Git/Repository password | No | Password for base auth or for FTP server  |
 | Download/URL            | No | Protocols: http, https, ftp.<br> File formats: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Example: [https://wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz)  |
 | Download/Login          | No | Login of FTP server  |
 | Download/Password       | No | Password of FTP server  |
-| Upload                  | No | You may upload an archive from your computer.<br>Protocols: **http**, **https**, **ftp**.<br> File formats: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Maximum size: **50MB** |
+| Upload                  | No | You can upload an archive from your computer.<br>Protocols: **http**, **https**, **ftp**.<br> File formats: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Maximum size: **50MB** |
 
 ### Application settings
 
@@ -88,7 +88,7 @@ Only for [Application](/getting-started/services/#application-services) and base
 | Parameter                     | Required      | Comments |
 | :------------- | :------------- | :------------- |
 | Add volume                    | No  |  [Persistent data volumes](/getting-started/containers/#persistent-data) - directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) |
-| Sync                          | No  | When you have more than one container you may need to sync data between volumes. Simply check the volumes which you want to sync |
+| Sync                          | No  | When you have more than one container you can need to sync data between volumes. Simply check the volumes which you want to sync |
 
 ### Configs
 
@@ -96,7 +96,7 @@ Only for [Application](/getting-started/services/#application-services) and base
 
 | Parameter      | Required      | Comments |
 | :------------- | :------------- | :------------- |
-| Add custom config  | No  | Some services have default config files (e.g. PHP-FPM, PHP-Apache, MongoDB). You may add your additional config files or edit/replace defaults. |
+| Add custom config  | No  | Some services have default config files (e.g. PHP-FPM, PHP-Apache, MongoDB). You can add your additional config files or edit/replace defaults. |
 
 ### Configure services
 

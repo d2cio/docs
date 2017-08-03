@@ -1,27 +1,57 @@
 # Introduction
 
-**Domains** and **certificates** in D2C are issued when NGINX or HAProxy serve any of [application services](/getting-started/services/#application-services). By default an application gets a domain like: *servicename-www.accountID.at.d2c.io*. You may add your domains and TLS certificates.
+**Domains** and **certificates** in D2C are issued when NGINX or HAProxy serve any of [application services](/getting-started/services/#application-services). By default an application gets a domain like: _**servicename-www.accountID.at.d2c.io**_ (*servicename-lb.accountID.at.d2c.io*). Moreover, you can add additional domains and TLS certificates.
 
-Ensure that DNS-record for additional domains has the same IP-address as a host of NGINX or HAProxy.
+To add additional domains and TLS certificates (or create [free Let's Encrypt](/platform/domains-and-certificates/#using-free-tls-by-lets-encrypt) TLS certificates), you should have:
+
+- Host with free 80 and 443 ports
+- NGINX or HAProxy with enabled [remote access](/getting-started/creating-services/#ports) from the Internet
+
+!!! note
+
+    Ensure that DNS-record for additional domains has the same IP-address as a host of NGINX or HAProxy.
 
 ## How to add additional domains and certificates
 
-The process is almost the same for NGINX and HAProxy. The difference is that using NGINX you may add domains and certificates while creating or editing and HAProxy only during editing. To add domain or  TLS certificate, you should have:
+The process is almost the same for NGINX and HAProxy. The difference is that using NGINX you can add domains and certificates while creating or editing and HAProxy only during editing.
 
-- Host with free 80 and 443 ports
-- [Application](/getting-started/services/#application-services) or Docker service
-- NGINX or HAProxy
+Let's review examples with NGINX. Editing HAProxy described [here](/platform/balancing/#edit-load-balancer). The "Configure services" block is the same for these services.
 
-Let's review a variant with NGINX. Editing HAProxy described [here](/platform/balancing/#edit-load-balancer). The "Configure services" block is the same for these services.
+### QuickStart with HTTP protocol
 
 1. Start create NGINX or click **Edit settings** at NGINX service page if it is already exist
 2. Click **Add service config** at the "Configure services" block
-3. Choose a service NGINX will serves
-4. Choose a protocol (HTTP or HTTPS) and click **Generate config**
-5. Specify domains at domains field
-6. Click **Own certificate** if you want to add it
+3. Choose a service NGINX will serve
+4. Choose an HTTP protocol and click **Generate config**
+5. Specify domains and subdomains at special field
+6. Choose a host and click **Create service** or **Update service** if you edit a service
+
+### Using free TLS by Let's Encrypt
+
+!!! note
+
+    DNS-record for additional domains with the same IP-address as a host of NGINX or HAProxy should be accessible at the moment of creating or editing service.
+
+1. Start create NGINX or click **Edit settings** at NGINX service page if it is already exist
+2. Click **Add service config** at the "Configure services" block
+3. Choose a service NGINX will serve
+4. Choose an HTTPS protocol and click **Generate config**
+5. Specify domains and subdomains at special field
+6. Choose **Let's Encrypt**
+7. Choose a host and click **Create service** or **Update service** if you edit a service
+
+### Using own TLS certificate
+
+1. Start create NGINX or click **Edit settings** at NGINX service page if it is already exist
+2. Click **Add service config** at the "Configure services" block
+3. Choose a service NGINX will serve
+4. Choose an HTTPS protocol and click **Generate config**
+5. Specify domains and subdomains at special field
+6. Choose **Own certificate**
 7. Choose a Security level and upload your HTTPS certificate and HTTPS key
 8. Choose a host and click **Create service** or **Update service** if you edit a service
+
+### Screenshots
 
 ![Domains - first step](../img/domains.png)
 

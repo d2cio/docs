@@ -25,7 +25,7 @@ If there is a need to move your service/app to another host, you can do so with 
 
 <!--нужно больше инфы (спросить у Паши)-->
 
-Each container has logs. You may check them from the interface. [Read more](https://docs.docker.com/engine/admin/logging/view_container_logs/) about Docker logs.
+Each container has logs. You can check them from the interface. [Read more](https://docs.docker.com/engine/admin/logging/view_container_logs/) about Docker logs.
 
 ### How the containers page looks like
 

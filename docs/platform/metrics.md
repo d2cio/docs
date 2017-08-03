@@ -2,10 +2,10 @@
 
 You can inspect resource utilization graphs in your dashboard. This data is collected by Telegraf daemons running on managed hosts.
 
-You may check usage of:
+You can check usage of:
 
 - **Hosts**
-- **Containers** (individual applications).
+- [**Containers**](/getting-started/containers/) (individual applications).
 
 Graphs:
 

@@ -1,13 +1,13 @@
 # Introduction
 
-Cloning is a simple way to copy any service to any project in D2C.
+Cloning is a simple way to create service same as original one.
 
 ## How to clone
 
 1. Open a service page
-2. Click **Clone**. You may choose a project by clicking on the dropdown icon.
+2. Click **Clone**. You can choose a project by clicking on the dropdown icon.
 3. Enter a name for the new service. After submitting you will see a creating service page with filled up settings
-3. Check the settings. You may change any of them here
+3. Check the settings. You can change any of them here
 4. Choose a host and click **Create service**
 5. The service will be deployed
 
