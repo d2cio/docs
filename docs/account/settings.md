@@ -6,7 +6,7 @@
 
 - изменить пароль
 - изменить тариф
-- добавить или удалить аккаунты [облачных провайдеров](getting-started/cloud-providers/#_2)
+- добавить или удалить аккаунты [облачных провайдеров](/getting-started/cloud-providers/#_2)
 
 ![Settings](../img/settings.png)
 

@@ -33,7 +33,7 @@ _**0.12, 4, 6, 7, 8**_
 3. Click "Create service"
 4. Choose Node.js
 5. Pick a name
-6. Specify [install commands](getting-started/deployment/#building)
+6. Specify [install commands](/getting-started/deployment/#building)
 7. Choose the way to provision sources:
     - GitHub/BitBucket repository (if you use private repository you should add a SSH key to your account)
     - External link to an archive file
@@ -42,8 +42,8 @@ _**0.12, 4, 6, 7, 8**_
     - Disable or enable access from the Internet
     - Specify a port
     - Add extra ports
-9. Specify [deploy commands](getting-started/deployment/#deploying)
-10. Specify [start commands](getting-started/deployment/#running)
+9. Specify [deploy commands](/getting-started/deployment/#deploying)
+10. Specify [start commands](/getting-started/deployment/#running)
 11. Add environment variables
 12. Add custom configs
 13. Select a host or several hosts

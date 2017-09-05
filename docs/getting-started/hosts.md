@@ -4,7 +4,7 @@
 
 Кроме того, вы можете разворачивать сервисы на собственных серверах или у облачных провайдеров, которые ещё не поддерживаются в D2C. Мы предоставляем скрипт, который проверяет совместимость сервера и добавляет его в вашу панель управления D2C.
 
-Любой из серверов может использоваться для любого [проекта](getting-started/projects/).
+Любой из серверов может использоваться для любого [проекта](/getting-started/projects/).
 
 ## Поддерживаемые операционные системы и требования
 
@@ -12,10 +12,10 @@
 
 Когда вы **подключаете** свой сервер он должен соответствовать следующим требованиям:
 
-- Ubuntu 14.04/16.04 or Debian 8/9.
-- Kernel version >= 4.0 for better Docker performance using OverlayFS, otherwise, the storage driver will be "devicemapper"
+- Ubuntu 14.04/16.04 или Debian 8/9
+- Версия ядра >= 4.0 для лучшей производительности Docker используя OverlayFS, в противном случае,  в качестве драйвера хранилища будет ["devicemapper"](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)
 - Свободное место на диске: 5 Gb
-- Открытый ssh порт
+- Открытый SSH порт
 - Для работы с сетью Weave, требуется открыть порты 6783, 6784 (TCP/UDP)
 
 !!! note
@@ -24,22 +24,22 @@
 
 ## Как подключить свой сервер
 
-1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup).
-2. Нажмите **Подключить свой сервер**.
-3. Скопируйте команду.
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup)
+2. Нажмите **Подключить свой сервер**
+3. Скопируйте команду
 ![Hosts](../img/hosts_connect_own.png)
-4. Подключитесь к вашему серверу через **SSH**.
-5. Вставьте и запустите команду, которую скопировали до этого.
+4. Подключитесь к вашему серверу через **SSH**
+5. Вставьте и запустите команду, которую скопировали до этого
 
 ## Поддерживаемые облачные провайдеры
 
-- Amazon Web Services ([how to link AWS](getting-started/cloud-providers/#amazon-web-services))
-- Digital Ocean ([how to link DigitalOcean](getting-started/cloud-providers/#digital-ocean))
+- Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
+- Digital Ocean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
 
 Скоро будут доступны:
 
-- Microsoft Azure
 - Vultr
+- Microsoft Azure
 
 ## ПО, которое устанавливается на сервер
 
@@ -55,7 +55,7 @@
 - Остановить (Запустить)
 - Обновить системные сервисы
 - Удалить (+удалить с форсом)
-- [Изменить размер сервера](platform/scaling/#_3) (только для облачных серверов)
+- [Изменить размер сервера](/platform/scaling/#_3) (только для облачных серверов)
 - Изменить размер диска (для серверов AWS)
 
 ## AWS EBS
