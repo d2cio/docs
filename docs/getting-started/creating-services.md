@@ -11,9 +11,9 @@ There are some  definitions which should be explained.
 
 - Service names should be unique across your account
 
-- Directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) should be specified as Volumes in Persistent Data volumes block. Check sync if you want to [synchronize](/getting-started/containers/#synchronizing) files between all containers of service. Do not use it for database files.
+- Directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) should be specified as Volumes in Persistent Data volumes block. Check sync if you want to [synchronize](/getting-started/containers/#synchronizing) files between all containers of service. Do not use it for database files
 
-- All services in a project are visible for each other inside. Access from the internet is disabled by default (except NGINX and HAProxy). You can open access from the Internet in "Ports" block.
+- All services in a project are visible for each other inside. Access from the internet is disabled by default (except NGINX and HAProxy). You can open access from the Internet in "Ports" block
 
 ### Application services
 
@@ -23,7 +23,7 @@ There are some  definitions which should be explained.
 
 ### Other services
 
-- NGINX, NGINX-Static, HAProxy has enabled access from the Internet by default on port 80.
+- NGINX, NGINX-Static, HAProxy has enabled access from the Internet by default on port 80
 
 ## Parameters and definitions
 
@@ -36,9 +36,9 @@ There are some  definitions which should be explained.
 | Name                | Yes      |           | The name should be unique across your account. More about [Naming](/getting-started/services/#naming) |
 | Configuration       | Yes      | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
 | Version             | Yes      |           | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
-| Password/Root password | No    |           | Root password. Required for some configurations, e.g. MongoDB Replica Set |
-| Username            | No       |           | Create a user during deploying service. Database will be created with the same name    |
-| UserPassword        | No       |           | Password for the created database     |
+| Password/Root password | No    |           | Root password. Required for some configurations, e.g. MongoDB ReplicaSet |
+| Username            | No       |           | Create a user during deploying service (database). Database will be created with the same name    |
+| UserPassword        | No       |           | Password for a user of database  |
 | Preinstall          | No       |           | Additional software which you can want to install with your app    |
 | Extensions and Pecl packages   | No |      | Additional modules for PHP-FPM and PHP-Apache services. |
 | Global dependencies | No       |           | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g**   |

@@ -1,6 +1,6 @@
 # Introduction
 
-D2C supports load balancing provided by [HAProxy](http://www.haproxy.org/). It works in different modes: **HTTP**, **HTTPS**, **TCP**. The config generates automatically. All you need to do is open a service you need to balance and click **Add load balancer**.
+D2C supports load balancing provided by [HAProxy](http://www.haproxy.org/). It works in different modes: **HTTP**, **HTTPS**, **TCP**. The config generates automatically. You can edit it after deploying.
 
 ## How to deploy a load balancer
 
@@ -23,7 +23,7 @@ You can change settings of load balancer after deploying. For this purpose open 
 
 ![Load balancing - editing](../img/balancing_editing.png)
 
-To change mode or set your own certificate find a `Configure services` block and click on **Generate new config** icon.
+To change mode or set your own certificate find a **Configure services** block and click on **Generate new config** icon.
 
 ![Load balancing - generate new config](../img/balancing_editing_new_config.png)
 

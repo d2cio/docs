@@ -4,13 +4,15 @@ Applications can not run without a server on the Internet. D2C can automatically
 
 If you want to deploy applications on your own in-house servers or at cloud providers that D2C does not currently support, you can do so. We provide a script that checks whether your host complies with the requirements to be added to the D2C dashboard and be a part of your project.
 
+Each host can be used for any [project](/getting-started/projects/) multiple times.
+
 ## Supported operation systems and requirements
 
 When you create a host, we install **Ubuntu 16.04** on it.
 
 When you **connect** your own host it should have:
 
-- Ubuntu 14.04/16.04 or Debian 8.
+- Ubuntu 14.04/16.04 or Debian 8/9.
 - Kernel version >= 4.0 for better Docker performance using OverlayFS, otherwise, the storage driver will be "devicemapper"
 - Free disk space: 5 Gb
 - Opened incoming ssh port
@@ -53,7 +55,7 @@ Will be available soon:
 - Stop (Start)
 - Update system requirements
 - Destroy (+force destroy)
-- [Instance Resize](/platform/scaling/#vertical-scaling) (not for own hosts)
+- [Instance Resize](/platform/scaling/#vertical-scaling) (only for cloud hosts)
 - Volume Resize (for AWS hosts)
 
 ## AWS EBS
