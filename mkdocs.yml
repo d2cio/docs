@@ -42,7 +42,6 @@ pages:
 - Платформа:
   - 'Разворачивание': 'platform/deployment.md'
   - 'Приватная сеть': 'platform/private-network.md'
-#  - 'Application updates': 'platform/updates.md'
   - 'Масштабирование': 'platform/scaling.md'
   - 'Балансировка': 'platform/balancing.md'
   - 'Логи': 'platform/logs.md'
@@ -70,4 +69,4 @@ markdown_extensions:
       permalink: True
 
 
-copyright: Copyright&copy; 2017 <a href="https://d2c.io">D2C.io</a>
+copyright: Copyright&copy; 2017 <a href="https://d2c.io">D2C.io</a>&nbsp;&nbsp;&nbsp;<a href="https://docs.d2c.io/">English version</a>

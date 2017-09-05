@@ -1,4 +1,3 @@
 start.ps1
 build.ps1
-site/ru
-site/en
+site

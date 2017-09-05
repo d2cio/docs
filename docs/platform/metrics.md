@@ -4,8 +4,8 @@
 
 Вы можете следить за ресурсами:
 
-- [**Серверов**](/getting-started/hosts/)
-- [**Контейнеров**](/getting-started/containers/)
+- [**Серверов**](getting-started/hosts/)
+- [**Контейнеров**](getting-started/containers/)
 
 Графики:
 

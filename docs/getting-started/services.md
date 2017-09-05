@@ -8,7 +8,7 @@ D2C запускает ваши сервисы/приложения внутри
 
 ## Именование
 
-У каждого сервиса есть своё **уникальное** имя. Сервисы могут обращаться друг к другу по имени сервиса (или по alias-именам, например `servicename-1` или `servicename`). Не важно на каком сервере сервис запущен – все взаимосвязи внутри [приватной сети](/platform/private-network/) прозрачны для сервисов. Более того, мы используем имена для создания публичных доменов, таких как: **_servicename-www.accountID.at.d2c.io_** для ваших сервисов, которые обслуживает NGINX или HAProxy.
+У каждого сервиса есть своё **уникальное** имя. Сервисы могут обращаться друг к другу по имени сервиса (или по alias-именам, например `servicename-1` или `servicename`). Не важно на каком сервере сервис запущен – все взаимосвязи внутри [приватной сети](platform/private-network/) прозрачны для сервисов. Более того, мы используем имена для создания публичных доменов, таких как: **_servicename-www.accountID.at.d2c.io_** для ваших сервисов, которые обслуживает NGINX или HAProxy.
 
 Имя должно начинаться с буквы и содержать не более 16 символов (допускаются латинские символы и цифры).
 
@@ -43,7 +43,7 @@ D2C запускает ваши сервисы/приложения внутри
 
 | Название              | Масштабируемый      | Поддерживаемые версии |  Комментарий
 | :-----------      | :-------------| :-------------     | :-------------     |
-| **NGINX**                                    | Нет          | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+| **NGINX**                                    | Нет          | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](platform/domains-and-certificates/) (by Let's Encrypt).
 | **NGINX-Cluster**                            | Да           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your application does not return static files or you need to serve more than one PHP-FPM container.
 | **NGINX-Static**                             | Да           | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.).  It cannot serve other services.
 | **HAProxy**                                  | Нет          | 1.7 |
@@ -56,17 +56,17 @@ D2C запускает ваши сервисы/приложения внутри
 - Обновить
 - Перезапустить
 - Остановить (Запустить)
-- [Клонировать](/platform/cloning-apps/)
+- [Клонировать](platform/cloning-apps/)
 - Удалить (+удалить с форсом)
 - Редактировать настройки
-- [Масштабировать](/platform/scaling/) (кроме некоторых сервисов, например NGINX)
-- Добавить [балансировщика](/platform/balancing/)
+- [Масштабировать](platform/scaling/) (кроме некоторых сервисов, например NGINX)
+- Добавить [балансировщика](platform/balancing/)
 - Выполнить - выполнение команду внутри запущенного контейнера сервиса
 
 
 ![Standard service actions](../img/standart_actions.png)
 
-У всех [**сервисов приложений**](/getting-started/services/#application-services) есть возможность гибкого обновления:
+У всех [**сервисов приложений**](getting-started/services/#_5) есть возможность гибкого обновления:
 
 - Обновить версию (у сервисов хранения данных и других сервисов есть только эта функция)
 - Обновить глобальные зависимости

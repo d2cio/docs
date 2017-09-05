@@ -59,7 +59,7 @@
         }
 
 6. Кликните **Create policy**
-7. Теперь вы можете [сгенерировать ключи доступа AWS](/getting-started/cloud-providers/#generate-aws-credentials) с вашей собственной policy
+7. Теперь вы можете [сгенерировать ключи доступа AWS](getting-started/cloud-providers/#generate-aws-credentials) с вашей собственной policy
 
 ## Digital Ocean
 

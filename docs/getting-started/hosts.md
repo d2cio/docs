@@ -4,7 +4,7 @@
 
 Кроме того, вы можете разворачивать сервисы на собственных серверах или у облачных провайдеров, которые ещё не поддерживаются в D2C. Мы предоставляем скрипт, который проверяет совместимость сервера и добавляет его в вашу панель управления D2C.
 
-Любой из серверов может использоваться для любого [проекта](/getting-started/projects/).
+Любой из серверов может использоваться для любого [проекта](getting-started/projects/).
 
 ## Поддерживаемые операционные системы и требования
 
@@ -33,8 +33,8 @@
 
 ## Поддерживаемые облачные провайдеры
 
-- Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
-- Digital Ocean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
+- Amazon Web Services ([how to link AWS](getting-started/cloud-providers/#amazon-web-services))
+- Digital Ocean ([how to link DigitalOcean](getting-started/cloud-providers/#digital-ocean))
 
 Скоро будут доступны:
 
@@ -55,7 +55,7 @@
 - Остановить (Запустить)
 - Обновить системные сервисы
 - Удалить (+удалить с форсом)
-- [Изменить размер сервера](/platform/scaling/#vertical-scaling) (только для облачных серверов)
+- [Изменить размер сервера](platform/scaling/#_3) (только для облачных серверов)
 - Изменить размер диска (для серверов AWS)
 
 ## AWS EBS
