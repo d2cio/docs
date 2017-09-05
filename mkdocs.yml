@@ -2,12 +2,13 @@ site_name: D2C
 site_url: https://www.d2c.io
 site_description: Project documentation of D2C.io.
 site_author: D2C.io Team
+site_dir: site/en
 
 repo_url: https://github.com/d2cio/docs/
 
 pages:
 - Introduction: index.md
-- Getting started:  
+- Getting started:
   - 'Projects': 'getting-started/projects.md'
   - 'Hosts': 'getting-started/hosts.md'
   - 'Cloud providers': 'getting-started/cloud-providers.md'
