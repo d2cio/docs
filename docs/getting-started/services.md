@@ -1,101 +1,99 @@
-# Introduction
-Service is an application deployed in D2C.
+# Вступление
 
-D2C executes your services/applications inside containers. We use Docker as our containerization platform. Each app is a separate container: web-app, database, load-balancer, etc. Docker is installed and configured on the hosts that are managed by D2C automatically. When you deploy your application, all the necessary files are delivered to the host, and container images are built locally on the host and then run by Docker daemon. D2C configures the environment automatically, so we do not recommend to add your current development boxes as managed hosts, to prevent any configuration conflicts.
+Сервис это приложение, развернутое с помощью D2C.
 
-Once you can deploy up to 50 containers (except services, which have their limitations).
+D2C запускает ваши сервисы/приложения внутри контейнеров. Мы используем Docker в качестве платформы контейнеризации. Каждый сервис это отдельный контейнер: веб-приложение, база данных, балансировщик нагрузки и т.д. Docker устанавливается и настраивается на сервера, которые добавляются в D2C автоматически. Когда вы разворачиваете сервис все необходимые файлы  отправляются на сервер и образ контейнера собирается локально на сервере и затем запускается с помощью демона Docker. D2C настраивает окружение автоматически, поэтому мы не рекомендуем добавлять уже настроенные сервера в целях избежения конфигурационных конфликтов.
 
-## Naming
+Единовременно вы можете развернуть до 50 контейнеров (за исключением сервисов, у которых есть свои ограничения).
 
-Each service has its **unique** name. Services can communicate with each other by service names (or alias-names, e.g. `servicename-1` or `servicename`). It doesn't matter on which host the app is running – all [private network](/platform/private-network/) intercommunication is transparent for applications. Moreover, we use them to create public domains like: **_servicename-www.accountID.at.d2c.io_** for your applications which are served by NGINX or HAProxy.
+## Именование
 
-The name should starts with a letter and contain maximum 16 characters (initial, capital Latin symbols or numbers).
+У каждого сервиса есть своё **уникальное** имя. Сервисы могут обращаться друг к другу по имени сервиса (или по alias-именам, например `servicename-1` или `servicename`). Не важно на каком сервере сервис запущен – все взаимосвязи внутри [приватной сети](/platform/private-network/) прозрачны для сервисов. Более того, мы используем имена для создания публичных доменов, таких как: **_servicename-www.accountID.at.d2c.io_** для ваших сервисов, которые обслуживает NGINX или HAProxy.
 
-## Native support
+Имя должно начинаться с буквы и содержать не более 16 символов (допускаются латинские символы и цифры).
 
-### Data services
+## Нативно поддерживаемые сервисы
 
-| Name          | Configuration               | Scalable         | Supported versions  |
+### Сервисы хранения данных
+
+| Название          | Конфигурация               | Масштабируемый         | Поддерживаемые версии  |
 | :-----------  | :-------------              | :------------- | |
-| **MongoDB**       | StandAlone or ReplicaSet    | Yes |              2.6, 3.0, 3.2, 3.4 |
-| **MySQL**         | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7, 8.0 |
-| **MariaDB**       | StandAlone or MasterSlave   | Yes |              5.5, 10.0, 10.1, 10.2, 10.3 |
-| **Percona**       | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7 |
-| **PostgreSQL**    | StandAlone or MasterSlave   | Yes |              9.3, 9.4, 9.5, 9.6 |
-| **Crate**         | StandAlone                  | No  |              0.57, 1.0 |
-| **Redis**         |                             | Yes |              2.8, 3.0, 3.2 |
-| **Memcached**     |                             | Yes |              1.4 |
-| **ElasticSearch** | StandAlone                  | No  |              1.x, 2.x, 5.x |
+| **MongoDB**       | StandAlone or ReplicaSet    | Да |              2.6, 3.0, 3.2, 3.4 |
+| **MySQL**         | StandAlone or MasterSlave   | Да |              5.5, 5.6, 5.7, 8.0 |
+| **MariaDB**       | StandAlone or MasterSlave   | Да |              5.5, 10.0, 10.1, 10.2, 10.3 |
+| **Percona**       | StandAlone or MasterSlave   | Да |              5.5, 5.6, 5.7 |
+| **PostgreSQL**    | StandAlone or MasterSlave   | Да |              9.3, 9.4, 9.5, 9.6 |
+| **Crate**         | StandAlone                  | Нет  |              0.57, 1.0 |
+| **Redis**         |                             | Да |              2.8, 3.0, 3.2 |
+| **Memcached**     |                             | Да |              1.4 |
+| **ElasticSearch** | StandAlone                  | Нет  |              1.x, 2.x, 5.x |
 
-### Application services
+### Сервисы приложений
 
-| Name          | Scalable      | Supported versions |
+| Название          | Масштабируемый      | Поддерживаемые версии |
 | :---------    | :-------------| :-------------      |
-| **Node.js**       | Yes           | 0.12, 4, 6, 7, 8   |
-| **Python**        | Yes           | 2.7, 3.3, 3.4, 3.5, 3.6 |
-| **Go**            | Yes           | 1.6, 1.7, 1.8  |
-| **Ruby**          | Yes           | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4 |
-| **PHP-FPM**       | Yes           | 5.6, 7.1 |
-| **APACHE+PHP**    | Yes           | 5.6, 7.1 |
+| **Node.js**       | Да           | 0.12, 4, 6, 7, 8   |
+| **Python**        | Да           | 2.7, 3.3, 3.4, 3.5, 3.6 |
+| **Go**            | Да           | 1.6, 1.7, 1.8  |
+| **Ruby**          | Да           | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4 |
+| **PHP-FPM**       | Да           | 5.6, 7.1 |
+| **APACHE+PHP**    | Да           | 5.6, 7.1 |
 
-### Other services
+### Другие сервисы
 
-| Name                                                                                        | Scalable      | Supported versions |  Comments
+| Название              | Масштабируемый      | Поддерживаемые версии |  Комментарий
 | :-----------      | :-------------| :-------------     | :-------------     |
-| **NGINX**                                            | No            | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
-| **NGINX-Cluster**                            | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your application does not return static files or you need to serve more than one PHP-FPM container.
-| **NGINX-Static**                             | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.).  It cannot serve other services.
-| **HAProxy**                                       | No            | 1.7 |
-| **Docker** (Services based on Docker Images) | Yes           |  |
+| **NGINX**                                    | Нет          | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+| **NGINX-Cluster**                            | Да           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your application does not return static files or you need to serve more than one PHP-FPM container.
+| **NGINX-Static**                             | Да           | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.).  It cannot serve other services.
+| **HAProxy**                                  | Нет          | 1.7 |
+| **Docker** (Services based on Docker Images) | Да           |     |
 
-## Actions
+## Действия
 
-Actions which have all services:
+Действия со всеми сервисами:
 
-- Update version
-- Restart
-- Stop (Start)
-- [Clone](/platform/cloning-apps/)
-- Destroy (+force destroy)
-- Edit settings
-- [Scale](/platform/scaling/) (except some services e.g. NGINX)
-- Add [load-balancer](/platform/balancing/)
-- Execute - executing a command inside all running service containers.
+- Обновить
+- Перезапустить
+- Остановить (Запустить)
+- [Клонировать](/platform/cloning-apps/)
+- Удалить (+удалить с форсом)
+- Редактировать настройки
+- [Масштабировать](/platform/scaling/) (кроме некоторых сервисов, например NGINX)
+- Добавить [балансировщика](/platform/balancing/)
+- Выполнить - выполнение команду внутри запущенного контейнера сервиса
 
 
 ![Standard service actions](../img/standart_actions.png)
 
-All [**application services**](/getting-started/services/#application-services) have smart update feature which you can choose separately or combine with each other:
+У всех [**сервисов приложений**](/getting-started/services/#application-services) есть возможность гибкого обновления:
 
-- Update version (data and other services have only this one)
-- Update global dependencies
-- Update local dependencies
-- Update sources
-- Include .git folder
+- Обновить версию (у сервисов хранения данных и других сервисов есть только эта функция)
+- Обновить глобальные зависимости
+- Обновить локальные зависимости
+- Обновить исходники
+- Включить папку .git
 
 ![Application actions](../img/app_actions.png)
 
 
-### Interacting with service
+### Взаимодействие с сервисом
 
+## Системные логи
 
+У каждого сервиса есть системные логи (логи деплоя).
 
-
-## System Logs
-
-Each service has system logs (deploy logs).
-
-The line which has ellipsis marks, in the end, can be opened with a mouse click.
+Строчки, которые заканчиваются троеточием содержат дополнительную информацию, которую можно открыть с помощью клика мышки.
 
 ![Build log](../img/build_log.png)
 
-Messages of building images consist stdout, and it also can be shown.
+Сообщения создания образом содержат stdout, которые тоже можно развернуть.
 
 ![Stdout log](../img/stdout.png)
 
 
 
-### Host the service page look like
+### Как выглядит страница сервиса
 
 ![Service page](../img/servicepage.jpg)
 

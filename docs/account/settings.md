@@ -1,12 +1,12 @@
 # Introduction
 
-To create D2C account follow this [link](https://panel.d2c.io/account/signup). You can use any of social profiles (Google, Facebook, GitHub, BitBucket) or your email and password.
+Для того, чтобы создать аккаунт в D2C перейдите по [ссылке](https://panel.d2c.io/account/signup). Вы можете использовать профили социальных сетей (Google, Facebook, GitHub, BitBucket) или логин и пароль.
 
-In account settings you can:
+В настройках аккаунта вы можете:
 
-- change password
-- upgrade [plan]()
-- add or delete accounts of [cloud providers](/getting-started/hosts/#supported-cloud-providers)
+- изменить пароль
+- изменить тариф
+- добавить или удалить аккаунты [облачных провайдеров](/getting-started/hosts/#supported-cloud-providers)
 
 ![Settings](../img/settings.png)
 

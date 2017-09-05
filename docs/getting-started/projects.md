@@ -1,4 +1,5 @@
-# Introduction
-Projects are folders for your applications. They can help, for example, to separate stages of your application. You can create any amount of projects.
+# Вступление
+
+Проекты это папки для ваших приложений. Они могут помочь разделить, например, разные стадии ваших приложений. Можно создавать любое количество проектов.
 
 ![Projects](../img/projects.png)

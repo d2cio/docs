@@ -1,26 +1,26 @@
-# Introduction
+# Вступление
 
-D2C does not provide its computing resources – it automates the provisioning process at cloud providers. Be aware that cloud provider will charge you for resource usage based on your payment plan.
+На данный момент в D2C серверная инфраструктура для пользователей обеспечивается облачными провайдерами. Свои сервера на данный момент не предоставляются. Облачные провайдеры самостоятельно взымают плату за свои услуги в зависимости от выбранного вами тарифа и используемых ресурсов.
 
-## Compare and understanding plans
+## Сравнение тарифов
 
-| Free                          | Pro                                      | Enterprise   |
-| :------------- |              :------------- |                            :------------- |
-| 1 cloud host                  | Unlimited cloud and own hosts            |  Pro features                        |
-| Low priority in task queue    | Multi-Cloud and Hybrid deployment        |  Private Cloud                       |
-|                               | High priority in task queue              |  Role-based Access control           |
-|                               | [Database Replication](/platform/scaling/)              | LDAP/SAML/AD  |
-|                               | [Vertical and horizontal Scaling](/platform/scaling/)   |   |
-|                               | [Load Balancing](/platform/balancing/)                  |   |
-|                               | [Container migration](/platform/migration/)               |                                      |
-| **0 $**                       | **19 $ monthly**                  | [Contact us](mailto:support@d2c.io)  |
+| Free                             | Pro                                                                 | Enterprise   |
+| :------------- |                 :------------- |                                                       :------------- |
+| 1 облачный сервер                | Неограниченное количество облачных и собственных серверов           |  Pro features |
+| Низкий приоритет в очереди задач | Использование нескольких провайдеров                                |  Все функции Pro |
+|                                  | Высокий приоритет в очереди задач                                   |  Вся платформа в вашем приватном окружении |
+|                                  | [Репликация баз данных](/platform/scaling/)                         |  Разграничение прав пользователей |
+|                                  | [Вертикальное и горизонтальное масштабирование](/platform/scaling/) |  LDAP/SAML/AD |
+|                                  | [Балансировка нагрузки](/platform/balancing/)                       |   |
+|                                  | [Миграция контейнеров](/platform/migration/)                        |    |
+| **0 $**                          | **19 $ monthly**                  | [Свяжитесь с нами](mailto:support@d2c.io)  |
 
-### Notes
+### Примечания
 
-1. Priority in task queue means how fast task (create services, update services, etc.) will be processed. If you would like to manage priority yourself, you need the Enterprise plan.
-2. **Private cloud** means the ability to run D2C platform in your environment.
-3. You can not change Pro plan to Free yourself. [Contact us](mailto:support@d2c.io) if you want to do it. The account should have not more than one cloud host.
-4. We accept PayPal payments only from Personal [PayPal accounts](https://www.paypal.com/ca/webapps/mpp/account-selection). If you would like to use PayPal business account for payments - [contact us](mailto:support@d2c.io), and we create a bill from a personal PayPal account.
-5. Customers from Russia can make a payment using ChronoPay and bank transfer ([Send](mailto:support@d2c.io) your company details and subscription duration for making the invoice).
-5. We never delete any data from your hosts after cancelling a subscription. You can continue to manage them manually.
-6. You can ask to delete any data about your D2C account.
+1. Приоритет в очереди задач означает насколько быстро задача (создание сервисов, обновление сервисов и т.д.) будет обработана. Если вы хотите самостоятельно управлять приоритетом задач - вам требуется тариф Enterprise.
+2. **Платформа в вашем приватном окружении** означает возможность запустить платформу D2C на ваших серверах.
+3. Самостоятельно сменить тариф с Pro на Free невозможно. [Свяжитесь с нами](mailto:support@d2c.io), если желаете изменить тариф. Чтобы это сделать, в аккаунте не должно быть более одного облачного сервера.
+4. Мы принимаем платежи через PayPal только от частных [аккаунтов PayPal](https://www.paypal.com/ca/webapps/mpp/account-selection). Если вы хотите использовать бизнес аккаунт PayPal для платежей - [свяжитесь с нами](mailto:support@d2c.io).
+5. Для российских пользователей доступна оплата с помощью банковского перевода. ([Отправьте](mailto:support@d2c.io) данные вашей компании и срок подписки для создания счета.
+5. Мы никогда не удаляем никакие данные с ваших серверов после отмены подписки. Вы сможете продолжать настраивать их вручную.
+6. Вы можете попросить удалить любую информацию о вашем D2C аккаунте.

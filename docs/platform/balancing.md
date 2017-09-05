@@ -1,15 +1,15 @@
-# Introduction
+# Вступление
 
-D2C supports load balancing provided by [HAProxy](http://www.haproxy.org/). It works in different modes: **HTTP**, **HTTPS**, **TCP**. The config generates automatically. All you need to do is open a service you need to balance and click **Add load balancer**.
+D2C использует в качестве балансировщика [HAProxy](http://www.haproxy.org/). Он поддерживает разные протоколы: **HTTP**, **HTTPS**, **TCP**. Конфиг генерируется автоматически, в дальнейшем его можно изменять.
 
-## How to deploy a load balancer
+## Как развернуть балансировщика нагрузки
 
-1. Deploy or open a service you want to balance
-2. Click **Add load balancer**
-3. Choose a mode and a host
-4. Click **Add load balancer**
+1. Разверните или откройте страницу сервиса, который нужно балансировать
+2. Нажмите **Добавить балансировщика**
+3. Выберите режим и сервер
+4. Нажмите **Добавить балансировщика**
 
-If you use HTTPS HAProxy will be deployed with [Let's Encrypt](https://letsencrypt.org/) certificate (you can also add own certificate [after deploying](/platform/balancing/#edit-load-balancer)). Specify any additional ports if it needs. You can also disable access from the Internet (it is enabled by default).
+Если вы выберите HTTPS, то по умолчанию будет создан конфиг с бесплатными сертификатами от [Let's Encrypt](https://letsencrypt.org/). После разворачивания вы сможете  добавить свой сертификат. По необходимости можно указать любые дополнительные порты. Вы также можете выключит доступ из Интернета, который включен по умолчанию для HAProxy.
 
 ![Load balancing](../img/balancing.png)
 
@@ -17,22 +17,22 @@ If you use HTTPS HAProxy will be deployed with [Let's Encrypt](https://letsencry
 
 ![Load balancing - choose a host](../img/balancing_hosts.png)
 
-## Edit load balancer
+## Редактирование
 
-You can change settings of load balancer after deploying. For this purpose open an HAProxy service, click **Edit settings**.
+Вы можете изменить настройки балансировщика после разворачивания. Для этого, откройте сервис HAProxy и нажмите **Редактировать**.
 
 ![Load balancing - editing](../img/balancing_editing.png)
 
-To change mode or set your own certificate find a `Configure services` block and click on **Generate new config** icon.
+Для того, чтобы изменить режим или добавить свой HTTPS сертификат найдите блок **Обслуживаемые сервисы**  и нажмите на иконку **Сгенерировать новый конфиг**.
 
 ![Load balancing - generate new config](../img/balancing_editing_new_config.png)
 
-Choose a mode and click **Generate new config**.
+Выберите режим и нажмите **Сгенерировать новый конфиг**.
 
 ![Load balancing - choose a mode](../img/balancing_editing_new_config_2.png)
 
-If you need HTTPS, you cad add an own certificate or use free automatically updated certificates provided by [Let's Encrypt](https://letsencrypt.org/).
+Если вам требуется HTTPS, вы можете добавить свой сертификат или использовать бесплатные автообновляемые сертификаты от Let's Encrypt.
 
-Click **Update service**.
+Нажмите **Обновить сервис**.
 
 ![Load balancing - update](../img/balancing_editing_update.png)

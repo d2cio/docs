@@ -1,76 +1,78 @@
-# Introduction
+# Вступление
 
-Applications can not run without a server on the Internet. D2C can automatically provide servers for you. Just provide an access token for your preferred cloud provider, and D2C will create/destroy/resize servers as you need them. Keep in mind that the cloud provider will charge you for resource usage based on your payment plan. D2C does not provide its own computing resources – it automates the provisioning process at cloud providers.
+Сервисы не могут запускаться в Интернете без сервера. D2C может автоматически предоставлять их для вас. Просто предоставьте токен к облачному провайдеру, который будете использовать и D2C будет создавать, удалять, изменять конфигурацию (масштабировать) сервера по вашему требованию. Облачный провайдер будет списывать средства с вашего аккаунта в зависимости от потраченных ресурсов и используемого тарифа. D2C не предоставляет свои облачные ресурсы, а только автоматизирует процесс управления ресурсами облачных провайдеров.
 
-If you want to deploy applications on your own in-house servers or at cloud providers that D2C does not currently support, you can do so. We provide a script that checks whether your host complies with the requirements to be added to the D2C dashboard and be a part of your project.
+Кроме того, вы можете разворачивать сервисы на собственных серверах или у облачных провайдеров, которые ещё не поддерживаются в D2C. Мы предоставляем скрипт, который проверяет совместимость сервера и добавляет его в вашу панель управления D2C.
 
-## Supported operation systems and requirements
+Любой из серверов может использоваться для любого [проекта](/getting-started/projects/).
 
-When you create a host, we install **Ubuntu 16.04** on it.
+## Поддерживаемые операционные системы и требования
 
-When you **connect** your own host it should have:
+Когда вы создаете сервер мы устанавливаем на него **Ubuntu 16.04**.
 
-- Ubuntu 14.04/16.04 or Debian 8.
+Когда вы **подключаете** свой сервер он должен соответствовать следующим требованиям:
+
+- Ubuntu 14.04/16.04 or Debian 8/9.
 - Kernel version >= 4.0 for better Docker performance using OverlayFS, otherwise, the storage driver will be "devicemapper"
-- Free disk space: 5 Gb
-- Opened incoming ssh port
-- For the Weave network to work, you must open ports 6783, 6784 (TCP/UDP)
+- Свободное место на диске: 5 Gb
+- Открытый ssh порт
+- Для работы с сетью Weave, требуется открыть порты 6783, 6784 (TCP/UDP)
 
 !!! note
 
-    D2C does not support hosts with installed Docker to prevent any configuration conflicts.
+    D2C не поддерживает сервера с установленным Docker, в целях избегания конфликтов конфигураций.
 
-## How to connect own host
+## Как подключить свой сервер
 
-1. Sign in into your [D2C account](https://panel.d2c.io/account/signup).
-2. Click **Connect host**.
-3. Copy the command.
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup).
+2. Нажмите **Подключить свой сервер**.
+3. Скопируйте команду.
 ![Hosts](../img/hosts_connect_own.png)
-4. Connect to your host via **SSH**.
-5. Run the command you copied before.
+4. Подключитесь к вашему серверу через **SSH**.
+5. Вставьте и запустите команду, которую скопировали до этого.
 
-## Supported cloud providers
+## Поддерживаемые облачные провайдеры
 
 - Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
 - Digital Ocean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
 
-Will be available soon:
+Скоро будут доступны:
 
 - Microsoft Azure
 - Vultr
 
-## What software will be installed on hosts?
+## ПО, которое устанавливается на сервер
 
 - Docker
 - Weave Network
 - Telegraf
 - D2C HealthCheck Daemon
 
-## Actions
+## Действия
 
-- Terminal
-- Restart
-- Stop (Start)
-- Update system requirements
-- Destroy (+force destroy)
-- [Instance Resize](/platform/scaling/#vertical-scaling) (not for own hosts)
-- Volume Resize (for AWS hosts)
+- Терминал
+- Перезапустить
+- Остановить (Запустить)
+- Обновить системные сервисы
+- Удалить (+удалить с форсом)
+- [Изменить размер сервера](/platform/scaling/#vertical-scaling) (только для облачных серверов)
+- Изменить размер диска (для серверов AWS)
 
 ## AWS EBS
 
-Amazon EC2 provides additional storage which calls [Amazon Elastic Block Storage](https://aws.amazon.com/ebs/?nc1=h_ls) (EBS). You can add additional EBS without stops of hosts.
+Амазон EC2 предоставляет дополнительно место  на диске которое называется [Amazon Elastic Block Storage](https://aws.amazon.com/ebs/?nc1=h_ls) (EBS). Вы можете изменять размер EBS без остановки серверов.
 
 ![EBS](../img/scaling_ebs.png)
 
-## Logs
+## Логи
 
-Each host has logs (server logs).
+У каждого сервера есть логи (серверные логи).
 
-The line which has ellipsis marks, in the end, can be opened with a mouse click.
+Строчки, которые заканчиваются троеточием содержат дополнительную информацию, которую можно открыть с помощью клика мышки.
 
 ![Hosts](../img/host_logs.png)
 
-### How the host page looks like
+### Как выглядит страница сервера
 
 ![Hosts](../img/host_page.png)
 ![Hosts](../img/host_page2.png)

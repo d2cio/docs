@@ -1,44 +1,44 @@
-# Introduction
+# Вступление
 
-In this page, we describe how to generate credentials of cloud providers and use them in D2C.
+На этой странице мы расскажем как подключить аккаунты облачных провайдеров к D2C.
 
-## Supported cloud providers
+## Поддерживаемые облачные провайдеры
 
 - **Amazon Web Services**
 - **Digital Ocean**
 
-Will be available soon:
+Скоро будут доступны:
 
 - Microsoft Azure
 - Vultr
 
 ## Amazon Web Services
 
-### AWS QuickStart integration
+### Быстрый старт с AWS
 
-1. Sign in into your [D2C account](https://panel.d2c.io/account/signup).
-2. Click **+ Create host**.
-3. Click **Add provider** and choose **Amazon Web Services**.
-5. Paste your AWS credentials (Access Key ID and Secret Access Key).
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup).
+2. Нажмите **+ Создать сервер**.
+3. Нажмите **Добавить провайдера** and choose **Amazon Web Services**.
+5. Вставьте ваши ключи доступа AWS (Access Key ID and Secret Access Key).
 
-### Generate AWS credentials
+### Сгенерировать ключи доступа (AWS credentials)
 
-If you do not have AWS credentials, you can create one with the AWS Management console
+Если у вас нет ключей доступа AWS, вы можете создать их через консоль AWS (AWS Management console)
 
-1. From the AWS [IAM Users dashboard](https://console.aws.amazon.com/iam/home?#/users), select Add user.
-2. Enter a username (e.g. d2c). Select the “Programmatic access” checkbox and click **Next: Permissions**.
-3. Select the "Attach existing policies directly" button at the top. Search for the AdministratorAccess policy, select it, then click **Next: Review**.
-4. Click Create user
-5. Copy Access Key ID and Secret Access Key or save a .csv file with the download button.
-6. Then follow the AWS quickstart integration.
+1. Войдите в аккаунт AWS, раздел [IAM Users](https://console.aws.amazon.com/iam/home?#/users), кликните Add user.
+2. Вставьте имя пользователя (например d2c). Выберите “Programmatic access” и кликните **Next: Permissions**.
+3. Нажмите кнопку "Attach existing policies directly". Найдите AdministratorAccess policy, отметьте её, затем нажмите **Next: Review**.
+4. Кликните Create user
+5. Скопируйте ключи доступа (Access Key ID and Secret Access Key) или сохраните в .csv файл с помощью кнопки download.
+6. Затем следуйте инструкции **Быстрый старт с AWS**.
 
-### Create an additional policy
+### Создать индивидуальную policy
 
-1. Open the AWS [policies](https://console.aws.amazon.com/iam/home?#/policies) page.
-2. Click **Create policy**.
-3. Select **Create Your Own Policy**.
-4. Enter a name (e.g. d2c-policy).
-5. You can generate your own policy [here](https://awspolicygen.s3.amazonaws.com). Here is a simple example with the regions limit (replace "eu-west-1" with regions you want to use):
+1. Откройте раздел AWS [policies](https://console.aws.amazon.com/iam/home?#/policies).
+2. Кликните **Create policy**.
+3. Выберите **Create Your Own Policy**.
+4. Введите имя (например, d2c-policy).
+5. Вы можете сгенерировать индивидуальную policy [здесь](https://awspolicygen.s3.amazonaws.com). Ниже приведен простой пример с ограничением по регионам (замените "eu-west-1" на регионы, которые вы хотите использовать):
 
         {
             "Version": "2012-10-17",
@@ -58,26 +58,26 @@ If you do not have AWS credentials, you can create one with the AWS Management c
             ]
         }
 
-6. Click **Create policy**
-7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
+6. Кликните **Create policy**
+7. Теперь вы можете [сгенерировать ключи доступа AWS](/getting-started/cloud-providers/#generate-aws-credentials) с вашей собственной policy
 
 ## Digital Ocean
 
-### Digital Ocean QuickStart integration
+### Быстрый старт с Digital Ocean
 
-1. Now go into your [D2C account](https://panel.d2c.io/account/signup)
-2. Click **+ Create host**.
-3. Click **Add provider** and choose **Digital Ocean**.
-4. Paste your Digital Ocean token.
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup)
+2. Кликните **+ Создать сервер**.
+3. Нажмите **Добавить провайдера** и выберите **Digital Ocean**.
+4. Вставьте ваш Digital Ocean токен.
 
-### Authorize D2C to your Digital Ocean
+### Авторизовать D2C в Digital Ocean (создать новый токен)
 
-If you do not have Digital Ocean token, you can create one with the Digital Ocean account
+Если у вас нет токена Digital Ocean, вы можете создать его в аккаунте Digital Ocean
 
-1. Open the Digital Ocean [API](https://cloud.digitalocean.com/settings/api/tokens) page.
-2. Click **Generate New Token**.
-3. Give the token a name and click **Generate Token**. Copy it.
-4. Then follow the Digital Ocean QuickStart integration.
+1. Войдите в аккаунт Digital Ocean, раздел [API](https://cloud.digitalocean.com/settings/api/tokens).
+2. Нажмите **Generate New Token**.
+3. Назовите токен и нажмите **Generate Token**. Скопируйте его.
+4. Далее следуйте инструкции **Быстрый старт с Digital Ocean**  .
 
 <!-- ## Vultr
 

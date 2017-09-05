@@ -1,37 +1,37 @@
-# Introduction
+# Вступление
 
-D2C collects all applications' stdout and stderr and shows it in real time. You can browse through logs any time in your dashboard. Keep in mind that your application should print logs to standard output for Docker daemon to be able to capture it and send it to our log facility.
+D2C собирает все stdout и stderr сервисов и показывает их в реальном времени. Вы можете просматривать логи в вашей панели управления. Учитывайте, что ваш сервис должен записывать логи в стандартный output для Docker домена, чтобы была возможность их перехватить и отправить в нашу лог категорию.
 
-There are three kinds of logs in D2C:
+В D2C есть три вида логов:
 
-- **System logs** - deploy logs for each service
-- **Container logs**
-- **Host logs**
+- **Системные логи** - логи разворачивания для каждого сервиса
+- **Логи контенейра**
+- **Логи сервера**
 
-## System logs
+## Системные логи
 
-Each service has system logs (deploy logs).
+У каждого сервиса есть системные логи (логи разворачивания)
 
-The line which has ellipsis marks, in the end, can be opened with a mouse click.
+Строки, в конце которых есть троеточие, содержат дополнительную информацию и могут быть развернуты по клику мышки.
 
 ![Build log](../img/build_log.png)
 
-Messages can consist stdout, and it also can be shown.
+Сообщения могут содержать stdout, который также может быть показан по клику мышки.
 
 ![Stdout log](../img/stdout.png)
 
-## Container logs
+## Логи контейнера
 
 <!--нужно больше инфы (спросить у Паши)-->
 
-Each container has logs. You can check them from the interface. [Read more](https://docs.docker.com/engine/admin/logging/view_container_logs/) about Docker logs.
+У каждого контейнера есть свои логи. Вы можете следить за ними в панели управления. [Ознакомьтесь](https://docs.docker.com/engine/admin/logging/view_container_logs/) с более подробной информацией о Docker логах.
 
 ![Container log](../img/containers_logs.png)
 
-## Host logs
+## Логи сервера
 
-Host logs consist creating and setup logs.
+Логи сервера содержат логи создания и настроек.
 
-The line which has ellipsis marks, in the end, can be opened with a mouse click.
+Строки, в конце которых есть троеточие, содержат дополнительную информацию и могут быть развернуты по клику мышки.
 
 ![Host log](../img/host_logs.png)

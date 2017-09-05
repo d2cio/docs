@@ -1,10 +1,9 @@
-# Private network
+# Вступление
 
-D2C allows you to span your project infrastructure across multiple hosts and even different cloud providers. We use a secure, private overlay network for this purpose. Currently, we use WeaveWorks solution for Docker but are considering moving to the new Docker Swarm mode as soon as it matures enough. The network is decentralized and doesn't require any dedicated hosts or configuration storage to operate. WeaveWorks is installed as a docker plugin (it creates several of its own containers) and forms an encrypted mesh network between your hosts. For robust operation, it needs TCP/UDP ports 6783,6784 to be accessible in both directions.
+D2C позволяет использовать в проектах как собственные, так и облачные сервера, у одного или нескольких облачных провайдеров. Любой из серверов может использоваться для любого проекта. Мы используем безопасную, приватную оверлейную сеть для этих целей. На данный момент, мы используем решение WeaveWorks для Docker, но собираемся перейти на Docker Swarm, как только он будет удовлетворять нашим потребностям. Приватная сеть децентрализована и не требует выделенного сервера для своей работы. WeaveWorks устанавливается как Docker плагин (он создает несколько своих контейнеров) и формирует зашифрованную сеть между вашими серверами. Для надежной работы требуется, чтобы TCP/UDP порты 6783,6784 были доступны с обеих сторон.
 
-By default, application containers are started inside this private network and have dynamically assigned local IP addresses. Apps can reference each other by service name. It does not matter on which host the app is running – all private network intercommunication is transparent for applications.
+По умолчанию, контейнеры сервисов запускаются внутри этой приватной сети и получают динамически заданный локальный IP адрес. Сервисы могут общаться друг с другом по [сервисному имени](/getting-started/services/#_2). Не важно на каком сервере сервис запущен – все взаимосвязи внутри приватной сети прозрачны для сервисов.
 
-You can enable access from the Internet while creating or editing service. For example, if you publish a my-node app on port 3000, you can access it at **ip_address_of_a_host:3000**.
-Advanced users can configure containers in the host network context to gain more flexibility.
+Вы можете включить доступ из интернета во время создания или редактирования сервиса. Например, если вы развернули сервис my-node на 3000 порту - он будет доступен по адресу **ip_адрес_сервера:3000**. Продвинутые пользователи могут настраивать контейнеры в сети сервера для достижения большей гибкости.
 
 ![Private network](../img/private_inf.png)

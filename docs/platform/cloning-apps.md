@@ -1,15 +1,14 @@
-# Introduction
+# Вступление
 
-Cloning is a simple way to create service same as original one.
+Клонирование - это простой способ создать сервис с точно такими же настройками.
 
-## How to clone
+## Как клонировать
 
-1. Open a service page
-2. Click **Clone**. You can choose a project by clicking on the dropdown icon.
-3. Enter a name for the new service. After submitting you will see a creating service page with filled up settings
-3. Check the settings. You can change any of them here
-4. Choose a host and click **Create service**
-5. The service will be deployed
+1. Откройте страницу сервиса
+2. Нажмите **Клонировать**. Вы можете выбрать проект, нажав на иконку выпадающего меню
+3. Введите имя для нового сервиса. После подтверждения вы увидите страницу создания сервиса с заполненными настройками
+4. Проверьте настройки. Вы можете их изменять при необходимости
+5. Выберите сервер и нажмите **Создать сервис**
 
 ![Cloning - first step](../img/cloning.png)
 

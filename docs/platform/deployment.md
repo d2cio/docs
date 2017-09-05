@@ -1,23 +1,23 @@
-# Introduction
+# Вступление
 
-D2C uses Ansible playbooks to deploy applications. Settings from service configuration pages are used as parameters to execute playbooks. We have a set of playbooks for environment configuration and different application types. You choose the application type, provide some essential parameters, supply the source code and/or deployment scripts, and start the deployment process. The process is logged task-by-task, and you can review it in your dashboard.
+D2C использует плейбуки Ansible для разворачивания сервисов. Настройки со страницы создания сервисов используются как параметры для выполнения плейбуков. У нас есть набор плейбуков для различных конфигураций и типов сервисов. Вы выбираете тип сервиса, вводите необходимые параметры, указываете исходный код и/или скрипты для разворачивания и запускаете процесс разворачивания. Весь процесс логгируется отдельными задачами и вы можете следить за ними в панели управления D2C.
 
-D2C uses three deployment phases: building, deploying and running. D2C can execute all three of them one after another, or just the necessary one. For example, you can want to rebuild a base container with an upgraded Node release and run it with the same source code and data. Alternatively, you can want to update the source code and reload your application to pick up these changes.
+В D2C есть три стадии разворачивания: сборка, разворачивание и запуск. D2C может выполнять все три, одну за другой, или только какую-то одну необходимую. Например, вы можете захотеть пересобрать контейнер, обновив Node.js, и запустить его с таким же исходным кодом и данными. Или вы можете обновить исходный код и перезапустить ваш сервис, чтобы забрать изменения.
 
-### Building
+### Сборка
 
-It is a process of building the container image for your application. It includes downloading base docker OS images for the application, installing, and configuring necessary packages. *There is no access to application sources* in this step. All modifications done in this step are stored **inside** the container image; no data is saved to external volume. Treat this step like preparing a server for running your application. You use **Global dependencies** to run commands in this step.
+Это процесс сборки образа контейнера для вашего сервиса. Он включает скачивание базового образа Docker для сервиса, установку и настройку необходимых пакетов. *На этой стадии нет доступа к сервису*. Все модификации, выполненные на этой стадии, хранятся **внутри** образа контейнера; данные не сохраняются в [постоянном хранилище](/getting-started/containers/#_2). Стоит воспринимать эту стадию как подготовку сервера для запуска сервиса. Используйте **Глобальные зависимости** для запуска команд на этой стадии.
 
-### Deploying
+### Разворачивание
 
-It is a process of preparing your application to be ready to run. During this step, you have access to application source codes and data volume, but *no changes will be saved to the container image*. You should use this step, for example, to compile CSS, minify JS, install local code dependencies, make the initial database population, etc.
+Это процесс подготовки вашего сервиса к запуску. В течении этой стадии у вас есть доступ к исходному коду сервиса и постоянному хранилищу, но *изменения не сохранятся в образе контейнера*. Следует использовать эту стадию, например, для компиляции CSS, минификации JS, установки локальных зависимостей, выполнять первоначальное заполнение базы данных и т.д.
 
-The deployment process runs in temporary containers with its *own source code copy but the same data volume*. The source code volume from this temporary container is placed into the main container afterwards. This allows you to achieve near zero downtime deployment by preparing a new version of code while the previous one is still running online; at the same time, if you need to migrate the current database to a new version, you have access to the live data volume. Depending on your preferred deployment process, you can wish to stop the current application first (in a case of DB migration), or to keep it running and just swap the source code after the preparation process in the temporary container is completed. You use **Local dependencies and code's preparation** to run commands in this step.
+Процесс разворачивания запускается во временном контейнере с *копией исходного кода, но с таким же постоянным хранилищем*. Впоследствии, исходный код из этого временного контейнера помещается в основной контейнер. Это позволяет достигнуть практически безостановочного разворачивания с подготовкой новой версии кода пока предыдущая находится в онлайне; в то же время, если вам потребуется мигрировать текущую базу данных на новую версию - у вас будет доступ к постоянному хранилищу. В зависимости от предпочитаемого процесса разворачивания, вы можете захотеть остановить текущий сервис (в случаях миграции базы данных) или оставить запущенным и просто заменить исходный код после процесса подготовки во временном контейнере. Используйте **Локальные зависимости и подготовка кода** для выполнения команд на этой стадии.
 
-After the deployment process is completed, the temporary container is removed. So in this step, you can change only the source code or data volume. Any changes that are made in other locations (e.g., installing npm-packages globally) will be lost. Remember to use the build step to create container-wide changes.
+После того, как процесс разворачивания выполнен, временный контейнер удаляется. Поэтому на этой стадии вы можете изменять только исходный код или данные постоянного хранилища. Любые изменения, которые выполнены в других местах (например глобальная установка npm-пакетов) будет утеряна. Помните про использования стадии сборки для внесения изменений контейнера.
 
-### Running
+### Запуск
 
-In this step, the app container is started with source code and data volumes mounted. All networking is being properly configured, ports published, and DNS set up. The container image created during the build step is used to spin up the container. You use **startCommand** to start your application.
+На этой стадии контейнер сервиса запускается с исходным кодом и монтированным постоянным хранилищем. Сетевое взаимодействие уже правильно настроено, порты проброшены и DNS настроен. Образ контейнера созданный во время стадии сборки используется для запуска контейнера. Используйте **Команду запуска** для запуска вашего сервиса.
 
-You should usually modify **startCommand** only for custom applications like Node, Python, etc. Standard applications like database engines and web servers provided by D2C use predefined commands.
+Обычно вам стоит изменять **Команду запуска** только для сервисов типа Node, Python и т.д. Сервисы хранения данных, такие как базы данных и веб-серверы предоставляются в D2C с уже предустановленными командами.

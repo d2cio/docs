@@ -1,123 +1,119 @@
-# Introduction
+# Вступление
 
-This article describes the process of creating services in D2C.
-All definitions from creating (and editing) service page describes here.
-There are some  definitions which should be explained.
+В этой статье описывается процесс создания сервисов с помощью D2C.
+Все определения и параметры страницы создания (редактирования) сервисов описываются здесь.
 
-## What you need to know before creating
+## Что требуется знать
 
+### Для всех сервисов
 
-### All services
+- Имена сервисов должны быть уникальны внутри всего аккаунта
 
-- Service names should be unique across your account
+- Директории, которые не должны удаляться после пересборок или редеплоев (пользовательский контент, плагины, логи и т.д.) должны быть указаны в [постоянном хранилище](/getting-started/containers/#persistent-data). Для этих директорий вы можете включить [синхронизацию](/getting-started/containers/#synchronizing) файлов между всеми контейнерами сервиса. Не используйте синхронизацию для файлов баз данных
 
-- Directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) should be specified as Volumes in Persistent Data volumes block. Check sync if you want to [synchronize](/getting-started/containers/#synchronizing) files between all containers of service. Do not use it for database files.
+- Все сервисы внутри проекта видны друг для друга. По умолчанию, доступ в Интернет закрыт (кроме NGINX и HAProxy). Вы можете открыть доступ в Интернет в блоке "Порты"
 
-- All services in a project are visible for each other inside. Access from the internet is disabled by default (except NGINX and HAProxy). You can open access from the Internet in "Ports" block.
+### Для сервисов приложений
 
-### Application services
+- Если вы используете приватный репозиторий, вы должны добавить SSH ключ в ваш аккаунт (инструкции к [GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) и  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html))
 
-- If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)
+- Сервис должен слушать 0.0.0.0:3000 (а не 127.0.0.1:3000)
 
-- Application should listen on 0.0.0.0:3000 (not 127.0.0.1:3000)
+### Для других сервисов
 
-### Other services
+- У NGINX, NGINX-Static и HAProxy по умолчанию включен доступ в Интернет на порте 80
 
-- NGINX, NGINX-Static, HAProxy has enabled access from the Internet by default on port 80.
+## Параметры и определения
 
-## Parameters and definitions
-
-### Service settings
+### Настройки сервиса
 
 ![Creating services - Service settings](../img/creating_services_settings.png)
 
-| Parameter     | Required     | Default     | Comments |
+| Параметр     | Обязательный     | Значение по умолчанию     | Комментарии |
 | :------------- | :------------- | :------------- |:------------- |
-| Name                | Yes      |           | The name should be unique across your account. More about [Naming](/getting-started/services/#naming) |
-| Configuration       | Yes      | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
-| Version             | Yes      |           | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
-| Password/Root password | No    |           | Root password. Required for some configurations, e.g. MongoDB Replica Set |
-| Username            | No       |           | Create a user during deploying service. Database will be created with the same name    |
-| UserPassword        | No       |           | Password for the created database     |
-| Preinstall          | No       |           | Additional software which you can want to install with your app    |
-| Extensions and Pecl packages   | No |      | Additional modules for PHP-FPM and PHP-Apache services. |
-| Global dependencies | No       |           | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g**   |
+| Имя                | Да      |           | Имя должно быть уникальным внутри всего аккаунта. Больше о [именовании](/getting-started/services/#naming) |
+| Конфигурация       | Да      | StandAlone | Поддерживаемые [конфигурации](/getting-started/services/#data-services)       |
+| Версия             | Да      |           | Вы можете выбрать любую из [поддерживаемых версий](/getting-started/services/#data-services) здесь. Чаще всего по умолчанию выбрана наиболее стабильная       |
+| Password/Root password | Нет    |           | Пароль или пароль пользователя root. Обязательный для некоторых конфигураций, например MongoDB ReplicaSet |
+| Username            | Нет       |           | Создание пользователя в течении разворачивания. База данных будет создана с таким же именем    |
+| UserPassword        | Нет       |           | Пароль для пользователя базы данных     |
+| Предустановка       | Нет       |           | Дополнительное программное обеспечение, которое может потребоваться установить вместе с вашим сервисом    |
+| PHP дополнения и Pecl пакеты   | Нет |      | Дополнительные модули для сервисов PHP-FPM и PHP-Apache  |
+| Глобальные зависимости | Нет       |           | Команды для установки глобальных зависимостей вашего сервиса.<br>Примеры: **pip install**, **bundle install**, **apt-get install**, **npm install -g**   |
 
-### Application source
+### Исходники
 
-Only for [Application](/getting-started/services/#application-services) and based on Docker
+Только для [сервисов приложений](/getting-started/services/#application-services) и Docker
 
 ![Creating services - Application source](../img/creating_services_source.png)
 
-| Parameter               | Required         | Comments |
+| Параметр               | Обязательный         | Комментарии |
 | :------------- | :------------- | :------------- |
-| Git/Repository URL      | No | Example: [https://github.com/d2cio/nodejs-hello-world](https://github.com/d2cio/nodejs-hello-world) |
-| Git \| branch\tag\commit  | No | You can specify branch, tag or commit. Examples:<br>branch `master`, tag `v1.4`, commit `62d2272bbf7f1c6841c70dd09657df78836fda9c`  |
-| Git/Auth method         | No | Choices: **SSH** (recommended), **Login/Password**.<br>If you specify private repository and SSH, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
-| Git/Repository login    | No | Login for base auth or for FTP server  |
-| Git/Repository password | No | Password for base auth or for FTP server  |
-| Download/URL            | No | Protocols: http, https, ftp.<br> File formats: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Example: [https://wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz)  |
-| Download/Login          | No | Login of FTP server  |
-| Download/Password       | No | Password of FTP server  |
-| Upload                  | No | You can upload an archive from your computer.<br>Protocols: **http**, **https**, **ftp**.<br> File formats: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Maximum size: **50MB** |
+| Git/URL репозитория      | Нет | Пример: [https://github.com/d2cio/nodejs-hello-world](https://github.com/d2cio/nodejs-hello-world) |
+| Git \| ветка\тэг\коммит  | Нет | Вы можете указать ветку, тэг или коммит своего репозитория. Примеры:<br>branch `master`, tag `v1.4`, commit `62d2272bbf7f1c6841c70dd09657df78836fda9c`  |
+| Git/Метод аутентификации | Нет | Варианты: **SSH** (рекомендуется), **Login/Password**.<br>Если вы используете приватный репозиторий, вы должны добавить SSH ключ в ваш аккаунт (инструкции к [GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) и  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html)) |
+| Git/Логин репозитория    | Нет | Логин для базовой аутентификации или для FTP сервера |
+| Git/Пароль репозитория   | Нет | Пароль для базовой аутентификации или для FTP сервера |
+| Скачать/URL              | Нет | Протоколы: http, https, ftp.<br> Форматы файлов: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Пример: [https://wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz)  |
+| Скачать/Логин            | Нет | Логин к FTP серверу  |
+| Скачать/Пароль           | Нет | Пароль к FTP серверу |
+| Загрузить                | Нет | Вы можете загрузить архив с приложением с вашего компьютера.<br>Протоколы: **http**, **https**, **ftp**.<br> Форматы файлов: **.tar.bz2**, **.tar.gz**, **.tar**, **.zip**<br>Максимальный размер: **50MB** |
 
-### Application settings
+### Настройки приложения
 
 ![Creating services - volumes](../img/creating_services_app_settings.png)
 
-| Parameter                                 | Required       | Comments |
+| Параметр                                 | Обязательный       | Комментарии |
 | :------------- |                            :------------- | :------------- |:------------- |
-| Local dependencies and code's preparation | No     |  Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
-| Start command                             | Yes    |  [Start commands](/getting-started/deployment/#running) of your application |
-| Environment variables                     | No     |   |
+| Локальные зависимости и подготовка кода  | Нет     |  Команды для установки локальных зависимостей и подготовке кода к работе.<br>Примеры: **npm install**, **composer install**, **bower install**, и т.д. или для подготовки:<br>Примеры: **gulp build**, **grunt build**, и т.д. |
+| Команда запуска                           | Да    |  [Команда запуска](/getting-started/deployment/#running) вашего приложения |
+| Переменные окружения                     | Нет     |   |
 
-### Ports
+### Порты
 
 ![Creating services - Ports](../img/creating_services_ports.png)
 
-| Parameter                     | Required     | Comments |
+| Параметр                     | Обязательный     | Комментарии |
 | :------------- | :------------- | :------------- |:------------- |
-| Access from the Internet      | Yes | All services in a project are [visible](/platform/private-network/) for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports.<br>Disabled by default for all services except **NGINX** and **HAProxy** |
-| Ports\Protocol               | Yes  | Choices: UDP or TCP |
-| Ports\Port                   | Yes  | Should be integer |
+| Доступ из Интернета          | Да | Все сервисы внутри проекты [видны](/platform/private-network/) друг для друга.<br>Если вы хотите, чтобы сервис был доступ из Интернета вы можете включить эту опцию и назначить порты.<br>Выключено по умолчанию для всех сервисов, кроме **NGINX** и **HAProxy** |
+| Порты\Протокол               | Да  | Варианты: UDP или TCP |
+| Порты\Порт                   | Да  | Должно указываться целое число |
 
-### Persistent data volumes
+### Постоянное хранилище
 
 ![Creating services - volumes](../img/creating_services_volumes.png)
 
-| Parameter                     | Required      | Comments |
+| Параметр                     | Обязательный      | Комментарии |
 | :------------- | :------------- | :------------- |
-| Add volume                    | No  |  [Persistent data volumes](/getting-started/containers/#persistent-data) - directories, which should not be deleted after rebuild or redeploy (user generated content, plugins, logs, etc.) |
-| Sync                          | No  | When you have more than one container you can need to sync data between volumes. Simply check the volumes which you want to sync |
+| Добавить папку (Volume)         | Нет  |  [Директории постоянного хранилища](/getting-started/containers/#persistent-data) (Volumes) - директории, который не должны удаляться после пересборок или редеплоев (пользовательский контент, плагины, логи и т.д.) |
+| Синхронизация                          | Нет  | В случаях, когда у вас более одного контейнера в сервисе вам может потребоваться синхронизация данных между директориями постоянного хранилища. Отметьте галочкой директории, которые необходимо синхронизировать |
 
-### Configs
+### Конфиги
 
 ![Creating services - configs](../img/creating_services_configs2.png)
 
-| Parameter      | Required      | Comments |
+| Параметр      | Обязательный      | Комментарии |
 | :------------- | :------------- | :------------- |
-| Add custom config  | No  | Some services have default config files (e.g. PHP-FPM, PHP-Apache, MongoDB). You can add your additional config files or edit/replace defaults. |
+| Добавить пользовательский конфиг  | Нет  | У некоторых сервисов есть стандартные конфиги (например, PHP-FPM, PHP-Apache, MongoDB). Вы можете добавлять дополнительные конфиги или редактировать/заменять стандартные |
 
-### Configure services
+### Обслуживаемые сервисы
 
-Only for NGINX, NGINX-Cluster and HAProxy. You can use automatically generated configs, edit them or use owns. [Domains and certificates](/platform/domains-and-certificates/) should be specified in this block.
+Только для NGINX, NGINX-Cluster и HAProxy. Вы можете использовать автоматически генерируемые конфиги, редактировать их ли добавлять свои. [Домены и сертификаты](/platform/domains-and-certificates/) должны указываться в этом блоке.
 
 ![Creating services - configure services](../img/creating_services_configure_services.png)
 
-| Parameter      | Required      | Default | Comments |
+| Параметр      | Обязательный      | Значение по умолчанию | Комментарии |
 | :------------- | :------------- | :------------- | :------------- |
-| Protocol            | Yes  | HTTP    | Choices: HTTP, HTTPS   |
-| Mode                | Yes  | Proxy   | Choices: Proxy, uWSGI  |
-| Domains             | No   |     | Domains and subdomains for a service |
-| Serve static        | No   | Off |  |
+| Протокол            | Да    | HTTP    | Варианты: HTTP, HTTPS   |
+| Режим               | Да    | Proxy   | Варианты: Proxy, uWSGI  |
+| Домены              | Нет   |         | Домены и поддомены сервиса |
+| Обслуживать статику | Нет   | Выключено     |  |
 
-### Select hosts
+### Выбор серверов
 
 ![Creating services - select hosts](../img/creating_services_select_hosts.png)
 
-Select a host(s) you want an application to deploy to.
-
-
+Отметьте сервер(а), на котором нужно развернуть приложение.
 
 <!--
 ## How to create

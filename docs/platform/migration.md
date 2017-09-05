@@ -1,15 +1,15 @@
-# Introduction
+# Вступление
 
-If there is a need to move your service/app to another host, you can do so with our container migration feature – it moves all your persistent data to the other host as well.
+В случаях, когда требуется перенести ваш сервис на другой сервер - вы можете это сделать с помощью функции миграции контейнеров. Это перенесет контейнер, вместе с [постоянным хранилищем](/getting-started/containers/#_2) на другой сервер.
 
-## How to migrate
+## Как мигрировать
 
-1. Open a service you want to migrate (or open a container page and find **Migrate** button)
-2. Click **migrate** at the container card
-3. Choose a host
-4. Click **Migrate container**. The migration process will start. All the data will be copied, but old container will not be destroyed before submitting
-5. Wait for a notification for submitting migration. Ensure that all the data copied and the container works
-6. Submit migrating
+1. Откройте сервис, который нужно мигрировать (или откройте страницу контейнера и найдите кнопку **Мигрировать**)
+2. Нажмите **Мигрировать** на карточке контейнера
+3. Выберите сервер
+4. Нажмите **Мигрировать контейнер**. Начнется процесс миграции. Все данные скопируются, но старый контейнер не будет удален до подтверждения
+5. Подождите уведомления о подтверждении миграции. Убедитесь, что все данные скопированы и контейнер работает
+6. Подтвердите миграцию (это также можно сделать на странице контейнера)
 
 ![Migrating - first step](../img/migrate.png)
 

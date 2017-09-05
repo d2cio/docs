@@ -1,24 +1,24 @@
-# Introduction
+# Вступление
 
-D2C was designed to provide easy scaling for applications and hosts. Check your metrics online and use scaling when you need it. We are supporting horizontal scaling as well as vertical.
+Одно из основных преимуществ D2C - масштабирование в несколько кликов мышки. Мы поддерживаем как горизонтальное так и вертикальное масштабирование. Следите за вашими метриками в онлайне и масштабируйте, когда это требуется.
 
-## Horizontal scaling
+## Горизонтальное масштабирование
 
-Horizontal scaling means increasing number of containers.
-You can scale horizontal almost all [services](/getting-started/services/#native-support) in D2C. Open a service page and click **Scale**.
+Горизонтальное масштабирование означает увеличение количества.
+Вы можете машстабировать горизонтально практически любые [сервисы](/getting-started/services/#_3) в D2C. Откройте страницу сервиса и нажмите **Масштабировать**.
 
 ![Horizontal scaling](../img/horizontal_scaling.png)
 
-Choose hosts which you want to be scaled to and click **Scale service**
+Выберите сервера, которые вы хотите использовать для масштабирования и нажмите **Масштабировать**
 
 ![Horizontal scaling - choose hosts](../img/horizontal_scaling2.png)
 
-After that, the scaling process starts, the status of application changes to *Scaling*. You can check system logs at the service page. The notification comes after the end of the process.
+После этого начнется процесс масштабирования. Статус сервиса изменится на **Масштабирование**. Вы можете следить за системными логами на странице сервиса. После завершения вы получите уведомление.
 
 ![Horizontal scaling - logs](../img/horizontal_scaling_logs.png)
 
-## Vertical scaling
+## Вертикальное масштабирование
 
-Vertical scaling means increasing power of a host (CPU, RAM). The process is quite easy - open a host page, choose the instance type and click **Resize**.
+Вертикальное масштабирование означает увеличение мощности сервера (процессора, оперативной памяти). Выполнить это достаточно просто - зайдите на страницу сервера, выберите нужный вам тип сервера и нажмите **Изменить размер**
 
 ![Vertical scaling](../img/vertical_scaling.png)

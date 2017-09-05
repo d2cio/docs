@@ -1,33 +1,34 @@
-# Introduction
+# Вступление
 
-There is a lot of revealing information about Docker containers. Here is a link to an [article](https://www.docker.com/what-container) about it from the Docker website.
+В Интернете достаточно много подробной информации о Docker containers. Предлагаем ознакомиться со  [статьей](https://www.docker.com/what-container) с официального сайта Docker.
 
-## Persistent data
+## Постоянное хранилище
 
-Containerized applications should be lightweight, disposable, and easily replaceable. For this reason, D2C separates the application itself from its data. Docker volumes are used to store persistent data. Data is stored locally on the hosts. If you provision your hosts with D2C at Amazon EC2, it creates a separate EBS partition for containers' data, which can later be enlarged or replaced from your dashboard.
+Приложения внутри контейнеров должны быть легковесными, доступными и легко заменимыми. По этой причине D2C разделяет приложение от данных приложения. Docker volumes используются для хранения постоянных данных. Данные хранятся локально на серверах. В случаях, когда вы используете сервера от Amazon EC2 создаются отдельные [EBS](https://docs.d2c.io/getting-started/hosts/#aws-ebs) блоки для данных контейнеров, размер которых можно уменьшать или увеличивать в панели управления D2C без остановки серверов.
 
-### Synchronizing
+### Синхронизация
 
-We recommend to store _user generated content_ in cloud storage like [Amazon S3](https://aws.amazon.com/s3/) or CDN. Sometimes there is a need to support old technologies when data stores at hosts. For such cases we made a synchronizing volumes between all containers. Simply check the volumes which you want to sync when creating or editing service.
+Мы рекомендуем хранить пользовательские данные (user generated content) в таких облачных хранилищах как [Amazon S3](https://aws.amazon.com/s3/) или CDN.
+Иногда появляется необходимость поддержки старых технологий, когда данные хранятся на серверах. Для таких случаях в D2C предусмотрена синхронизация **Постоянного хранилища** (Volumes) между всеми контейнерами приложения. Для того чтобы включить синхронизацию необходимо отметить галочкой директории, которые нужно синхронизировать.
 
 ![Persistent data](../img/persistent_data.png)
 
-If there is a need to move your service/app to another host, you can do so with our container [migration feature](/platform/migration/) – it will move all your persistent data to the other host as well.
+В случаях, когда необходимо переместить сервис на другой сервер вы можете сделать это с помощью функции [миграции контейнеров ](/platform/migration/) – все данные с Постоянным хранилищем будут перенесены на выбранный сервер.
 
-## Actions
+## Действия
 
-- Terminal
-- Execute - like [service execution](/getting-started/services/#actions), but with one container
-- [Migrate](/platform/migration/)
-- Start (stop)
+- Терминал
+- Выполнить - также как и в [сервисах](/getting-started/services/#actions), только с одним контейнером
+- [Миграция](/platform/migration/)
+- Запустить (остановить)
 
-## Logs
+## Логи
 
 <!--нужно больше инфы (спросить у Паши)-->
 
-Each container has logs. You can check them from the interface. [Read more](https://docs.docker.com/engine/admin/logging/view_container_logs/) about Docker logs.
+У каждого контейнера есть свои логи. Вы можете следить за ними через интерфейс. Больше информации о Docker логах и как с ними работать вы можете найти [здесь](https://docs.docker.com/engine/admin/logging/view_container_logs/).
 
-### How the containers page looks like
+### Как выглядит страница контейнера
 
 ![Containers page](../img/containers.png)
 ![Containers page](../img/containers_logs.png)

@@ -1,32 +1,32 @@
-# Introduction
+# Вступление
 
-You can inspect resource utilization graphs in your dashboard. This data is collected by Telegraf daemons running on managed hosts.
+Вы можете следить за потреблением ресурсов в вашей панели управления. Данные собираются с помощью демона Telegraf, который запускается на обслуживаемых серверах.
 
-You can check usage of:
+Вы можете следить за ресурсами:
 
-- **Hosts**
-- [**Containers**](/getting-started/containers/) (individual applications).
+- [**Серверов**](/getting-started/hosts/)
+- [**Контейнеров**](/getting-started/containers/)
 
-Graphs:
+Графики:
 
-- Load average
-- CPU
-- RAM
-- Disk  
+- Средняя загрузка
+- Процессор
+- Оперативная память
+- Диск  
 
-Available by:
+Отображение:
 
-- hour
-- day
-- week
-- month.
+- за час
+- за день
+- за неделю
+- за месяц
 
-## Examples
+## Примеры
 
-### Host metrics
+### Метрики сервера
 
 ![Host metrics](../img/host_metrics.png)
 
-### Container metrics
+### Метрики контейнера
 
 ![Host metrics](../img/container_metrics.png)
