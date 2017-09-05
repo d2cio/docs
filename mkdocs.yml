@@ -2,7 +2,7 @@ site_name: D2C
 site_url: https://www.d2c.io
 site_description: Project documentation of D2C.io.
 site_author: D2C.io Team
-site_dir: site/en
+site_dir: site
 
 repo_url: https://github.com/d2cio/docs/
 
@@ -70,4 +70,4 @@ markdown_extensions:
       permalink: True
 
 
-copyright: Copyright&copy; 2017 <a href="https://d2c.io">D2C.io</a>
+copyright: Copyright&copy; 2017 <a href="https://d2c.io">D2C.io</a>&nbsp;&nbsp;&nbsp;<a href="https://docs.d2c.io/ru">Русская версия</a>
