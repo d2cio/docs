@@ -5,7 +5,7 @@ You can inspect resource utilization graphs in your dashboard. This data is coll
 You can check usage of:
 
 - **Hosts**
-- [**Containers**](/getting-started/containers/) (individual applications).
+- [**Containers**](/getting-started/containers/)
 
 Graphs:
 
@@ -19,7 +19,7 @@ Available by:
 - hour
 - day
 - week
-- month.
+- month
 
 ## Examples
 

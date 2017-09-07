@@ -13,7 +13,7 @@ Choose hosts which you want to be scaled to and click **Scale service**
 
 ![Horizontal scaling - choose hosts](../img/horizontal_scaling2.png)
 
-After that, the scaling process starts, the status of application changes to *Scaling*. You can check system logs at the service page. The notification comes after the end of the process.
+After that, the scaling process starts, the status of service changes to *Scaling*. You can check system logs at the service page. The notification comes after the end of the process.
 
 ![Horizontal scaling - logs](../img/horizontal_scaling_logs.png)
 

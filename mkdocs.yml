@@ -42,7 +42,6 @@ pages:
 - Platform:
   - 'Deployment in depth': 'platform/deployment.md'
   - 'Private Network': 'platform/private-network.md'
-#  - 'Application updates': 'platform/updates.md'
   - 'Scaling': 'platform/scaling.md'
   - 'Balancing': 'platform/balancing.md'
   - 'Logs': 'platform/logs.md'

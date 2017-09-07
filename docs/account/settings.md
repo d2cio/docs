@@ -5,7 +5,7 @@ To create D2C account follow this [link](https://panel.d2c.io/account/signup). Y
 In account settings you can:
 
 - change password
-- upgrade [plan]()
+- upgrade [plan](/account/plan/)
 - add or delete accounts of [cloud providers](/getting-started/hosts/#supported-cloud-providers)
 
 ![Settings](../img/settings.png)

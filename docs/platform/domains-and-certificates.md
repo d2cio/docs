@@ -1,6 +1,6 @@
 # Introduction
 
-**Domains** and **certificates** in D2C are issued when NGINX or HAProxy serve any of [application services](/getting-started/services/#application-services). By default an application gets a domain like: _**servicename-www.accountID.at.d2c.io**_ (*servicename-lb.accountID.at.d2c.io*). Moreover, you can add additional domains and TLS certificates.
+**Domains** and **certificates** in D2C are issued when NGINX or HAProxy serve any of [application services](/getting-started/services/#application-services). By default a service gets a domain like: _**servicename-www.accountID.at.d2c.io**_ (*servicename-lb.accountID.at.d2c.io*). Moreover, you can add additional domains and TLS certificates.
 
 To add additional domains and TLS certificates (or create [free Let's Encrypt](/platform/domains-and-certificates/#using-free-tls-by-lets-encrypt) TLS certificates), you should have:
 

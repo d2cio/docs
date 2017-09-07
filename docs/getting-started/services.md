@@ -2,13 +2,13 @@
 
 Service is an application deployed in D2C.
 
-D2C executes your services/applications inside containers. We use Docker as our containerization platform. Each app is a separate container: web-app, database, load-balancer, etc. Docker is installed and configured on the hosts that are managed by D2C automatically. When you deploy your application, all the necessary files are delivered to the host, and container images are built locally on the host and then run by Docker daemon. D2C configures the environment automatically, so we do not recommend to add your current development boxes as managed hosts, to prevent any configuration conflicts.
+D2C executes your services/applications inside containers. We use Docker as our containerization platform. Each app is a separate container: web-app, database, load-balancer, etc. Docker is installed and configured on the hosts that are managed by D2C automatically. When you deploy your service, all the necessary files are delivered to the host, and container images are built locally on the host and then run by Docker daemon. D2C configures the environment automatically, so we do not recommend to add your current development boxes as managed hosts, to prevent any configuration conflicts.
 
 Once you can deploy up to 50 containers (except services, which have their limitations).
 
 ## Naming
 
-Each service has its **unique** name. Services can communicate with each other by service names (or alias-names, e.g. `servicename-1` or `servicename`). It doesn't matter on which host the app is running – all [private network](/platform/private-network/) intercommunication is transparent for applications. Moreover, we use them to create public domains like: **_servicename-www.accountID.at.d2c.io_** for your applications which are served by NGINX or HAProxy.
+Each service has its **unique** name. Services can communicate with each other by service names (or alias-names, e.g. `servicename-1` or `servicename`). It doesn't matter on which host the app is running – all [private network](/platform/private-network/) intercommunication is transparent for services. Moreover, we use them to create public domains like: **_servicename-www.accountID.at.d2c.io_** for your services which are served by NGINX or HAProxy.
 
 The name should starts with a letter and contain maximum 16 characters (initial, capital Latin symbols or numbers).
 
@@ -44,7 +44,7 @@ The name should starts with a letter and contain maximum 16 characters (initial,
 | Name                                                                                        | Scalable      | Supported versions |  Comments
 | :-----------      | :-------------| :-------------     | :-------------     |
 | **NGINX**                                            | No            | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
-| **NGINX-Cluster**                            | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your application does not return static files or you need to serve more than one PHP-FPM container.
+| **NGINX-Cluster**                            | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
 | **NGINX-Static**                             | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.).  It cannot serve other services.
 | **HAProxy**                                       | No            | 1.7 |
 | **Docker** (Services based on Docker Images) | Yes           |  |
@@ -61,7 +61,7 @@ Actions which have all services:
 - Edit settings
 - [Scale](/platform/scaling/) (except some services e.g. NGINX)
 - Add [load-balancer](/platform/balancing/)
-- Execute - executing a command inside all running service containers.
+- Execute - executing a command inside all running service containers
 
 
 ![Standard service actions](../img/standart_actions.png)
