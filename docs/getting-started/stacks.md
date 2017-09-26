@@ -36,39 +36,37 @@ For matching variables from other services you can use next templates:
 
 ## Data services
 
-| Parameter      | Required     | Default     | Comments |
-| :------------- | :------------- | :------------- |:------------- |
-| name          |   Yes    |           | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface     |  
-| type          | Yes      |           | A service you want to deploy       |
-| version       | No       |           | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
-| configuration | No       | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
-| password      | No       |           | Root password. Required for some configurations, e.g. MongoDB Replica Set.        |
-| username      | No       |           | Create a user after deploying. Database will be created with the same name        |
-| userPassword  | No       |           | Password for the created database        |
-| ports         | No       | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
-| env | No |  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| remoteAccess  | No       | Disabled  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports |
-| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src  | No |  | A path to a config file in your stack folder |
-| volumes.directory | No   |           | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync  | No       | False     | `True` if you need to sync files between containers |
-| deployTo      | No       |           | A list of hosts for deploying a service     |
+| Parameter     | Required | Comments |
+| :------------- | :------------- | :------------- |
+| name          | Yes      | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated |  
+| type          | Yes      | A service you want to deploy |
+| version       | No       | You can specify any of [supported versions](/getting-started/services/#data-services) here. |
+| configuration | No       | Check [available configurations](/getting-started/services/#data-services)  |
+| password      | No       | Root password. Required for some configurations, e.g. MongoDB Replica Set   |
+| username      | No       | Create a user after deploying. Database will be created with the same name  |
+| userPassword  | No       | Password for the created database  |
+| remoteAccess  | No       | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
+| ports         | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
+| env           | No       | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
+| configFiles.dest | No    | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles.src  | No    | A path to a config file in your stack folder |
+| volumes.directory | No   | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
+| volumes.sync  | No       | `true` if you need to sync files between containers |
+| deployTo      | No       | A list of hosts for deploying a service  |
 
 ### Examples
 
 ```yml
 name: db
 type: mysql
-version: 8.0
+version: 10.3
 configuration: MasterSlave
 username: wordpress
 userPassword: null
+password: null
 ports:
   - 3306
 remoteAccess: false
-configFiles:
-  - dest: my.cnf
-    src: ./configs/my.cnf
 deployTo:
   - main-1
   - main-2
@@ -92,25 +90,26 @@ deployTo:
 
 ## Application services
 
-| Parameter       | Required     | Default     | Comments |
-| :------------- | :------------- | :------------- |:------------- |
-| name              | Yes |  |The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface |
-| type              | Yes | No | A service you want to deploy |
-| version           | No       |  | You can specify any of [supported versions](/getting-started/services/#app-services) here. Usually, it is the most stable one by default |
-| source.type       | Yes |  | choices: git, download(url) <br> <br>  |
-| source.url        | Yes |  | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)  |
-| extensions        | No  |  | Option for PHP-FPM and PHP-Apache services. `mysqli` and `opcache` selects by default  |
-| pecl              | No  |  |Option for PHP-FPM and PHP-Apache services |
-| ports             | No  | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)   |
-| env               | No  |  | Environment variables for your application. Check the way of adding environments at the example  |
-| volumes.directory | No  |  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync      | No  | False  | `True` if you need to sync files between containers |
-| globalDeps        | No  |  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
-| localDeps         | No  |  | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
-| startCommand      | No  |  | [Start commands](/getting-started/deployment/#running) of your application. Required for **PHP-FPM** and **PHP-Apache** |
-| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src   | No  |  | A path to a config file in your stack folder |
-| deployTo          | No  |  | A list of hosts for deploying a service  |
+| Parameter         | Required     |  Comments |
+| :------------- | :------------- | :------------- |
+| name              | Yes | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated  |
+| type              | Yes | A service you want to deploy |
+| version           | Yes | You can specify any of [supported versions](/getting-started/services/#app-services) here. Usually, it is the most stable one by default |
+| source.git        | Yes | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
+| source.url        | Yes | Protocols: http, https, ftp. <br> File formats: .tar.bz2, .tar.gz, .tar, .zip<br>Example: https://wordpress.org/latest.tar.gz  |
+| extensions        | No  | Option for PHP-FPM and PHP-Apache services. |
+| pecl              | No  | Option for PHP-FPM and PHP-Apache services  |
+| remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
+| ports             | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
+| env               | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
+| volumes.directory | No  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
+| volumes.sync      | No  | `true` if you need to sync files between containers |
+| globalDeps        | No  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
+| localDeps         | No  | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
+| startCommand      | No  | [Start command](/getting-started/deployment/#running) of your application |
+| configFiles.dest  | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles.src   | No  | A path to a config file in your stack folder |
+| deployTo          | Yes | A list of hosts for deploying a service  |
 
 ### Examples
 
@@ -172,22 +171,23 @@ deployTo:
 
 ## Other services
 
-| Parameter       | Required     | Default     | Comments |
-| :------------- | :------------- | :------------- |:------------- |
-| name               | Yes      |   | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface     |  
-| type               | Yes      |  | A service you want to deploy       |
-| version            | No       | | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually it is the most stable one by default       |
-| ports              | No       | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
-| remoteAccess       | No       | Disabled | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports       |
-| env                | No  |     | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| volumes.directory  | No  |     | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync       | Yes | False    | `True` if you need to sync files between containers |
-| globalDeps         | No  |     | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
-| serviceFiles.name  | No  |     | A name of service which NGINX or HAProxy should serve  |
-| serviceFiles.src   | No  |     | A path to a config file in your stack folder |
-| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src    | No  |     | A path to a config file in your stack folder |
-| deployTo           | No  |     | A list of hosts for deploying a service        |
+| Parameter           | Required     | Comments |
+| :------------- | :------------- | :------------- |
+| name                | Yes | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated      |  
+| type                | Yes | A service you want to deploy       |
+| version             | Yes | You can specify any of [supported versions](/getting-started/services/#data-services) here |
+| ports               | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
+| remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
+| env                 | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
+| volumes.directory   | No  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
+| volumes.sync        | Yes | `true` if you need to sync files between containers |
+| globalDeps          | No  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
+| serviceFiles.name   | No  | A name of service which NGINX or HAProxy should serve  |
+| serviceFiles.static | No  | Enable or disable serving static. `True` if you need to serve static. **Be careful**: NGINX can serve static only on the same host |
+| serviceFiles.src    | No  | A path to a config file in your stack folder. Do not specify it if you need a default config  |
+| configFiles.dest    | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles.src     | No  | A path to a config file in your stack folder |
+| deployTo            | Yes | A list of hosts for deploying a service |
 
 ### Examples
 
@@ -201,12 +201,12 @@ ports:
 remoteAccess: true
 serviceFiles:
   - name: blog
-    src: ./configs/blog.conf
+    static: true
   - name: mongo-express
-    src: ./configs/mongo-express.conf
 deployTo:
   - edge
 ```
+
 ```yaml
 name: balancer
 type: haproxy
@@ -224,26 +224,25 @@ deployTo:
 
 ## Docker services
 
-| Parameter       | Required     | Default     | Comments |
-| :------------- | :------------- | :------------- |:------------- |
-| name              | Yes |     | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface |
-| type              | Yes       |  | A service you want to deploy       |
-| image             | Yes | No  | Docker image of an app from [DockerHub](https://hub.docker.com/).<br>Examples: openjdk, million12/varnish, quay.io/letsencrypt/dnsmasq |
-| version           | No |      | Set a version of an application |
-| source.type       | No |      | choices: git, download(url) <br> <br>  |
-| source.url        | No |      | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals)  |
-| extensions        | No |      | Option for PHP-FPM and PHP-Apache services. `mysqli` and `opcache` selects by default  |
-| pecl              | No |      |Option for PHP-FPM and PHP-Apache services |
-| ports             | No | Default port | Specify ports for your service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
-| env               | No |      | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| volumes.directory | No |      | A path to [Persistant data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync      | No | False | `True` if you need to sync files between containers |
-| globalDeps        | No |      | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
-| localDeps         | No |      | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
-| startCommand      | No |      | [Start commands](/getting-started/deployment/#running) of your application |
-| configFiles.dest  | No |      | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src   | No |      | A path to a config file in your stack folder |
-| deployTo          | No |      | A list of hosts for deploying a service  |
+| Parameter       | Required     | Comments |
+| :------------- | :------------- | :------------- |
+| name              | Yes | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated  |
+| type              | Yes | A service you want to deploy       |
+| image             | Yes | Docker image of an app from [DockerHub](https://hub.docker.com/).<br>Examples: openjdk, million12/varnish, quay.io/letsencrypt/dnsmasq |
+| version           | No  | Set a version of an application |
+| source.git        | Yes | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
+| source.url        | Yes | Protocols: http, https, ftp. <br> File formats: .tar.bz2, .tar.gz, .tar, .zip<br>Example: https://wordpress.org/latest.tar.gz  |
+| remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
+| ports             | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
+| env               | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
+| volumes.directory | No  | A path to [Persistant data volume](/getting-started/containers/#persistent-data)  |
+| volumes.sync      | No  | `true` if you need to sync files between containers |
+| globalDeps        | No  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
+| localDeps         | No  | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
+| startCommand      | No  | [Start command](/getting-started/deployment/#running) of your application |
+| configFiles.dest  | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles.src   | No  | A path to a config file in your stack folder |
+| deployTo          | No  | A list of hosts for deploying a service  |
 
 ### Example
 
@@ -269,33 +268,28 @@ deployTo:
 
 ## Hosts
 
-| Parameter       | Requiered     | Default     | Comments |
-| :------------- | :------------- | :------------- |:------------- |
-| name        | yes |    | The name should be unique across your account. If you use a name which is already in use, you can change it during importing your stack via interface |
-| instance    | Yes |    | A type of instance. Examples for AWS: t2.small, t2.2xlarge. For DO: 1 gb, 16gb   |
-| storageSize | yes |    | Recommended storage size for a host |
-| storageType | No  |    | Recommended type of storage. Check types of [AWS volumes](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) |
+| Parameter   | Required     |  Comments |
+| :------------- | :------------- | :------------- |
+| name                | Yes | The name should be unique across your account. If you use a name which is already in use (e.g. "host"), the name changes to "host1", "host2", etc. |
+| requirements.cores  | Yes | An amount of cores for the new host  |
+| requirements.memory | Yes | An amount of GB memory for the new host |
 
 ### Example
 
 ```yaml
 hosts:
   - name: main-1
-    instance:
-      AWS: t2.small
-      DO: 2gb
-    storageSize: 20
-    storageType: gp2
+    requirements:
+      cores: 1
+      memory: 1
 
   - name: main-2
-    instance:
-      AWS: t2.small
-      DO: 2gb
-    storageSize: 20
-    storageType: gp2
+    requirements:
+      cores: 2
+      memory: 4
 
   - name: edge
-    instance:
-      AWS: t2.micro
-      DO: 1gb
+    requirements:
+      cores: 1
+      memory: 0.5
 ```
