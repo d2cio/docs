@@ -33,8 +33,8 @@
 
 ## Поддерживаемые облачные провайдеры
 
-- Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
-- Digital Ocean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
+- Amazon Web Services ([инструкция по подключению AWS](/getting-started/cloud-providers/#amazon-web-services))
+- Digital Ocean ([инструкция по подключению DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
 
 Скоро будут доступны:
 
