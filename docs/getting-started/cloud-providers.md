@@ -6,12 +6,11 @@
 
 - **Amazon Web Services**
 - **Digital Ocean**
+- **Vultr**
 
 Скоро будут доступны:
 
-- Vultr
 - Microsoft Azure
-
 
 ## Amazon Web Services
 
