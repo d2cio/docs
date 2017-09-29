@@ -17,7 +17,7 @@
 
 ### Быстрый старт с AWS
 
-1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup)
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/login)
 2. Нажмите **+ Создать сервер**
 3. Нажмите **Добавить провайдера** and choose **Amazon Web Services**
 5. Вставьте ваши ключи доступа AWS (Access Key ID and Secret Access Key)
@@ -66,7 +66,7 @@
 
 ### Быстрый старт с Digital Ocean
 
-1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/signup)
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/login)
 2. Кликните **+ Создать сервер**
 3. Нажмите **Добавить провайдера** и выберите **Digital Ocean**
 4. Вставьте ваш Digital Ocean токен
@@ -80,7 +80,24 @@
 3. Назовите токен и нажмите **Generate Token**. Скопируйте его
 4. Далее следуйте инструкции **Быстрый старт с Digital Ocean**
 
-<!-- ## Vultr
+## Vultr
 
-### Authorize D2C to your Vultr
--->
+!!! note
+
+    Для того, чтобы разрешить D2C управлять серверами Vultr необходимо добавить IP-адрес 52.58.244.78/32 в разделе Access Control
+
+### Быстрый старт с Vultr
+
+1. Войдите в ваш [D2C аккаунт](https://panel.d2c.io/account/login)
+2. Кликните **+ Создать сервер**
+3. Нажмите **Добавить провайдера** и выберите **Vultr**
+4. Вставьте ваш Vultr API key
+
+### Авторизовать D2C в Vultr
+
+Если у вас нет Vultr API key, вы можете создать его в аккаунте Vultr
+
+1. Войдите в аккаунт Vultr, раздел [API](https://my.vultr.com/settings/#settingsapi)
+2. Нажмите **Enable API** и скопируйте API key
+3. Добавьте 52.58.244.78/32 IP в разделе Access Control
+4. Далее следуйте инструкции **Быстрый старт с Vultr**
