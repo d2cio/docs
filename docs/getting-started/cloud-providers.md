@@ -6,17 +6,17 @@ In this page, we describe how to generate credentials of cloud providers and use
 
 - **Amazon Web Services**
 - **Digital Ocean**
+- **Vultr**
 
 Will be available soon:
 
-- Vultr
 - Microsoft Azure
 
 ## Amazon Web Services
 
 ### AWS QuickStart integration
 
-1. Sign in into your [D2C account](https://panel.d2c.io/account/signup)
+1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
 2. Click **+ Create host**
 3. Click **Add provider** and choose **Amazon Web Services**
 5. Paste your AWS credentials (Access Key ID and Secret Access Key)
@@ -65,7 +65,7 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 
 ### Digital Ocean QuickStart integration
 
-1. Now go into your [D2C account](https://panel.d2c.io/account/signup)
+1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
 2. Click **+ Create host**
 3. Click **Add provider** and choose **Digital Ocean**
 4. Paste your Digital Ocean token
@@ -79,7 +79,24 @@ If you do not have Digital Ocean token, you can create one with the Digital Ocea
 3. Give the token a name and click **Generate Token**. Copy it
 4. Then follow the Digital Ocean QuickStart integration
 
-<!-- ## Vultr
+## Vultr
+
+!!! note
+
+    To allow D2C manage Vultr hosts, you should add 52.58.244.78/32 IP at the Access Control block
+
+### Vultr QuickStart integration
+
+1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
+2. Click **+ Create host**
+3. Click **Add provider** and choose **Vultr**
+4. Paste your Vultr API key
 
 ### Authorize D2C to your Vultr
--->
+
+If you do not have Vultr API key, you can create one with the Vultr account
+
+1. Open the Vultr [API](https://my.vultr.com/settings/#settingsapi) page
+2. Click **Enable API** and copy API key
+3. Add 52.58.244.78/32 IP at the Access Control block
+4. Then follow the Vultr QuickStart integration
