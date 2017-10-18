@@ -3,17 +3,7 @@
 Stack is a set of services and hosts needed for your application to run.
 It is a very easy way to deploy your application in different environments (development, testing, staging, production).
 
-All services and services' settings which D2C supports through the interface can be described with `Stack file`.
-
-<!-- ## Ready to deploy stacks
-
-| Stack name         | Link                       | Services                      | Minimal configuration |
-| :-------------     | :-------------             | :-------------                |:------------- |
-| MEAN               | [GitHub]()                 | MongoDB, Mongo-express (Node.js), Node.js, NGINX                                                    | 2 hosts, 4 containers  |  
-| Sentry             | [GitHub]()                 | Redis, PostgreSQL, Docker (web), Docker (Worker), Docker (Cron), NGINX                              | 1 host, 6 containers |
-| Scalable Wordpress | [GitHub]()                 | MySQL (MasterSlave), Redis, PHP-FPM, NGINX-Cluster, HAProxy, Varnish, PHPMyAdmin (PHP-FPM), NGINX   | 3 hosts, 11 containers |
-
-### How to deploy a stack file -->
+All services and services' settings which D2C supports through the interface can be described with **Stack file** in YAML format.
 
 ## Creating a stack file
 
@@ -23,12 +13,14 @@ For matching variables from other services you can use next templates:
 
 | Template       | Comments    |
 | :------------- | :------------- |
-| `{{=service('serviceName').get('fieldName')}}`        | Returns a variable of a service |
-| `{{=service('serviceName').getMainPort()}}`           | Returns the main port   |
-| `{{=service(serviceName).getAppAlias()}}`             | Returns a container alias of an [application service](/getting-started/services/#application-services))      |
-| `{{=service('serviceName').getMasterAlias()}}`        | Returns an alias of Master-container (for [data services](/getting-started/services/#data-services))      |
-| `{{=service(serviceName).getSlaveAlias()}}`           | Returns an alias of Slave-container (for [data services](/getting-started/services/#data-services))      |
-| `{{=service('serviceName').getContainerName(num)}}`   | Returns a container name of a service with number `num`  |
+| `{{=service('serviceName').get('fieldName')}}`           | Returns a variable of a service |
+| `{{=service('serviceName').getMainPort()}}`              | Returns the main port   |
+| `{{=service(serviceName).getAppAlias()}}`                | Returns a container alias of an [application service](/getting-started/services/#application-services)) and non-replicable services (Redis, NGINX, etc.) |
+| `{{=service('serviceName').getMasterAlias()}}`           | Returns an alias of Master-container (for [data services](/getting-started/services/#data-services))       |
+| `{{=service(serviceName).getSlaveAlias()}}`              | Returns an alias of Slave-container (for [data services](/getting-started/services/#data-services))       |
+| `{{=service('serviceName').getContainerName(num)}}`      | Returns a container name of a service with number `num`  |
+| `{{=service('serviceName').getEnv('environmentfield')}}` | Returns an environment field of a service  |
+| `{{=randomString(num)}}`                                 | Generates a random string with a defined length |
 
 !!! note
 
@@ -222,7 +214,7 @@ deployTo:
   - edge
 ```
 
-## Docker services
+## Docker service
 
 | Parameter       | Required     | Comments |
 | :------------- | :------------- | :------------- |
@@ -242,6 +234,7 @@ deployTo:
 | startCommand      | No  | [Start command](/getting-started/deployment/#running) of your application |
 | configFiles.dest  | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
 | configFiles.src   | No  | A path to a config file in your stack folder |
+| volumesUID        | No  | User ID of service volumes |
 | deployTo          | No  | A list of hosts for deploying a service  |
 
 ### Example
@@ -293,3 +286,24 @@ hosts:
       cores: 1
       memory: 0.5
 ```
+
+## How to deploy a stack
+
+### In existing project
+
+1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
+2. Create or open a project
+3. Click **Import stack**
+4. Paste a link to the stack or upload an archive (or a `.yml` file) with a stack from your computer
+5. Choose a provider and a region if you want to create new hosts or choose the created ones in **Select hosts** menu
+6. Fill in necessary fields (if they are)
+7. Click **Create hosts and services**
+
+### In new project
+
+1. Choose a stack you want to deploy in the [list](/getting-started/ready-made-stacks) <br> or enter your link to a stack. Example: **https://panel.d2c.io/?import=yourlink**
+2. Choose a provider and a region if you want to create new hosts or choose the created ones in **Select hosts** menu
+3. Fill in necessary fields (if they are)
+4. Click **Create hosts and services**
+
+A new project will be created. Change a name if it needs.

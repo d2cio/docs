@@ -18,15 +18,15 @@ The name should starts with a letter and contain maximum 16 characters (initial,
 
 | Name          | Configuration               | Scalable         | Supported versions  |
 | :-----------  | :-------------              | :------------- | |
-| **MongoDB**       | StandAlone or ReplicaSet    | Yes |              2.6, 3.0, 3.2, 3.4 |
-| **MySQL**         | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7, 8.0 |
-| **MariaDB**       | StandAlone or MasterSlave   | Yes |              5.5, 10.0, 10.1, 10.2, 10.3 |
-| **Percona**       | StandAlone or MasterSlave   | Yes |              5.5, 5.6, 5.7 |
-| **PostgreSQL**    | StandAlone or MasterSlave   | Yes |              9.3, 9.4, 9.5, 9.6 |
-| **Crate**         | StandAlone                  | No  |              0.57, 1.0 |
-| **Redis**         |                             | Yes |              2.8, 3.0, 3.2 |
-| **Memcached**     |                             | Yes |              1.4 |
-| **ElasticSearch** | StandAlone                  | No  |              1.x, 2.x, 5.x |
+| **MongoDB**       | StandAlone or ReplicaSet    | Yes |  2.6, 3.0, 3.2, 3.4 |
+| **MySQL**         | StandAlone or MasterSlave   | Yes |  5.5, 5.6, 5.7, 8.0 |
+| **MariaDB**       | StandAlone or MasterSlave   | Yes |  5.5, 10.0, 10.1, 10.2, 10.3 |
+| **Percona**       | StandAlone or MasterSlave   | Yes |  5.5, 5.6, 5.7 |
+| **PostgreSQL**    | StandAlone or MasterSlave   | Yes |  9.3, 9.4, 9.5, 9.6, 10.0 |
+| **Crate**         | StandAlone                  | No  |  0.57, 1.0, 2.0, 2.1 |
+| **Redis**         |                             | Yes |  2.8, 3.0, 3.2, 4.0 |
+| **Memcached**     |                             | Yes |  1.4, 1.5 |
+| **ElasticSearch** | StandAlone                  | No  |  1.x, 2.x, 5.x |
 
 ### Application services
 
@@ -34,10 +34,10 @@ The name should starts with a letter and contain maximum 16 characters (initial,
 | :---------    | :-------------| :-------------      |
 | **Node.js**       | Yes           | 0.12, 4, 6, 7, 8   |
 | **Python**        | Yes           | 2.7, 3.3, 3.4, 3.5, 3.6 |
-| **Go**            | Yes           | 1.6, 1.7, 1.8  |
+| **Go**            | Yes           | 1.6, 1.7, 1.8, 1.9  |
 | **Ruby**          | Yes           | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4 |
-| **PHP-FPM**       | Yes           | 5.6, 7.1 |
-| **APACHE+PHP**    | Yes           | 5.6, 7.1 |
+| **PHP-FPM**       | Yes           | 5.6, 7.0, 7.1 |
+| **APACHE+PHP**    | Yes           | 5.6, 7.0, 7.1 |
 
 ### Other services
 

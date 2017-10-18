@@ -16,6 +16,7 @@ pages:
   - 'Containers': 'getting-started/containers.md'
   - 'Creating services': 'getting-started/creating-services.md'
   - 'Stacks': 'getting-started/stacks.md'
+  - 'Stack hub': 'getting-started/stack-hub.md'
 #  - 'Application services':
 #    - 'Node.js': 'getting-started/app-services/nodejs.md'
 #    - 'Python': 'getting-started/app-services/python.md'
