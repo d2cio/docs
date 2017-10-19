@@ -4,16 +4,17 @@ D2C does not provide its computing resources – it automates the provisioning p
 
 ## Compare and understanding plans
 
-| Free                          | Pro                                      | Enterprise   |
-| :------------- |              :------------- |                            :------------- |
-| 1 cloud host                  | Unlimited cloud and own hosts            |  Pro features                        |
-| Low priority in task queue    | Multi-Cloud and Hybrid deployment        |  Private Cloud                       |
-|                               | High priority in task queue              |  Role-based Access control           |
-|                               | [Database Replication](/platform/scaling/)              | LDAP/SAML/AD  |
-|                               | [Vertical and horizontal Scaling](/platform/scaling/)   |   |
+| Free                          | Pro                                                     | Enterprise   |
+| :------------- |              :------------- |                                           :------------- |
+| 1 cloud host                  | Unlimited cloud and own hosts                           |  Pro features                        |
+| Low priority in task queue    | Multi-Cloud and Hybrid deployment                       |  Private Cloud                       |
+| 300MB rotated logs            | High priority in task queue                             |  Role-based Access control           |
+|                               | [Database Replication](/platform/scaling/)              |  LDAP/SAML/AD  |
+|                               | [Vertical and horizontal Scaling](/platform/scaling/)   |  Unlimited logs  |
 |                               | [Load Balancing](/platform/balancing/)                  |   |
-|                               | [Container migration](/platform/migration/)               |                                      |
-| **0 $**                       | **19 $ monthly**                  | [Contact us](mailto:support@d2c.io)  |
+|                               | [Container migration](/platform/migration/)      |                                                                             |
+|                               | 300MB rotated logs                          |              |
+| **0 $**                       | **$16/mo** billed annually<br>$19/mo billed monthly  | [Contact us](mailto:support@d2c.io)  |
 
 ### Notes
 
