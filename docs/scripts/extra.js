@@ -15,6 +15,13 @@
 //     }
 //     x[slideIndex-1].style.display = "block";
 // }
+var links = document.querySelectorAll( 'a' );
+for (var i = 0, length = links.length; i < length; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = '_blank';
+  }
+}
+
 <!-- Yandex.Metrika counter -->
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
