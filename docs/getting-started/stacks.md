@@ -295,14 +295,14 @@ hosts:
 2. Create or open a project
 3. Click **Import stack**
 4. Paste a link to the stack or upload an archive (or a `.yml` file) with a stack from your computer
-5. Choose a provider and a region if you want to create new hosts or choose the created ones in **Select hosts** menu
+5. Choose a provider and a region if you want to create new hosts or click **Select existing hosts** and choose hosts which are already created
 6. Fill in necessary fields (if they are)
 7. Click **Create hosts and services**
 
 ### In new project
 
-1. Choose a stack you want to deploy in the [list](/getting-started/ready-made-stacks) <br> or enter your link to a stack. Example: **https://panel.d2c.io/?import=yourlink**
-2. Choose a provider and a region if you want to create new hosts or choose the created ones in **Select hosts** menu
+1. [Choose a stack](/getting-started/stack-hub) you want to deploy <br> or enter your link to a stack. Example: **https://panel.d2c.io/?import=yourlink**
+2. Choose a provider and a region if you want to create new hosts or click **Select existing hosts** and choose hosts which are already created
 3. Fill in necessary fields (if they are)
 4. Click **Create hosts and services**
 

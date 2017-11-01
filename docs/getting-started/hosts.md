@@ -53,7 +53,7 @@ Will be available soon:
 - Terminal
 - Restart
 - Stop (Start)
-- Update system requirements
+- Update system services (Docker, Weave, Telegraf)
 - Destroy (+force destroy)
 - [Instance Resize](/platform/scaling/#vertical-scaling) (only for cloud hosts)
 - Volume Resize (for AWS hosts)
