@@ -72,6 +72,31 @@ The line which has ellipsis marks, in the end, can be opened with a mouse click.
 
 ![Hosts](../img/host_logs.png)
 
+## Connecting via SSH and SFTP
+
+!!! note
+
+    One public key should be used only once regardless of its type (SSH or SFTP). If you need to change a method of connection, you need to create another public key or replace the old one.
+
+Open a terminal of a host and execute following commands using your keys.
+
+[How to create SSH keys (BitBucket manual)](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html)
+
+### For SSH
+
+
+```bash
+SSH_KEY="your public key"
+echo $SSH_KEY >> ~/.ssh/authorized_keys
+```
+
+### For SFTP
+
+```bash
+SSH_KEY="your public key"
+echo "restrict,command=\"sudo /usr/lib/openssh/sftp-server -d /ebs/containers\" $SSH_KEY" >> ~/.ssh/authorized_keys
+```
+
 ### How the host page looks like
 
 ![Hosts](../img/host_page.png)

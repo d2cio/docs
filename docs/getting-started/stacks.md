@@ -20,7 +20,9 @@ For matching variables from other services you can use next templates:
 | `{{=service(serviceName).getSlaveAlias()}}`              | Returns an alias of Slave-container (for [data services](/getting-started/services/#data-services))       |
 | `{{=service('serviceName').getContainerName(num)}}`      | Returns a container name of a service with number `num`  |
 | `{{=service('serviceName').getEnv('environmentfield')}}` | Returns an environment field of a service  |
-| `{{=randomString(num)}}`                                 | Generates a random string with a defined length |
+| `{{=service('serviceName').getNginxDomain()}}`           | Returns default domain which is going to use in NGINX |
+| `{{=service('serviceName').getBalancerDomain()}}`        | Returns default domain which is going to use in HAProxy |
+| `{{=randomString(num)}}`                                 | Generates a random string with a defined length | 
 
 !!! note
 
