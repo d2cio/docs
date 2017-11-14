@@ -22,7 +22,7 @@ For matching variables from other services you can use next templates:
 | `{{=service('serviceName').getEnv('environmentfield')}}` | Returns an environment field of a service  |
 | `{{=service('serviceName').getNginxDomain()}}`           | Returns default domain which is going to use in NGINX |
 | `{{=service('serviceName').getBalancerDomain()}}`        | Returns default domain which is going to use in HAProxy |
-| `{{=randomString(num)}}`                                 | Generates a random string with a defined length | 
+| `{{=randomString(num)}}`                                 | Generates a random string with a defined length |
 
 !!! note
 
@@ -89,8 +89,9 @@ deployTo:
 | name              | Yes | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated  |
 | type              | Yes | A service you want to deploy |
 | version           | Yes | You can specify any of [supported versions](/getting-started/services/#app-services) here. Usually, it is the most stable one by default |
-| source.git        | Yes | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
+| source.type        | Yes | Examples: `git`, `download`. If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
 | source.url        | Yes | Protocols: http, https, ftp. <br> File formats: .tar.bz2, .tar.gz, .tar, .zip<br>Example: https://wordpress.org/latest.tar.gz  |
+| source.version    | No  | Only for git. By default - `master`. Can be used for specifying branch, number of commit, tag. |
 | extensions        | No  | Option for PHP-FPM and PHP-Apache services. |
 | pecl              | No  | Option for PHP-FPM and PHP-Apache services  |
 | remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
@@ -224,8 +225,9 @@ deployTo:
 | type              | Yes | A service you want to deploy       |
 | image             | Yes | Docker image of an app from [DockerHub](https://hub.docker.com/).<br>Examples: openjdk, million12/varnish, quay.io/letsencrypt/dnsmasq |
 | version           | No  | Set a version of an application |
-| source.git        | Yes | If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
+| source.type        | Yes | Examples: `git`, `download`. If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
 | source.url        | Yes | Protocols: http, https, ftp. <br> File formats: .tar.bz2, .tar.gz, .tar, .zip<br>Example: https://wordpress.org/latest.tar.gz  |
+| source.version    | No  | Only for git. By default - `master`. Can be used for specifying branch, number of commit, tag. |
 | remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
 | ports             | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
 | env               | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
