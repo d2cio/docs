@@ -83,7 +83,7 @@ If you do not have Digital Ocean token, you can create one with the Digital Ocea
 
 !!! note
 
-    To allow D2C manage Vultr hosts, you should add 52.58.244.78/32 IP at the Access Control block
+    To allow D2C manage Vultr hosts, you should add 52.58.244.78/32 and 52.57.161.208/32 IP at the Access Control block
 
 ### Vultr QuickStart integration
 
