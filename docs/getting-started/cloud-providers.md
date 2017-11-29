@@ -98,5 +98,5 @@ If you do not have Vultr API key, you can create one with the Vultr account
 
 1. Open the Vultr [API](https://my.vultr.com/settings/#settingsapi) page
 2. Click **Enable API** and copy API key
-3. Add 52.58.244.78/32 IP at the Access Control block
+3. Add 52.58.244.78/32 and 52.57.161.208/32 IP at the Access Control block
 4. Then follow the Vultr QuickStart integration
