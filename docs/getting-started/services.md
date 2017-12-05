@@ -36,8 +36,8 @@ The name should starts with a letter and contain maximum 16 characters (initial,
 | **Python**        | Yes           | 2.7, 3.3, 3.4, 3.5, 3.6 |
 | **Go**            | Yes           | 1.6, 1.7, 1.8, 1.9  |
 | **Ruby**          | Yes           | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4 |
-| **PHP-FPM**       | Yes           | 5.6, 7.0, 7.1 |
-| **APACHE+PHP**    | Yes           | 5.6, 7.0, 7.1 |
+| **PHP-FPM**       | Yes           | 5.6, 7.0, 7.1, 7.2 |
+| **APACHE+PHP**    | Yes           | 5.6, 7.0, 7.1, 7.2 |
 
 ### Other services
 
@@ -46,7 +46,7 @@ The name should starts with a letter and contain maximum 16 characters (initial,
 | **NGINX**                                            | No            | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
 | **NGINX-Cluster**                            | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 |  NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
 | **NGINX-Static**                             | Yes           | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.).  It cannot serve other services.
-| **HAProxy**                                       | No            | 1.7 |
+| **HAProxy**                                       | No            | 1.8 |
 | **Docker** (Services based on Docker Images) | Yes           |  |
 
 ## Actions
