@@ -38,7 +38,7 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 2. Click **Create policy**
 3. Select **Create Your Own Policy**
 4. Enter a name (e.g. d2c-policy)
-5. You can generate your own policy [here](https://awspolicygen.s3.amazonaws.com). Here is a simple example with the regions limit (replace "eu-west-1" with regions you want to use):
+5. You can generate your own policy [here](https://awspolicygen.s3.amazonaws.com). Here is a simple example of the region's limit (replace "eu-west-1" with regions you want to use):
 
         {
             "Version": "2012-10-17",
