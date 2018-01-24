@@ -5,7 +5,7 @@ In this page, we describe how to generate credentials of cloud providers and use
 ## Supported cloud providers
 
 - **Amazon Web Services**
-- **Digital Ocean**
+- **DigitalOcean**
 - **Vultr**
 
 Will be available soon:
@@ -61,23 +61,14 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 6. Click **Create policy**
 7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
 
-## Digital Ocean
+## DigitalOcean
 
-### Digital Ocean QuickStart integration
+### DigitalOcean QuickStart integration
 
 1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
 2. Click **+ Create host**
 3. Click **Add provider** and choose **Digital Ocean**
-4. Paste your Digital Ocean token
-
-### Authorize D2C to your Digital Ocean
-
-If you do not have Digital Ocean token, you can create one with the Digital Ocean account
-
-1. Open the Digital Ocean [API](https://cloud.digitalocean.com/settings/api/tokens) page
-2. Click **Generate New Token**
-3. Give the token a name and click **Generate Token**. Copy it
-4. Then follow the Digital Ocean QuickStart integration
+4. Click connect and sign in into your Digital Ocean account
 
 ## Vultr
 

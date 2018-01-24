@@ -11,7 +11,7 @@ pages:
 - Getting started:
   - 'Projects': 'getting-started/projects.md'
   - 'Hosts': 'getting-started/hosts.md'
-  - 'Cloud providers': 'getting-started/cloud-providers.md'
+  - 'Hosting providers': 'getting-started/cloud-providers.md'
   - 'Storage providers': 'getting-started/storage-providers.md'
   - 'Services': 'getting-started/services.md'
   - 'Containers': 'getting-started/containers.md'
@@ -47,7 +47,7 @@ pages:
   - 'Scaling': 'platform/scaling.md'
   - 'Balancing': 'platform/balancing.md'
   - 'Backups': 'platform/backups.md'
-  - 'Cron jobs': 'platform/cron.md'
+  - 'Cron tasks': 'platform/cron.md'
   - 'Logs': 'platform/logs.md'
   - 'Metrics': 'platform/metrics.md'
   - 'Cloning applications': 'platform/cloning-apps.md'

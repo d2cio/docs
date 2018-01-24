@@ -31,15 +31,16 @@ When you **connect** your own host it should have:
 4. Connect to your host via **SSH**
 5. Run the command you copied before
 
-## Supported cloud providers
+## Supported hosting providers
 
 - Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
-- Digital Ocean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
+- DigitalOcean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
+- Vultr ([how to link Vultr](/getting-started/cloud-providers/#vultr))
 
 Will be available soon:
 
 - Microsoft Azure
-- Vultr
+
 
 ## What software will be installed on hosts?
 

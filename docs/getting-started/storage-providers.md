@@ -7,7 +7,7 @@ In this page, we describe how to generate credentials of storage providers and u
 1. Amazon S3
 2. Backblaze
 3. Dropbox
-4. Digital Ocean Spaces
+4. DigitalOcean Spaces
 5. Microsoft OneDrive
 6. Hubic
 7. FTP/SFTP
@@ -70,9 +70,9 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 6. Click **Create policy**
 7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
 
-## Digital Ocean Spaces
+## DigitalOcean Spaces
 
-### Digital Ocean Spaces QuickStart integration
+### DigitalOcean Spaces QuickStart integration
 
 1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
 2. Click **+Add backup** at Cron tasks block
@@ -80,11 +80,11 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 4. Choose Digital Ocean Spaces
 5. Paste your Digital Ocean Spaces credentials (Key and Secret) and click **+Add provider**
 
-### Authorize D2C to your Digital Ocean Spaces
+### Authorize D2C to your DigitalOcean Spaces
 
 If you do not have Digital Ocean Spaces credentials, you can create it with the Digital Ocean account
 
-1. Open the [Digital Ocean Spaces](https://cloud.digitalocean.com/spaces) page
+1. Open the [DigitalOcean Spaces](https://cloud.digitalocean.com/spaces) page
 2. Click **Manage Keys** and then **Generate New Key**
 3. Give the key a name and apply it. Copy your Key and Secret
 4. Then follow the Digital Ocean Spaces QuickStart integration
