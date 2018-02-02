@@ -17,6 +17,7 @@ When you **connect** your own host it should have:
 - Free disk space: 5 Gb
 - Opened incoming SSH port
 - For the Weave network to work, you must open ports 6783, 6784 (TCP/UDP)
+- hostname should be unique and cannot be named as "localhost"
 
 !!! note
 
@@ -41,7 +42,6 @@ Will be available soon:
 
 - Microsoft Azure
 
-
 ## What software will be installed on hosts?
 
 - Docker
@@ -65,6 +65,16 @@ Amazon EC2 provides additional storage which calls [Amazon Elastic Block Storage
 
 ![EBS](../img/scaling_ebs.png)
 
+## Demo hosts
+
+You can create a demo host for testing the platform.
+The configuration of demo hosts is t2.micro (1 GB, 1 x 2.4 GHz, 8GB SSD).
+Region: N. Virginia, The United States
+
+Demo host creates for one hour and will be destroyed (with all services and containers) after this time expired. You can create another one after that.
+
+You can find a **+ Free demo host** button on the creating service page.
+
 ## Logs
 
 Each host has logs (server logs).
@@ -85,7 +95,6 @@ Open a terminal of a host and execute following commands using your keys.
 
 ### For SSH
 
-
 ```bash
 SSH_KEY="your public key"
 echo $SSH_KEY >> ~/.ssh/authorized_keys
@@ -97,6 +106,7 @@ echo $SSH_KEY >> ~/.ssh/authorized_keys
 SSH_KEY="your public key"
 echo "restrict,command=\"sudo /usr/lib/openssh/sftp-server -d /ebs/containers\" $SSH_KEY" >> ~/.ssh/authorized_keys
 ```
+
 
 ### How the host page looks like
 

@@ -26,7 +26,7 @@ The name should starts with a letter and contain maximum 16 characters (initial,
 | **Crate**         | StandAlone                  | No  |  0.57, 1.0, 2.0, 2.1, 2.2 |
 | **Redis**         |                             | Yes |  2.8, 3.0, 3.2, 4.0 |
 | **Memcached**     |                             | Yes |  1.4, 1.5 |
-| **ElasticSearch** | StandAlone                  | No  |  1.x, 2.x, 5.x |
+| **ElasticSearch** | StandAlone                  | No  |  1.7, 2.4, 5.3, 5.5, 5.6 |
 
 ### Application services
 
