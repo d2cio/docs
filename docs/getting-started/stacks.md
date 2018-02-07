@@ -9,6 +9,10 @@ All services and services' settings which D2C supports through the interface can
 
 ### What you need to know before creating a stack file
 
+!!! note
+
+    Stackfile should be named as **stackFile.yml**
+
 For matching variables from other services you can use next templates:
 
 | Template       | Comments    |
@@ -24,9 +28,8 @@ For matching variables from other services you can use next templates:
 | `{{=service('serviceName').getBalancerDomain()}}`        | Returns default domain which is going to use in HAProxy |
 | `{{=randomString(num)}}`                                 | Generates a random string with a defined length |
 
-!!! note
 
-    You can use `null` as a value for parameters. It means that you fill in these parameters via interface during importing a stack
+You can use `null` as a value for parameters. It means that you fill in these parameters via interface during importing a stack
 
 ## Data services
 
