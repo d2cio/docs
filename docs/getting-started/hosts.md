@@ -68,7 +68,7 @@ Amazon EC2 provides additional storage which calls [Amazon Elastic Block Storage
 ## Demo hosts
 
 You can create a demo host for testing the platform.
-The configuration of demo hosts is t2.micro (1 GB, 1 x 2.4 GHz, 8GB SSD).
+The configuration of demo hosts is t2.micro (1 GB, 1 x 2.4 GHz, 4GB SSD).
 Region: N. Virginia, The United States
 
 Demo host creates for one hour and will be destroyed (with all services and containers) after this time expired. You can create another one after that.

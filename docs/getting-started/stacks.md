@@ -37,7 +37,7 @@ You can use `null` as a value for parameters. It means that you fill in these pa
 | :------------- | :------------- | :------------- |
 | name          | Yes      | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated |  
 | type          | Yes      | A service you want to deploy |
-| version       | No       | You can specify any of [supported versions](/getting-started/services/#data-services) here. |
+| version       | Yes       | You can specify any of [supported versions](/getting-started/services/#data-services) here. |
 | configuration | No       | Check [available configurations](/getting-started/services/#data-services)  |
 | password      | No       | Root password. Required for some configurations, e.g. MongoDB Replica Set   |
 | username      | No       | Create a user after deploying. Database will be created with the same name  |
@@ -215,21 +215,20 @@ serviceFiles:
 deployTo:
   - edge
 ```
+
 ```yaml
 name: balancer
 type: haproxy
-version: 1.7
+version: latest
 ports:
   - 80
   - 443
-remoteAccess: false
+remoteAccess: true
 serviceFiles:
   - name: cluster
     src: ./configs/cluster.conf
-    domains:
-      - example.com
-      - www.example.com
     https: letsencrypt
+    domains: [example.com, www.example.com]
 deployTo:
   - edge
 ```
@@ -241,7 +240,7 @@ deployTo:
 | name              | Yes | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated  |
 | type              | Yes | A service you want to deploy       |
 | image             | Yes | Docker image of an app from [DockerHub](https://hub.docker.com/).<br>Examples: openjdk, million12/varnish, quay.io/letsencrypt/dnsmasq |
-| version           | No  | Set a version of an application |
+| version           | Yes  | Set a version of an application |
 | source.type        | Yes | Examples: `git`, `download`. If you use private repository, you should add an SSH key to your account ([GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and  [BitBucket](https://confluence.atlassian.com/bitbucket/add-an-ssh-key-to-an-account-302811853.html) manuals) |
 | source.url        | Yes | Protocols: http, https, ftp. <br> File formats: .tar.bz2, .tar.gz, .tar, .zip<br>Example: https://wordpress.org/latest.tar.gz  |
 | source.version    | No  | Only for git. By default - `master`. Can be used for specifying branch, number of commit, tag. |
