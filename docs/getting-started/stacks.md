@@ -45,10 +45,12 @@ You can use `null` as a value for parameters. It means that you fill in these pa
 | remoteAccess  | No       | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
 | ports         | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)     |
 | env           | No       | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| configFiles.dest | No    | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src  | No    | A path to a config file in your stack folder |
-| volumes.directory | No   | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync  | No       | `true` if you need to sync files between containers |
+| configFiles            |     | A list of config files |
+| configFiles[i].dest    | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles[i].src     | No  | A path to a config file in your stack folder |
+| volumes             |     | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)  |
+| volumes[i].directory   | No  | A path to persistent data volume  |
+| volumes[i].sync        | Yes | `true` if you need to sync files between containers |
 | deployTo      | No       | A list of hosts for deploying a service  |
 
 ### Examples
@@ -100,13 +102,15 @@ deployTo:
 | remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
 | ports             | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
 | env               | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| volumes.directory | No  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync      | No  | `true` if you need to sync files between containers |
+| volumes             |     | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)  |
+| volumes[i].directory   | No  | A path to persistent data volume  |
+| volumes[i].sync        | Yes | `true` if you need to sync files between containers |
 | globalDeps        | No  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
 | localDeps         | No  | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
 | startCommand      | No  | [Start command](/getting-started/deployment/#running) of your application |
-| configFiles.dest  | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src   | No  | A path to a config file in your stack folder |
+| configFiles            |     | A list of config files |
+| configFiles[i].dest    | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles[i].src     | No  | A path to a config file in your stack folder |
 | deployTo          | Yes | A list of hosts for deploying a service  |
 
 ### Examples
@@ -177,15 +181,20 @@ deployTo:
 | ports               | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
 | remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
 | env                 | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| volumes.directory   | No  | A path to [Persistent data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync        | Yes | `true` if you need to sync files between containers |
+| volumes             |     | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)  |
+| volumes[i].directory   | No  | A path to persistent data volume  |
+| volumes[i].sync        | Yes | `true` if you need to sync files between containers |
 | globalDeps          | No  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
-| serviceFiles.name   | No  | A name of service which NGINX or HAProxy should serve  |
-| serviceFiles.static | No  | Enable or disable serving static. `True` if you need to serve static. **Be careful**: NGINX can serve static only on the same host |
-| serviceFiles.src    | No  | A path to a config file in your stack folder. Do not specify it if you need a default config  |
-| configFiles.dest    | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src     | No  | A path to a config file in your stack folder |
-| deployTo            | Yes | A list of hosts for deploying a service |
+| serviceFiles         |     | A list of services which NGINX or HAProxy serve |
+| serviceFiles[i].name   | No  | A name of service which NGINX or HAProxy should serve  |
+| serviceFiles[i].static | No  | Enable or disable serving static. `True` if you need to serve static. **Be careful**: NGINX can serve static only on the same host |
+| serviceFiles[i].src    | No  | A path to a config file in your stack folder. Do not specify it if you need a default config  |
+| serviceFiles[i].domains | No  | Array which contains a list of domains associated with this service |
+| serviceFiles[i].https  | No  | Default value is `none` (HTTP mode). Use `letsencrypt` if you want to generate a TLS certificate for defined list of domains.  DNS-record for domains should be accessible at the moment of creating a stack |
+| configFiles            |     | A list of config files |
+| configFiles[i].dest    | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles[i].src     | No  | A path to a config file in your stack folder |
+| deployTo               | Yes | A list of hosts for deploying a service |
 
 ### Examples
 
@@ -199,12 +208,13 @@ ports:
 remoteAccess: true
 serviceFiles:
   - name: blog
-    static: true
+    src: ./configs/blog.conf
+    domains: [example.com, www.example.com]
   - name: mongo-express
+    src: ./configs/mongo-express.conf
 deployTo:
   - edge
 ```
-
 ```yaml
 name: balancer
 type: haproxy
@@ -216,6 +226,10 @@ remoteAccess: false
 serviceFiles:
   - name: cluster
     src: ./configs/cluster.conf
+    domains:
+      - example.com
+      - www.example.com
+    https: letsencrypt
 deployTo:
   - edge
 ```
@@ -234,13 +248,15 @@ deployTo:
 | remoteAccess      | No  | All services in a project are visible for each other inside.<br> If you want your service to be visible from the Internet use `true` |
 | ports             | No  | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP) |
 | env               | No  | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples)  |
-| volumes.directory | No  | A path to [Persistant data volume](/getting-started/containers/#persistent-data)  |
-| volumes.sync      | No  | `true` if you need to sync files between containers |
+| volumes             |     | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)  |
+| volumes[i].directory   | No  | A path to persistent data volume  |
+| volumes[i].sync        | Yes | `true` if you need to sync files between containers |
 | globalDeps        | No  | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g** |
 | localDeps         | No  | Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
 | startCommand      | No  | [Start command](/getting-started/deployment/#running) of your application |
-| configFiles.dest  | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
-| configFiles.src   | No  | A path to a config file in your stack folder |
+| configFiles            |     | A list of config files |
+| configFiles[i].dest    | No  | Name (for default configs) or path to a config file in the container (for custom configs) |
+| configFiles[i].src     | No  | A path to a config file in your stack folder |
 | volumesUID        | No  | User ID of service volumes |
 | deployTo          | No  | A list of hosts for deploying a service  |
 
