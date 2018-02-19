@@ -68,7 +68,7 @@ Only for [Application](/getting-started/services/#application-services) and base
 | Parameter                                 | Required       | Comments |
 | :------------- |                            :------------- | :------------- |:------------- |
 | Local dependencies and code's preparation | No     |  Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
-| Start command                             | Yes    |  [Start commands](/getting-started/deployment/#running) of your application |
+| Start command                             | Yes    |  [Start command](/platform/deployment/#running) is executing your application. The application should be in the foreground without daemonizing |
 | Environment variables                     | No     |   |
 
 ### Ports
