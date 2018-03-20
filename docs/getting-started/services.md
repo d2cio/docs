@@ -76,11 +76,16 @@ All [**application services**](/getting-started/services/#application-services) 
 
 ![Application actions](../img/app_actions.png)
 
+## Services data
 
-### Interacting with service
+All data of services are stored in:
+`/ebs/containers/serviceName`
 
+For example, you can find sources in:
+`/ebs/containers/serviceName/sources`
 
-
+Backups:
+`/ebs/containers/serviceName/backup`
 
 ## System Logs
 
@@ -95,8 +100,7 @@ Messages of building images consist stdout, and it also can be shown.
 ![Stdout log](../img/stdout.png)
 
 
-
-### Host the service page look like
+### How the service page look like
 
 ![Service page](../img/servicepage.jpg)
 

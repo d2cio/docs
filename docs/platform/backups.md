@@ -48,6 +48,14 @@ Backup is a process of copying and archiving data so it may be used to restore t
 
 Each backup task logged and you can check it by clicking on **Log** icon.
 
+## Clean up old backups from a host
+
+The easiest way is to add the next [cron task](/platform/cron/):<br>
+
+`ls -td /d2c/backup/* | tail -n +2 | xargs rm -- && echo "OK" || echo "FAIL"`
+
+It removes all backups except the last one.
+
 ### Screenshots
 
 ![Backups](../img/backup.png)

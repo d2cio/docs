@@ -106,7 +106,16 @@ echo $SSH_KEY >> ~/.ssh/authorized_keys
 SSH_KEY="your public key"
 echo "restrict,command=\"sudo /usr/lib/openssh/sftp-server -d /ebs/containers\" $SSH_KEY" >> ~/.ssh/authorized_keys
 ```
+## Services data
 
+All data of services are stored in:
+`/ebs/containers/serviceName`
+
+For example, you can find sources in:
+`/ebs/containers/serviceName/sources`
+
+Backups:
+`/ebs/containers/serviceName/backup`
 
 ### How the host page looks like
 
