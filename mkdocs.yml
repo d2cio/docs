@@ -8,6 +8,7 @@ repo_url: https://github.com/d2cio/docs/
 
 pages:
 - Introduction: index.md
+- Quick tour: 'quick-tour/introduction.md'
 - Getting started:
   - 'Projects': 'getting-started/projects.md'
   - 'Hosts': 'getting-started/hosts.md'
@@ -53,7 +54,6 @@ pages:
   - 'Cloning applications': 'platform/cloning-apps.md'
   - 'Container migration': 'platform/migration.md'
   - 'Domains and certificates': 'platform/domains-and-certificates.md'
-#  - 'Backups': 'platform/backups.md'
 - Account:
   - 'Settings': 'account/settings.md'
   - 'Plan': 'account/plan.md'
