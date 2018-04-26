@@ -8,9 +8,9 @@ Once you can deploy up to 50 containers (except services, which have their limit
 
 ## Naming
 
-Each service has its **unique** name. Services can communicate with each other by service names (or alias-names, e.g. `servicename-1` or `servicename`). It doesn't matter on which host the app is running – all [private network](/platform/private-network/) intercommunication is transparent for services. Moreover, we use them to create public domains like: **_servicename-www.accountID.at.d2c.io_** for your services which are served by NGINX or HAProxy.
+Each service has its **unique** name. Services can communicate with each other by service names (or alias-names, e.g. `servicename-1` or `servicename`). It doesn't matter on which host a service is running – all [private network](/platform/private-network/) intercommunication is transparent for services. Moreover, we use them to create public domains like: **_servicename-www.accountID.at.d2c.io_** for your services which are served by NGINX or HAProxy.
 
-The name should starts with a letter and contain maximum 16 characters (initial, capital Latin symbols or numbers).
+The name should start with a letter and contain up to 16 characters (Latin letters, numbers, hyphen).
 
 ## Native support
 

@@ -19,6 +19,7 @@ pages:
   - 'Creating services': 'getting-started/creating-services.md'
   - 'Creating stacks': 'getting-started/stacks.md'
   - 'Stack hub': 'getting-started/stack-hub.md'
+  - 'Database import': 'getting-started/database-import.md'
 #  - 'Application services':
 #    - 'Node.js': 'getting-started/app-services/nodejs.md'
 #    - 'Python': 'getting-started/app-services/python.md'
