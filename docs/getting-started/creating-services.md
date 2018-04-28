@@ -65,8 +65,8 @@ Only for [Application](/getting-started/services/#application-services) and base
 
 ![Creating services - volumes](../img/creating_services_app_settings.png)
 
-| Parameter                                 | Required       | Comments |
-| :------------- |                            :------------- | :------------- |:------------- |
+| Parameter  | Required       | Comments |
+| :------------- | :------------- | :------------- |
 | Local dependencies and code's preparation | No     |  Commands for installing local dependencies and making your code ready to work.<br>Examples: **npm install**, **composer install**, **bower install**, etc. or do some for preparation:<br> Examples: **gulp build**, **grunt build**, etc. |
 | Start command                             | Yes    |  [Start command](/platform/deployment/#running) is executing your application. The application should be in the foreground without daemonizing |
 | Environment variables                     | No     |   |
@@ -75,8 +75,8 @@ Only for [Application](/getting-started/services/#application-services) and base
 
 ![Creating services - Ports](../img/creating_services_ports.png)
 
-| Parameter                     | Required     | Comments |
-| :------------- | :------------- | :------------- |:------------- |
+| Parameter | Required | Comments |
+| :------------- | :------------- | :------------- |
 | Access from the Internet      | Yes | All services in a project are [visible](/platform/private-network/) for each other inside.<br> If you want your service to be visible from the Internet, you should enable this option and define ports.<br>Disabled by default for all services except **NGINX** and **HAProxy** |
 | Ports\Protocol               | Yes  | Choices: UDP or TCP |
 | Ports\Port                   | Yes  | Should be integer |
