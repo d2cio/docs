@@ -18,23 +18,23 @@ The name should start with a letter and contain up to 16 characters (Latin lette
 
 Name              | Configuration             | Scalable | Supported versions
 :---------------- | :------------------------ | :------- | ------------------------------------
-**MongoDB**       | StandAlone or ReplicaSet  | Yes      | 2.6, 3.0, 3.2, 3.4, 3.6
+**MongoDB**       | StandAlone or ReplicaSet  | Yes      | 3.0, 3.2, 3.4, 3.6
 **MySQL**         | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
 **MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.0, 10.1, 10.2, 10.3
 **Percona**       | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7
-**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.3, 9.4, 9.5, 9.6, 10.0, 10.1, 10.2
-**Crate**         | StandAlone                | No       | 1.0, 2.0, 2.1, 2.2, 2.3
+**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2
+**Crate**         | StandAlone                | No       | 2.0, 2.1, 2.2, 2.3
 **Redis**         |                           | Yes      | 2.8, 3.0, 3.2, 4.0
 **Memcached**     |                           | Yes      | 1.4, 1.5
-**ElasticSearch** | StandAlone                | No       | 1.7, 2.4, 5.3, 5.5, 5.6
+**ElasticSearch** | StandAlone                | No       | 2.4, 5.3, 5.5, 5.6
 
 ### Application services
 
 Name           | Scalable | Supported versions
 :------------- | :------- | :--------------------------------
 **Node.js**    | Yes      | 4, 6, 8, latest(9)
-**Python**     | Yes      | 2.7, 3.3, 3.4, 3.5, 3.6
-**Go**         | Yes      | 1.6, 1.7, 1.8, 1.9, 1.10
+**Python**     | Yes      | 2.7, 3.5, 3.6
+**Go**         | Yes      | 1.7, 1.8, 1.9, 1.10
 **Ruby**       | Yes      | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5
 **PHP-FPM**    | Yes      | 5.6, 7.0, 7.1, 7.2
 **APACHE+PHP** | Yes      | 5.6, 7.0, 7.1, 7.2
@@ -43,9 +43,9 @@ Name           | Scalable | Supported versions
 
 Name                                         | Scalable | Supported versions          | Comments
 :------------------------------------------- | :------- | :-------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------
-**NGINX**                                    | No       | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
-**NGINX-Cluster**                            | Yes      | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
-**NGINX-Static**                             | Yes      | 1.9, 1.10, 1.11, 1.12, 1.13 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
+**NGINX**                                    | No       | 1.11, 1.12, 1.13, 1.14 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+**NGINX-Cluster**                            | Yes      | 1.11, 1.12, 1.13, 1.14 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
+**NGINX-Static**                             | Yes      | 1.11, 1.12, 1.13, 1.14 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
 **HAProxy**                                  | No       | latest
 **Docker** (Services based on Docker Images) | Yes
 
@@ -56,6 +56,7 @@ Actions which have all services:
 - Update version
 - Restart
 - Stop (Start)
+- Move (between projects)
 - [Clone](/platform/cloning-apps/)
 - Destroy (+force destroy)
 - Edit settings
