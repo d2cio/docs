@@ -10,9 +10,7 @@ All services and services' settings which D2C supports through the interface can
 
 !!! note
 
-```
-Stackfile should be named as **stackFile.yml**
-```
+    Stackfile should be named as **stackFile.yml**. `Services` and `hosts` blocks are required ([example of stackFile](https://github.com/d2cio/cachethq-stack/blob/master/stackFile.yml))
 
 For matching variables from other services you can use next templates:
 
@@ -53,7 +51,7 @@ configFiles[i].src   | No       | A path to a config file in your stack folder
 volumes              |          | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)
 volumes[i].directory | No       | A path to persistent data volume
 volumes[i].sync      | Yes      | `true` if you need to sync files between containers
-deployTo             | No       | A list of hosts for deploying a service
+deployTo             | Yes      | A list of hosts for deploying a service
 
 ### Examples
 
@@ -278,7 +276,7 @@ configFiles          |          | A list of config files
 configFiles[i].dest  | No       | Name (for default configs) or path to a config file in the container (for custom configs)
 configFiles[i].src   | No       | A path to a config file in your stack folder
 volumesUID           | No       | User ID of service volumes
-deployTo             | No       | A list of hosts for deploying a service
+deployTo             | Yes      | A list of hosts for deploying a service
 
 ### Example
 
