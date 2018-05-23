@@ -17,6 +17,7 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
     - databases (including replication)
     - hosts
 - [**Balancing**](/platform/balancing/) applications using a pre-configured HAProxy service
+- [**Create database backups**](/platform/backups) directly to your [storage provider](/getting-started/storage-providers/) and restore when it needs
 - [**Migrating**](/platform/migration/) containers to any of your hosts
 - Check [**logs**](/platform/logs/) and [**metrics**](/platform/metrics/) of containers and hosts
 - Use a pre-configured [**private network**](/platform/private-network/) for all services
@@ -25,7 +26,7 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 
 ## How to get started?
 
-- Create an account
+- [Create an account](https://panel.d2c.io/register)
 - Link to a cloud provider or connect own hosts
 - Create a project
 - Choose services you want to deploy

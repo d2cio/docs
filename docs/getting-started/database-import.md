@@ -4,7 +4,7 @@ This article describes the process of importing existing database in D2C.
 
 ## First step. Creating a backup
 
-The easiest way is to use [backup and restore features](platform/backups/).
+The easiest way is to use [backup and restore features](/platform/backups/).
 
 ### MySQL, MariaDB, Percona
 
@@ -50,10 +50,10 @@ pg_dump --clean db1 | gzip > backup.gz
 
 ## Second step. Restoring
 
-To [restore a database](platform/backups/#how-to-restore-from-a-backup) follow the next steps:
+To [restore a database](/platform/backups/#how-to-restore-from-a-backup) follow the next steps:
 
 1. Create a database service or open an existing one
 2. Click **Restore** button
 3. Choose a provider
-4. Specify a path to a backup and the name of archive
+4. Enter backup's path and filename of an archive
 5. Click **Restore data**

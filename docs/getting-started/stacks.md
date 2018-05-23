@@ -39,6 +39,7 @@ version              | Yes      | You can specify any of [supported versions](/g
 configuration        | No       | Check [available configurations](/getting-started/services/#data-services)
 password             | No       | Root password. Required for some configurations, e.g. MongoDB Replica Set
 username             | No       | Create a user after deploying. Database will be created with the same name
+database             | No       | Create a name of database after deploying. If you miss this parameter a database will be created with the same name as `username`
 userPassword         | No       | Password for the created database
 remoteAccess         | No       | All services in a project are visible for each other inside.<br>If you want your service to be visible from the Internet use `true`
 ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)

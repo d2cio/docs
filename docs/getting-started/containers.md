@@ -27,6 +27,31 @@ If there is a need to move your service/app to another host, you can do so with 
 
 Each container has logs. You can check them from the interface. [Read more](https://docs.docker.com/engine/admin/logging/view_container_logs/) about Docker logs.
 
+## Connect to a container from outside the private network
+
+This is how to create an SSH tunnel to a certain container:
+
+1. First, ensure that you have SSH and you have generated private and public RSA keys.
+2. Next, you should add your public key to `/home/deploy/.ssh/authorized_keys` (NB: don't erase D2C public key) at host where located target container.
+3. Now you can connect to that host with your favourite  terminal and create SSH tunnels
+4. This command helps you to know IP of a container in docker network:
+
+        docker inspect -f '{{.NetworkSettings.Networks.bridge.IPAddress}}' $CONTAINER_NAME
+for example for service `Database`:
+
+        docker inspect -f '{{.NetworkSettings.Networks.bridge.IPAddress}}' database-master
+
+5. Great, now we know container IP and can create SSH tunnel via the next command on your PC:
+
+        ssh -L $LOCAL_PORT:$CONTAINER_IP:$CONTAINER_PORT deploy@$HOST_IP
+for example:
+
+        ssh -L 5432:172.17.0.6:5432 deploy@104.131.30.212
+
+6. Now you can connect to your container via localhost:$LOCAL_PORT
+
+        localhost:5432 in our example
+
 ### How the containers page looks like
 
 ![Containers page](../img/containers.png)
