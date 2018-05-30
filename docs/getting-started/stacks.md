@@ -50,6 +50,7 @@ configFiles[i].src   | No       | A path to a config file in your stack folder
 volumes              |          | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)
 volumes[i].directory | No       | A path to persistent data volume
 volumes[i].sync      | Yes      | `true` if you need to sync files between containers
+initialCommands      | No       | Commands which are executed only once after deploying a service
 deployTo             | Yes      | A list of hosts for deploying a service
 
 ### Examples
@@ -110,6 +111,7 @@ startCommand         | No       | [Start command](/getting-started/deployment/#r
 configFiles          |          | A list of config files
 configFiles[i].dest  | No       | Name (for default configs) or path to a config file in the container (for custom configs)
 configFiles[i].src   | No       | A path to a config file in your stack folder
+initialCommands      | No       | Commands which are executed only once after deploying a service
 deployTo             | Yes      | A list of hosts for deploying a service
 
 ### Examples
@@ -166,6 +168,9 @@ configFiles:
     src: ./configs/db-config.php
   - dest: $MAIN_PATH/wp-content/db.php
     src: ./configs/db.php
+initialCommands: |
+      wp plugin install redis-cache --activate
+      wp redis enable
 deployTo:
   - main-1
   - main-2
@@ -194,6 +199,7 @@ serviceFiles[i].https   | No       | Default value is `none` (HTTP mode). Use `l
 configFiles             |          | A list of config files
 configFiles[i].dest     | No       | Name (for default configs) or path to a config file in the container (for custom configs)
 configFiles[i].src      | No       | A path to a config file in your stack folder
+initialCommands         | No       | Commands which are executed only once after deploying a service
 deployTo                | Yes      | A list of hosts for deploying a service
 
 ### Examples
@@ -257,6 +263,7 @@ configFiles          |          | A list of config files
 configFiles[i].dest  | No       | Name (for default configs) or path to a config file in the container (for custom configs)
 configFiles[i].src   | No       | A path to a config file in your stack folder
 volumesUID           | No       | User ID of service volumes
+initialCommands      | No       | Commands which are executed only once after deploying a service
 deployTo             | Yes      | A list of hosts for deploying a service
 
 ### Example

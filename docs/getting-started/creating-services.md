@@ -31,17 +31,18 @@ There are some  definitions which should be explained.
 
 ![Creating services - Service settings](../img/creating_services_settings.png)
 
-| Parameter     | Required     | Default     | Comments |
+| Parameter     | Required     |  Comments |
 | :------------- | :------------- | :------------- |:------------- |
-| Name                | Yes      |           | The name should be unique across your account. More about [Naming](/getting-started/services/#naming) |
-| Configuration       | Yes      | StandAlone | Check [available configurations](/getting-started/services/#data-services)       |
-| Version             | Yes      |           | You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
-| Password/Root password | No    |           | Root password. Required for some configurations, e.g. MongoDB ReplicaSet |
-| Username            | No       |           | Create a user during deploying service (database). Database will be created with the same name    |
-| UserPassword        | No       |           | Password for a user of database  |
-| Preinstall          | No       |           | Additional software which you can want to install with your app    |
-| Extensions and Pecl packages   | No |      | Additional modules for PHP-FPM and PHP-Apache services. |
-| Global dependencies | No       |           | Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g**   |
+| Name                | Yes      |  The name should be unique across your account. More about [Naming](/getting-started/services/#naming) |
+| Configuration       | Yes      |  Check [available configurations](/getting-started/services/#data-services). Default is    |
+| Version             | Yes      |  You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
+| Password/Root password | No    |  Root password. Required for some configurations, e.g. MongoDB ReplicaSet |
+| Username            | No       |  Create a user during deploying service (database). Database will be created with the same name    |
+| UserPassword        | No       |  Password for a user of database  |
+| Preinstall          | No       |  Additional software which you can want to install with your app    |
+| Extensions and Pecl packages   | No | Additional modules for PHP-FPM and PHP-Apache services. |
+| Global dependencies | No       |    Commands for installing global dependencies of your service.<br>Examples: **pip install**, **bundle install**, **apt-get install**, **npm install -g**   |
+| Initial commands   | No        |  Commands which are executed only once after deploying a service  |
 
 ### Application source
 

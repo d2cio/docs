@@ -22,7 +22,7 @@ Name              | Configuration             | Scalable | Supported versions
 **MySQL**         | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
 **MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.0, 10.1, 10.2, 10.3
 **Percona**       | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7
-**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2
+**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2, 10.3, 10,4
 **Crate**         | StandAlone                | No       | 2.0, 2.1, 2.2, 2.3
 **Redis**         |                           | Yes      | 2.8, 3.0, 3.2, 4.0
 **Memcached**     |                           | Yes      | 1.4, 1.5
@@ -65,6 +65,10 @@ Actions which have all services:
 - Execute - executing a command inside all running service containers
 
 ![Standard service actions](../img/standart_actions.png)
+
+Additional action with MongoDB, MySQL, MariaDB, Percona, PostgreSQL services:
+
+- Reset superuser password
 
 All [**application services**](/getting-started/services/#application-services) have smart update feature which you can choose separately or combine with each other:
 

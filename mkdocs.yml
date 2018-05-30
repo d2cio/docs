@@ -50,6 +50,7 @@ pages:
   - 'Balancing': 'platform/balancing.md'
   - 'Backups': 'platform/backups.md'
   - 'Cron tasks': 'platform/cron.md'
+  - 'Webhooks': 'platform/webhooks.md'
   - 'Logs': 'platform/logs.md'
   - 'Metrics': 'platform/metrics.md'
   - 'Cloning applications': 'platform/cloning-apps.md'

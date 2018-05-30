@@ -6,13 +6,14 @@ D2C does not provide its computing resources – it automates the provisioning p
 
 Free                                          | Pro                                                      | Enterprise
 :-------------------------------------------- | :------------------------------------------------------- | :----------------------------------
-Connect 1 own host                            | Connect unlimited own hosts                              | Pro features
+Connect 1 own host                            | Connect up to 100 hosts                                  | Pro features
 Low priority in task queue                    | Multi-Cloud and Hybrid deployment                        | Private Cloud
 1-hour [metric](/platform/metrics/) retention | High priority in task queue                              | Role-based Access control
 300MB rotated [logs](/platform/logs/)         | [Database Replication](/platform/scaling/)               | LDAP/SAML/AD
                                               | [Vertical and horizontal Scaling](/platform/scaling/)    | Unlimited logs
                                               | [Load Balancing](/platform/balancing/)                   |
                                               | [Container migration](/platform/migration/)              |
+                                              | Webhoooks                                                |
                                               | 1-month [metric](/platform/metrics/) retention           |
                                               | 300MB rotated [logs](/platform/logs/)                    |
 **0 $**                                       | **$16/mo** billed annually<br>**$19/mo** billed monthly  | [Contact us](mailto:support@d2c.io)
