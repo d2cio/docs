@@ -32,9 +32,9 @@ There are some  definitions which should be explained.
 ![Creating services - Service settings](../img/creating_services_settings.png)
 
 | Parameter     | Required     |  Comments |
-| :------------- | :------------- | :------------- |:------------- |
+| :------------- | :------------- |:------------- |
 | Name                | Yes      |  The name should be unique across your account. More about [Naming](/getting-started/services/#naming) |
-| Configuration       | Yes      |  Check [available configurations](/getting-started/services/#data-services). Default is    |
+| Configuration       | Yes      |  Check [available configurations](/getting-started/services/#data-services). Default is **StandAlone**   |
 | Version             | Yes      |  You can specify any of [supported versions](/getting-started/services/#data-services) here. Usually, it is the most stable one by default       |
 | Password/Root password | No    |  Root password. Required for some configurations, e.g. MongoDB ReplicaSet |
 | Username            | No       |  Create a user during deploying service (database). Database will be created with the same name    |
