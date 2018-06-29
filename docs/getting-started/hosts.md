@@ -13,7 +13,7 @@ When you create a host, we install **Ubuntu 16.04** on it.
 When you **connect** your own host it should have:
 
 - Ubuntu 14.04/16.04 or Debian 8/9.
-- Kernel version >= 4.2
+- Kernel version >= 4.2. We do not recommend 4.12 and 4.13 because of their poor performance in VXLAN tunneling: 60x decrease
 - Free disk space: 5 Gb
 - Opened incoming SSH port
 - For the Weave network to work, you must open ports 6783, 6784 (TCP/UDP)
@@ -41,7 +41,7 @@ When you **connect** your own host it should have:
 
 Will be available soon:
 
-- Microsoft Azure
+- Google cloud platform
 
 ## What software will be installed on hosts?
 
