@@ -46,6 +46,8 @@ pages:
 - Platform:
   - 'Deployment in depth': 'platform/deployment.md'
   - 'Private Network': 'platform/private-network.md'
+  - 'Domains and certificates': 'platform/domains-and-certificates.md'
+  - 'SSH and SFTP access': 'platform/ssh-sftp.md'
   - 'Scaling': 'platform/scaling.md'
   - 'Balancing': 'platform/balancing.md'
   - 'Backups': 'platform/backups.md'
@@ -55,7 +57,6 @@ pages:
   - 'Metrics': 'platform/metrics.md'
   - 'Cloning applications': 'platform/cloning-apps.md'
   - 'Container migration': 'platform/migration.md'
-  - 'Domains and certificates': 'platform/domains-and-certificates.md'
 - Account:
   - 'Settings': 'account/settings.md'
   - 'Plan': 'account/plan.md'
