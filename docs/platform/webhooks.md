@@ -18,6 +18,10 @@ Update service version     | Updating global dependencies and the latest minor v
 
 A webhook key contains 64 symbols and generates automatically. You can generate a new one, but the previous will not work after that.
 
+## How it works
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/9FOkUe9y5lU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Screenshots
 
 ![Webhooks](../img/webhooks.png)
