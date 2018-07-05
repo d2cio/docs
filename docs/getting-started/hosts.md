@@ -54,8 +54,8 @@ Will be available soon:
 
 - Terminal
 - Restart
-- Stop (Start)
-- Update system services (Docker, Weave, Telegraf)
+- Stop/Start
+- Update system services (Docker, Weave, Telegraf, Lsync). You can do it one by one or separately
 - Destroy (+force destroy)
 - [Instance Resize](/platform/scaling/#vertical-scaling) (only for cloud hosts)
 - Volume Resize (for AWS hosts)

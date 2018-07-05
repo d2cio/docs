@@ -19,7 +19,7 @@ If there is a need to move your service/app to another host, you can do so with 
 - Terminal
 - Execute - like [service execution](/getting-started/services/#actions), but with one container
 - [Migrate](/platform/migration/)
-- Start (stop)
+- Start/Stop
 
 ## Logs
 

@@ -55,10 +55,11 @@ Actions which have all services:
 
 - Update version
 - Restart
-- Stop (Start)
+- Stop/Start
 - Move (between projects)
 - [Clone](/platform/cloning-apps/)
 - Destroy (+force destroy)
+- Destroy and redeploy. For cases when you want to start deploying service from scratch
 - Edit settings
 - [Scale](/platform/scaling/) (except some services e.g. NGINX)
 - Add [load-balancer](/platform/balancing/)
