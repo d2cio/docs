@@ -21,7 +21,7 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 - [**Migrating**](/platform/migration/) containers to any of your hosts
 - Check [**logs**](/platform/logs/) and [**metrics**](/platform/metrics/) of containers and hosts
 - Use a pre-configured [**private network**](/platform/private-network/) for all services
-- Use [**WebHooks**] to automate your deployments
+- Use [**WebHooks**](/platform/webhooks/) to automate your deployments
 - Use pre-configured **NGINX configs**
 - Use [**free TLS**](/platform/domains-and-certificates/) certificates for your domains by Let's Encrypt (works with NGINX and HAProxy)
 
