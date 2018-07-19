@@ -46,7 +46,7 @@ There are some  definitions which should be explained.
 
 ### Application source
 
-Only for [Application](/getting-started/services/#application-services) and based on Docker
+Only for [Application services](/getting-started/services/#application-services) and services based on Docker
 
 ![Creating services - Application source](../img/creating_services_source.png)
 

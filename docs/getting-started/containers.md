@@ -8,7 +8,7 @@ Containerized applications should be lightweight, disposable, and easily replace
 
 ### Synchronizing
 
-We recommend to store _user generated content_ in cloud storage like [Amazon S3](https://aws.amazon.com/s3/) or CDN. Sometimes there is a need to support old technologies when data stores at hosts. For such cases we made a synchronizing volumes between all containers. Simply check the volumes which you want to sync when creating or editing service.
+We recommend storing _user generated content_ in cloud storage like [Amazon S3](https://aws.amazon.com/s3/) or CDN. Sometimes there is a need to support old technologies when data stores at hosts. For such cases we made a synchronizing volumes between all containers. Simply check the volumes which you want to sync when creating or editing service.
 
 ![Persistent data](../img/persistent_data.png)
 
