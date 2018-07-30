@@ -41,7 +41,8 @@ When you **connect** your own host it should have:
 
 Will be available soon:
 
-- Google cloud platform
+- UpCloud
+- Google Cloud Platform
 
 ## What software will be installed on hosts?
 

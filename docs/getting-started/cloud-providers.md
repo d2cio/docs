@@ -10,7 +10,8 @@ In this page, we describe how to generate credentials of cloud providers and use
 
 Will be available soon:
 
-- Microsoft Azure
+- UpCloud
+- Google Cloud Platform
 
 ## Amazon Web Services
 
