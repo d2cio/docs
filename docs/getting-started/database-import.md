@@ -11,13 +11,13 @@ The easiest way is to use [backup and restore features](/platform/backups/).
 To make a backup of **all databases** connect to a host and execute:
 
 ```bash
-mysqldump --skip-lock-tables --ignore-table mysql.innodb_index_stats --ignore-table mysql.innodb_table_stats --hex-blob --all-databases | gzip > backup.gz
+mysqldump --skip-lock-tables --ignore-table mysql.innodb_index_stats --ignore-table mysql.innodb_table_stats --hex-blob -p --all-databases | gzip > backup.gz
 ```
 
 To make a backup of specific database(s):
 
 ```bash
-mysqldump --skip-lock-tables --hex-blob --databases db1 db2 db3 | gzip > backup.gz
+mysqldump --skip-lock-tables --hex-blob -p --databases db1 db2 db3 | gzip > backup.gz
 ```
 
 ### MongoDB
