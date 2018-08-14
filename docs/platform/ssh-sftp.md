@@ -27,7 +27,7 @@ After these steps, you can add your keys to new or existing hosts.
 - Open [settings menu](https://panel.d2c.io/settings) or a host page
 - Find Public keys block and click **New key**
 - Give key a name
-- Choose SFTP. You can give access to all services or a certain one
+- Choose SFTP. When you choose a service you will be redirected to that directory after connection
 - Paste your public SSH key to a key field
 - Click **Add key**
 
