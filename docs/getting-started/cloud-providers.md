@@ -7,10 +7,10 @@ In this page, we describe how to generate credentials of cloud providers and use
 - **Amazon Web Services**
 - **DigitalOcean**
 - **Vultr**
+- **UpCloud**
 
 Will be available soon:
 
-- UpCloud
 - Google Cloud Platform
 
 ## Amazon Web Services
@@ -68,8 +68,8 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 
 1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
 2. Click **+ Create host**
-3. Click **Add provider** and choose **Digital Ocean**
-4. Click connect and sign in into your Digital Ocean account
+3. Click **Add provider** and choose **DigitalOcean**
+4. Click connect and sign in into your DigitalOcean account
 
 ## Vultr
 
@@ -91,4 +91,22 @@ If you do not have Vultr API key, you can create one with the Vultr account
 1. Open the Vultr [API](https://my.vultr.com/settings/#settingsapi) page
 2. Click **Enable API** and copy API key
 3. Add 52.58.244.78/32 and 52.57.161.208/32 IP at the Access Control block
-4. Then follow the Vultr QuickStart integration
+4. Then follow the **Vultr QuickStart integration**
+
+## UpCloud
+
+### UpCloud QuickStart integration
+
+1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
+2. Click **+ Create host**
+3. Click **Add provider** and choose **UpCloud**
+4. Paste your API username and API password
+
+### Create API user
+
+1. Open the UpCloud [User Accounts](https://my.upcloud.com/account#t2) page
+2. Click **Add user**
+3. Fill in account details as username, password, phone etc.
+4. Disable access to Control Panel
+4. Allow **API connections** from *All addresses*
+5. Then follow the **UpCloud QuickStart integration**

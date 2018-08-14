@@ -38,10 +38,11 @@ When you **connect** your own host it should have:
 - Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
 - DigitalOcean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
 - Vultr ([how to link Vultr](/getting-started/cloud-providers/#vultr))
+- UpCloud ([how to link Upcloud](/getting-started/cloud-providers/#upcloud))
 
 Will be available soon:
 
-- UpCloud
+
 - Google Cloud Platform
 
 ## What software will be installed on hosts?
