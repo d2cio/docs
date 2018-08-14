@@ -18,9 +18,9 @@ Template                                                 | Comments
 :------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------
 `{{=service('serviceName').get('fieldName')}}`           | Returns a variable of a service
 `{{=service('serviceName').getMainPort()}}`              | Returns the main port
-`{{=service(serviceName).getAppAlias()}}`                | Returns a container alias of an [application service](/getting-started/services/#application-services)) and non-replicable services (Redis, NGINX, etc.)
+`{{=service('serviceName').getAppAlias()}}`                | Returns a container alias of an [application service](/getting-started/services/#application-services)) and non-replicable services (Redis, NGINX, etc.)
 `{{=service('serviceName').getMasterAlias()}}`           | Returns an alias of Master-container (for [data services](/getting-started/services/#data-services))
-`{{=service(serviceName).getSlaveAlias()}}`              | Returns an alias of Slave-container (for [data services](/getting-started/services/#data-services))
+`{{=service('serviceName').getSlaveAlias()}}`              | Returns an alias of Slave-container (for [data services](/getting-started/services/#data-services))
 `{{=service('serviceName').getContainerName(num)}}`      | Returns a container name of a service with number `num`
 `{{=service('serviceName').getEnv('environmentfield')}}` | Returns an environment field of a service
 `{{=service('serviceName').getNginxDomain()}}`           | Returns default domain which is going to use in NGINX
