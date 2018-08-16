@@ -33,7 +33,7 @@ Name              | Configuration             | Scalable | Supported versions
 Name           | Scalable | Supported versions
 :------------- | :------- | :--------------------------------
 **Node.js**    | Yes      | 4, 6, 8, latest(9)
-**Python**     | Yes      | 2.7, 3.5, 3.6
+**Python**     | Yes      | 2.7, 3.5, 3.6, 3.7
 **Go**         | Yes      | 1.7, 1.8, 1.9, 1.10
 **Ruby**       | Yes      | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5
 **PHP-FPM**    | Yes      | 5.6, 7.0, 7.1, 7.2
@@ -43,10 +43,10 @@ Name           | Scalable | Supported versions
 
 Name                                         | Scalable | Supported versions          | Comments
 :------------------------------------------- | :------- | :-------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------
-**NGINX**                                    | No       | 1.11, 1.12, 1.13, 1.14 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
-**NGINX-Cluster**                            | Yes      | 1.11, 1.12, 1.13, 1.14 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
-**NGINX-Static**                             | Yes      | 1.11, 1.12, 1.13, 1.14 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
-**HAProxy**                                  | No       | latest
+**NGINX**                                    | No       | 1.11, 1.12, 1.13, 1.14, 1.15 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+**NGINX-Cluster**                            | Yes      | 1.11, 1.12, 1.13, 1.14, 1.15 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
+**NGINX-Static**                             | Yes      | 1.11, 1.12, 1.13, 1.14, 1.15 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
+**HAProxy**                                  | No       | latest | HAProxy is a [load balancer](/platform/balancing/). May be used as edge service. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
 **Docker** (Services based on Docker Images) | Yes
 
 ## Actions
