@@ -10,15 +10,16 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 
 ## What can you do with D2C.io?
 
+- [Manage hardware infrastructure](/getting-started/hosts/) using cloud (hosting) providers and/or own hosts
 - [**Containerize**](/getting-started/services/#introduction) applications (it happens automatically after creating any service)
-- [**Deploying**](/platform/deployment/) applications from git or any archive to your cloud or own hosts
-- [**Scaling**](/platform/scaling/) in a single click:
+- [**Deploy**](/platform/deployment/) applications from git or any archive to your cloud or own hosts
+- [**Scale**](/platform/scaling/) in a single click:
     - web-apps
     - databases (including replication)
     - hosts
-- [**Balancing**](/platform/balancing/) applications using a pre-configured HAProxy service
+- [**Balance**](/platform/balancing/) applications using a pre-configured HAProxy service
 - [**Create database backups**](/platform/backups) directly to your [storage provider](/getting-started/storage-providers/) and restore when it needs
-- [**Migrating**](/platform/migration/) containers to any of your hosts
+- [**Migrate**](/platform/migration/) containers to any of your hosts
 - Check [**logs**](/platform/logs/) and [**metrics**](/platform/metrics/) of containers and hosts
 - Use a pre-configured [**private network**](/platform/private-network/) for all services
 - Use [**WebHooks**](/platform/webhooks/) to automate your deployments
