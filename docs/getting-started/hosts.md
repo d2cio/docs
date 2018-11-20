@@ -18,7 +18,7 @@ When you **connect** your own host it should have:
 - Opened incoming SSH port
 - For the Weave network to work, you must open ports 6783, 6784 (TCP/UDP)
 - hostname should be unique and cannot be named as "localhost"
-- For better performance we recommend to ensure that VXLAN tunneling is allowed
+- For better performance, we recommend ensuring that VXLAN tunneling is allowed
 
 !!! note
 

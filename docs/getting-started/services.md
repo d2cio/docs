@@ -22,17 +22,17 @@ Name              | Configuration             | Scalable | Supported versions
 **MySQL**         | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
 **MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.0, 10.1, 10.2, 10.3
 **Percona**       | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7
-**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2, 10.3, 10,4, 10.5
-**Crate**         | StandAlone                | No       | 2.0, 2.1, 2.2, 2.3
-**Redis**         |                           | Yes      | 2.8, 3.0, 3.2, 4.0
+**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2, 10.3, 10,4, 10.5, 11.0
+**Crate**         | StandAlone                | No       | 2.3, 3.1
+**Redis**         |                           | Yes      | 2.8, 3.0, 3.2, 4.0, 5.0
 **Memcached**     |                           | Yes      | 1.4, 1.5
-**ElasticSearch** | StandAlone                | No       | 2.4, 5.3, 5.5, 5.6
+**ElasticSearch** | StandAlone                | No       | 2.4, 5.6
 
 ### Application services
 
 Name           | Scalable | Supported versions
 :------------- | :------- | :--------------------------------
-**Node.js**    | Yes      | 4, 6, 8, latest(9)
+**Node.js**    | Yes      | 4, 6, 8, 10, latest(11)
 **Python**     | Yes      | 2.7, 3.5, 3.6, 3.7
 **Go**         | Yes      | 1.7, 1.8, 1.9, 1.10, 1.11
 **Ruby**       | Yes      | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5
@@ -43,9 +43,9 @@ Name           | Scalable | Supported versions
 
 Name                                         | Scalable | Supported versions          | Comments
 :------------------------------------------- | :------- | :-------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------
-**NGINX**                                    | No       | 1.11, 1.12, 1.13, 1.14, 1.15 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
-**NGINX-Cluster**                            | Yes      | 1.11, 1.12, 1.13, 1.14, 1.15 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
-**NGINX-Static**                             | Yes      | 1.11, 1.12, 1.13, 1.14, 1.15 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
+**NGINX**                                    | No       | 1.13, 1.14, 1.15 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+**NGINX-Cluster**                            | Yes      | 1.13, 1.14, 1.15 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
+**NGINX-Static**                             | Yes      | 1.13, 1.14, 1.15 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
 **HAProxy**                                  | No       | latest | HAProxy is a [load balancer](/platform/balancing/). May be used as edge service. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
 **Docker** (Services based on Docker Images) | Yes
 
