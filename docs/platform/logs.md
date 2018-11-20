@@ -4,9 +4,17 @@ D2C collects all services' stdout and stderr and shows it in real time. You can 
 
 There are three kinds of logs in D2C:
 
-- **System logs** - deploy logs for each service
-- **Container logs**
-- **Host logs**
+- **System logs** - Includes messages about deployment at a Service page
+- **Container logs** - Includes messages about hosts actions at a host page
+- **Host logs** - Includes all logs from any container at a container page
+
+Here is a comparison table of logs on current and future plans:
+
+Logs type | Free and Early Bird (Pro) | Personal | Team (coming soon)
+--|---|---|--
+System | 100MB | 200MB | 200MB
+Host | 100MB | 200MB | 200MB
+Container | 100MB | 600MB | 2600MB
 
 ## System logs
 
