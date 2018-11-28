@@ -17,9 +17,9 @@ Multicloud deployment                                 | ❌             | ✅   
 [Container migration](/platform/migration/)           | ❌             | ✅              | ✅        | ✅
 [Webhoooks](/platform/webhooks/)                      | ❌             | ✅              | ✅        | ✅
 Role-based Access control                             | ❌             | ❌              | ❌        | ✅
-**Extra user**                                        | Not available | Not available | Not available | **$15.83/mo** billed annually<br>**$19/mo** billed monthly
-**Extra logs**                                        | Not available | **$3 per GB monthly** | **$3 per GB monthly** | **$3 per GB monthly**
-**Price**                                             | **$0**        | **$16/mo** billed annually<br>**$19/mo** billed monthly | **$15.83/mo** billed annually<br>**$19/mo** billed monthly |  **$47.5/mo** billed annually<br>**$57/mo** billed monthly
+**Extra user** (per user)                             | Not available | Not available | Not available | **$190&nbsp;annually**<br>or<br>**$19&nbsp;monthly**
+**Extra logs** (per 1 GB)                             | Not available | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly** | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly** | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly**
+**Price**                                             | **$0**        | **$192&nbsp;annually**<br>or<br>**$19&nbsp;monthly** | **$190&nbsp;annually**<br>or<br>**$19&nbsp;monthly** |  **$570&nbsp;annually**<br>or<br>**$57&nbsp;monthly**
 
 \* available until 15th of December 2018
 
