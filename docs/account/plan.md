@@ -23,11 +23,14 @@ Role-based Access control                             | ❌             | ❌   
 
 \* available until 15th of December 2018
 
+## Services
+
 Services  | Info   |  Price
 --|---|--
+Technical support          | Email, tickets, chat.    | **$40/h**. [Contact us](mailto:support@d2c.io?subject=Technical Support)
 Basic technical support    | Email&Tickets. Response time: 24 hours                    | **$150/mo**. [Subscribe](https://pay.paddle.com/checkout/539534)
 Premium technical support  | Private chat channel. Response time: 12 hours             | **$350/mo**. [Subscribe](https://pay.paddle.com/checkout/539535)
-Migration your WordPress to D2C   | [Get more information](https://d2c.io/services/your-wordpress-site-migration-to-our-platform)    | **$50** |
+Migration your WordPress to D2C   | [Get more information](https://d2c.io/services/your-wordpress-site-migration-to-our-platform)    | **$50**. [**Contact us**](mailto:support@d2c.io?subject=Migration your WordPress to D2C) |
 Migration your application to D2C  |                                         | [**Contact us**](mailto:support@d2c.io?subject=Migration your application to D2C)
 Website optimizing         | Based on WordPress                                        | **$300**. [**Contact us**](mailto:support@d2c.io?subject=WordPress optimizing)
 Custom optimizing          | Databases, Webservers, Load balancers, etc.               | [**Contact us**](mailto:support@d2c.io?subject=Custom optimizing)

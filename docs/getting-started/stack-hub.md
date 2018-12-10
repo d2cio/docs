@@ -12,6 +12,10 @@ At this page we provide ready to use stacks.
 
 ## Stacks
 
+!!! note
+
+    Actual list of stacks you can [find in the Stackhub](https://d2c.io/stackhub)
+
 Stack name          | Services                                                                                            | Configuration          | Sources and deploy
 :------------------ | :-------------------------------------------------------------------------------------------------- | :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 MEAN light          | MongoDB, Mongo-express (Node.js), Node.js, NGINX                                                    | 1 hosts, 4 containers  | [GitHub](https://github.com/d2cio/mean-light-stack) or [Deploy](https://panel.d2c.io/?import=https://github.com/d2cio/mean-light-stack/archive/master.zip)

@@ -6,7 +6,7 @@ site_dir: site
 
 repo_url: https://github.com/d2cio/docs/
 
-pages:
+nav:
 - Introduction: index.md
 - Quick tour: 'quick-tour/introduction.md'
 - Getting started:
@@ -59,8 +59,8 @@ pages:
   - 'Container migration': 'platform/migration.md'
 - Account:
   - 'Settings': 'account/settings.md'
-  - 'Plan': 'account/plan.md'
-# - 'New Plans': 'account/plan-new.md'
+  - 'Plans and services': 'account/plan.md'
+  - 'New Plans': 'account/plan-new.md'
 
 theme: readthedocs
 
