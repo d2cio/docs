@@ -60,7 +60,6 @@ nav:
 - Account:
   - 'Settings': 'account/settings.md'
   - 'Plans and services': 'account/plan.md'
-  - 'New Plans': 'account/plan-new.md'
 
 theme: readthedocs
 
