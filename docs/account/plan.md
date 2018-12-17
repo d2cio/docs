@@ -4,24 +4,23 @@ D2C does not provide its computing resources – it automates the provisioning p
 
 ## Plans comparison
 
-Plan                                                  | Free          | Early bird*   | Personal | Team
-:---------------------------------------------------- |-------------- | ---------      | -----    | ----
-Connected hosts                                       | 1             | 100            | 30       |100  
-Priority of processes                                 | Low           | High           | High     | Highest
-[Metrics](/platform/metrics/) retention period        | 1-hour        | 1-month        | 1-week   | 1-month
-[Rotated logs](/platform/logs/)                       | 300MB         | 300MB          | 1 GB     | 1 GB
-Multicloud deployment                                 | ❌             | ✅              | ✅        | ✅
-[Database Replication](/platform/scaling/)            | ❌             | ✅              | ✅        | ✅
-[Vertical and horizontal Scaling](/platform/scaling/) | ❌             | ✅              | ✅        | ✅
-[Load Balancing](/platform/balancing/)                | ❌             | ✅              | ✅        | ✅
-[Container migration](/platform/migration/)           | ❌             | ✅              | ✅        | ✅
-[Webhoooks](/platform/webhooks/)                      | ❌             | ✅              | ✅        | ✅
-Role-based Access control                             | ❌             | ❌              | ❌        | ✅
-**Extra user** (per user)                             | Not available | Not available | Not available | **$190&nbsp;annually**<br>or<br>**$19&nbsp;monthly**
-**Extra logs** (per 1 GB)                             | Not available | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly** | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly** | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly**
-**Price**                                             | **$0**        | **$192&nbsp;annually**<br>or<br>**$19&nbsp;monthly** | **$190&nbsp;annually**<br>or<br>**$19&nbsp;monthly** |  **$570&nbsp;annually**<br>or<br>**$57&nbsp;monthly**
+Plan                                                  | Free             | Personal | Team
+:---------------------------------------------------- |--------------    | -----    | ----
+Connected hosts                                       | 1                | 30       |100  
+Priority of processes                                 | Low              | High     | Highest
+[Metrics](/platform/metrics/) retention period        | 1-hour           | 1-week   | 1-month
+[Rotated logs](/platform/logs/)                       | 300MB            | 1 GB     | 1 GB
+Multicloud deployment                                 | ❌               | ✅        | ✅
+[Database Replication](/platform/scaling/)            | ❌               | ✅        | ✅
+[Vertical and horizontal Scaling](/platform/scaling/) | ❌               | ✅        | ✅
+[Load Balancing](/platform/balancing/)                | ❌               | ✅        | ✅
+[Container migration](/platform/migration/)           | ❌               | ✅        | ✅
+[Webhoooks](/platform/webhooks/)                      | ❌               | ✅        | ✅
+Role-based Access control                             | ❌               | ❌        | ✅
+**Extra user** (per user)                             | Not available | Not available | **$190&nbsp;annually**<br>or<br>**$19&nbsp;monthly**
+**Extra logs** (per 1 GB)                             | Not available | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly** | **$30&nbsp;annually**<br>or<br>**$3&nbsp;monthly**
+**Price**                                             | **$0**        | **$190&nbsp;annually**<br>or<br>**$19&nbsp;monthly** |  **$570&nbsp;annually**<br>or<br>**$57&nbsp;monthly**
 
-\* available until 15th of December 2018
 
 ## Services
 
