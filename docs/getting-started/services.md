@@ -20,9 +20,9 @@ Name              | Configuration             | Scalable | Supported versions
 :---------------- | :------------------------ | :------- | ------------------------------------
 **MongoDB**       | StandAlone or ReplicaSet  | Yes      | 3.0, 3.2, 3.4, 3.6, 4.0
 **MySQL**         | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
-**MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.0, 10.1, 10.2, 10.3
+**MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.0, 10.1, 10.2, 10.3, 10.4
 **Percona**       | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7
-**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2, 10.3, 10,4, 10.5, 11.0
+**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2, 10.3, 10,4, 10.5, 11.0, 11.1
 **Crate**         | StandAlone                | No       | 2.3, 3.1
 **Redis**         |                           | Yes      | 2.8, 3.0, 3.2, 4.0, 5.0
 **Memcached**     |                           | Yes      | 1.4, 1.5
@@ -35,9 +35,9 @@ Name           | Scalable | Supported versions
 **Node.js**    | Yes      | 4, 6, 8, 10, latest(11)
 **Python**     | Yes      | 2.7, 3.5, 3.6, 3.7
 **Go**         | Yes      | 1.7, 1.8, 1.9, 1.10, 1.11
-**Ruby**       | Yes      | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5
-**PHP-FPM**    | Yes      | 5.6, 7.0, 7.1, 7.2
-**APACHE+PHP** | Yes      | 5.6, 7.0, 7.1, 7.2
+**Ruby**       | Yes      | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
+**PHP-FPM**    | Yes      | 5.6, 7.0, 7.1, 7.2, 7.3
+**APACHE+PHP** | Yes      | 5.6, 7.0, 7.1, 7.2, 7.3
 
 ### Other services
 
