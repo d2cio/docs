@@ -21,7 +21,14 @@ Backup is a process of copying and archiving data so it may be used to restore t
 7. FTP
 8. SFTP
 
-## How to create a backup
+## How to create a single backup
+
+1. Open a service page
+2. Click **Backup**
+3. Choose a storage provider ([How to add a storage provider](/getting-started/storage-providers/))
+4. Click **Backup data**
+
+## How to create backups by schedule
 
 1. Open a service page
 2. Click **+Add backup** at Cron tasks block

@@ -8,7 +8,7 @@ Each host can be used for any [project](/getting-started/projects/) multiple tim
 
 ## Supported operation systems and requirements
 
-When you create a host, we install **Ubuntu 16.04** on it.
+When you create a host, we install **Ubuntu 18.04** on it.
 
 When you **connect** your own host it should have:
 
@@ -26,6 +26,13 @@ When you **connect** your own host it should have:
 
 ## How to connect own host
 
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/CfX8kkZny2Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
+
+### Step by step tutorial
+
 1. Sign in into your [D2C account](https://panel.d2c.io/account/signup).
 2. Click **Connect host**
 3. Copy the command
@@ -36,14 +43,10 @@ When you **connect** your own host it should have:
 ## Supported hosting providers
 
 - Amazon Web Services ([how to link AWS](/getting-started/cloud-providers/#amazon-web-services))
+- Google Cloud Platform ([how to link GCP](/getting-started/cloud-providers/#google-cloud-platform))
 - DigitalOcean ([how to link DigitalOcean](/getting-started/cloud-providers/#digital-ocean))
 - Vultr ([how to link Vultr](/getting-started/cloud-providers/#vultr))
 - UpCloud ([how to link Upcloud](/getting-started/cloud-providers/#upcloud))
-
-Will be available soon:
-
-
-- Google Cloud Platform
 
 ## What software will be installed on hosts?
 
@@ -64,19 +67,31 @@ Will be available soon:
 
 ## AWS EBS
 
-Amazon EC2 provides additional storage which calls [Amazon Elastic Block Storage](https://aws.amazon.com/ebs/?nc1=h_ls) (EBS). You can add additional EBS without stops of hosts.
+Amazon EC2 provides additional storage for instances which calls [Amazon Elastic Block Storage](https://aws.amazon.com/ebs/?nc1=h_ls) (EBS). You can add additional EBS without stops of hosts using D2C interface.
 
 ![EBS](../img/scaling_ebs.png)
 
+## GCP Zonal Persistent SSD disks
+
+Google Compute Engine provides additional storage for instances which calls [Zonal Persistent SSD disks](https://cloud.google.com/compute/docs/disks/#pdspecs). You can add additional storage for your hosts using D2C interface.
+
+![EBS](../img/gcp_volumes_resize.png)
+
+## DigitalOcean Block Storage
+
+DigitalOcean provides additional storage for droplets which calls [Block Storage volumes](https://www.digitalocean.com/docs/volumes/). You can add additional storage for your hosts using D2C interface.
+
+![EBS](../img/do_block_storage.png)
+
 ## Demo hosts
 
-You can create a demo host for testing the platform.
-The configuration of demo hosts is t2.micro (1 GB, 1 x 2.4 GHz, 4GB SSD).
-Region: N. Virginia, The United States
+You can create demo hosts for testing the platform.
+The configuration of demo hosts is (2GB RAM, 1vCPU, 50GB SSD).
+N. Amsterdam, Netherlands
 
-Demo host creates for one hour and will be destroyed (with all services and containers) after this time expired. You can create another one after that.
+Demo host creates for three hours and will be destroyed (with all services and containers) after this time expired. You can create another ones after that.
 
-You can find a **+ Free demo host** button on the creating service page.
+You can find a **+ Free demo host** on the dashboard.
 
 ## Logs
 

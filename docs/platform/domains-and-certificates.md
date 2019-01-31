@@ -13,6 +13,11 @@ To add additional domains and TLS certificates (or create [free Let's Encrypt](/
 
 ## How to add additional domains and certificates
 
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/kED5l7f1Ub0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
+
 The process is almost the same for NGINX and HAProxy. The difference is that using NGINX you can add domains and certificates while creating or editing and HAProxy only during editing.
 
 Let's review examples with NGINX. Editing HAProxy described [here](/platform/balancing/#edit-load-balancer). The "Configure services" block is the same for these services.

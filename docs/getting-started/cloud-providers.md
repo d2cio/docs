@@ -8,12 +8,14 @@ In this page, we describe how to generate credentials of cloud providers and use
 - **DigitalOcean**
 - **Vultr**
 - **UpCloud**
-
-Will be available soon:
-
-- Google Cloud Platform
+- **Google Cloud Platform**
 
 ## Amazon Web Services
+
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/LT866IxJ5Qo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
 
 ### AWS QuickStart integration
 
@@ -62,7 +64,35 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 6. Click **Create policy**
 7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
 
+## Google Cloud Platform
+
+### GCP QuickStart integration
+
+!!! note
+
+    Make sure that you have enabled API for Compute Engine and have a billing account in GCP
+
+1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
+2. Click **+ Create host**
+3. Click **Add provider** and choose **Google Cloud**
+5. Upload your JSON file of your [Service account](https://console.cloud.google.com/iam-admin/serviceaccounts) with credentials
+
+### Generate GCP JSON file
+
+If you do not have GCP JSON file, you can create one with the GCP console
+
+1. Create a new project in [GCP](https://console.cloud.google.com) if it needs
+2. From the GCP [APIs & Services](https://console.cloud.google.com/apis/dashboard) click **ENABLE APIS AND SERVICES**, find **Compute Engine API** and click **Enable**
+3. Then go to [Credentials](https://console.cloud.google.com/apis/api/compute.googleapis.com/credentials) and choose a created Service Account (it should redirect you to [IAM & admin/Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts))
+4. At the Service accounts page create a new key for a created service account (Actions → ⋮ → Create key) in JSON format
+5. Then follow the GCP quickstart integration
+
 ## DigitalOcean
+
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/bCzGLQ6op0U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
 
 ### DigitalOcean QuickStart integration
 
@@ -73,11 +103,16 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 
 ## Vultr
 
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/5pQzCXkhNKM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
+
+### Vultr QuickStart integration
+
 !!! note
 
     To allow D2C manage Vultr hosts, you should add 52.58.244.78/32 and 52.57.161.208/32 IP at the Access Control block
-
-### Vultr QuickStart integration
 
 1. Sign in into your [D2C account](https://panel.d2c.io/account/login)
 2. Click **+ Create host**
@@ -94,6 +129,10 @@ If you do not have Vultr API key, you can create one with the Vultr account
 4. Then follow the **Vultr QuickStart integration**
 
 ## UpCloud
+
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/adxjApELOu8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### UpCloud QuickStart integration
 
