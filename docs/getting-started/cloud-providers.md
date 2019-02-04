@@ -89,6 +89,8 @@ If you do not have GCP JSON file, you can create one with the GCP console
 
 ## DigitalOcean
 
+If you don't have a DigitalOcean account you can [register with this link](https://m.do.co/c/3e6774908846) and get free credit - **$100**.
+
 ### Video tutorial
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/bCzGLQ6op0U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -102,6 +104,8 @@ If you do not have GCP JSON file, you can create one with the GCP console
 4. Click connect and sign in into your DigitalOcean account
 
 ## Vultr
+
+If you don't have a Vultr account you can [register with this link](https://www.vultr.com/?ref=7772421-4F) and get free credit - **$50**.
 
 ### Video tutorial
 
@@ -129,6 +133,8 @@ If you do not have Vultr API key, you can create one with the Vultr account
 4. Then follow the **Vultr QuickStart integration**
 
 ## UpCloud
+
+If you don't have an Upcloud account you can [register with this link](https://upcloud.com/signup/?promo=8YR3X6) and get free credit - **$25**.
 
 ### Video tutorial
 
