@@ -10,6 +10,11 @@ In this page, we describe how to generate credentials of cloud providers and use
 - **UpCloud**
 - **Google Cloud Platform**
 
+## Coming Soon
+
+- **CloudSigma**
+- **Microsoft Azure**
+
 ## Amazon Web Services
 
 ### Video tutorial
