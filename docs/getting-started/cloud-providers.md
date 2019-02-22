@@ -9,11 +9,17 @@ In this page, we describe how to generate credentials of cloud providers and use
 - **Vultr**
 - **UpCloud**
 - **Google Cloud Platform**
+- **CloudSigma**
 
 ## Coming Soon
 
-- **CloudSigma**
 - **Microsoft Azure**
+
+## CloudSigma
+
+Officially we already support CloudSigma in D2C.io, but you will have to enter the email and password of your CloudSigma account and the location (for example, zrh.cloudsigma.com) in order to create a new host. Note that in test versions are not supported by abuse, registration by gmail.com, yahoo.com, hotmail.com, etc. We recommend using corporate email to avoid suspension of the test account. If you use a temporary mail to register, then the test account will be suspended, and your host will stop.
+
+Docs in construction...
 
 ## Amazon Web Services
 
