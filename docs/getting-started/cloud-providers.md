@@ -66,6 +66,11 @@ If you do not have AWS credentials, you can create one with the AWS Management c
 
 ## Google Cloud Platform
 
+### Video tutorial
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/WhbvLZLGUiE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
+
 ### GCP QuickStart integration
 
 !!! note
