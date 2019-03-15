@@ -1,8 +1,12 @@
 # Introduction
 
 This article describes the process of creating services in D2C.
-All definitions from creating (and editing) service page describes here.
+All definitions from creating (and editing) service page are described here.
 There are some  definitions which should be explained.
+
+!!! note
+
+    You may also find helpful [one-by-one instructions](https://d2c.io/blog/deploying-tips) on creating different services in D2C.
 
 ## What you need to know before creating
 
