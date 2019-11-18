@@ -61,13 +61,13 @@ nav:
   - 'Settings': 'account/settings.md'
   - 'Plans and services': 'account/plan.md'
 
-theme: readthedocs
+theme: material
 
 extra_javascript:
   - 'scripts/extra.js'
 
-extra_css:
-  - 'css/extra.css'
+#extra_css:
+#  - 'css/extra.css'
 
 markdown_extensions:
   - admonition

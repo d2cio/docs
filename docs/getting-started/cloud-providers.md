@@ -94,7 +94,7 @@ If you do not have GCP JSON file, you can create one with the GCP console
 
 ## DigitalOcean
 
-If you don't have a DigitalOcean account you can [register with this link](https://m.do.co/c/3e6774908846) and get free credit - **$100**.
+If you don't have a DigitalOcean account you can [register with this link](https://m.do.co/c/3e6774908846) and get free credit - **$50**.
 
 ### Video tutorial
 

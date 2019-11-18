@@ -22,6 +22,7 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 - [**Migrate**](/platform/migration/) containers to any of your hosts
 - Check [**logs**](/platform/logs/) and [**metrics**](/platform/metrics/) of containers and hosts
 - Use a pre-configured [**private network**](/platform/private-network/) for all services
+- [Create own stacks](/getting-started/stacks/) to simplify your deployments
 - Use [**WebHooks**](/platform/webhooks/) to automate your deployments
 - Use pre-configured **NGINX configs**
 - Use [**free TLS**](/platform/domains-and-certificates/) certificates for your domains by Let's Encrypt (works with NGINX and HAProxy)
@@ -29,9 +30,9 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 ## How to get started?
 
 - [Create an account](https://panel.d2c.io/register)
-- Link to a cloud provider or connect own hosts
+- [**Link to a cloud provider**](/getting-started/cloud-providers/) or [connect own hosts](/getting-started/hosts/#supported-operation-systems-and-requirements)
 - Create a project
-- Choose services you want to deploy
+- [Choose services](/getting-started/services/) you want to deploy or use [ready to deploy stacks from the StackHub](https://d2c.io/stackhub)
 - Configure in a simple way, without any files
 - Select hosts and deploy
-- Work on your code and use the interface for updating your app, checking metrics and logs
+- Work on your code and use the interface for [updating your app](/getting-started/services/#actions), creating backups, checking metrics and logs
