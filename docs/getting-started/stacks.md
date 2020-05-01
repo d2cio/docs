@@ -42,7 +42,7 @@ username             | No       | Create a user after deploying. Database will b
 database             | No       | Create a name of database after deploying. If you miss this parameter a database will be created with the same name as `username`
 userPassword         | No       | Password for the created database
 remoteAccess         | No       | All services in a project are visible for each other inside.<br>If you want your service to be visible from the Internet use `true`
-ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)
+ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709/udp - port 7709 (UDP)
 env                  | No       | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples_1)
 configFiles          |          | A list of config files
 configFiles[i].dest  | No       | Name (for default configs) or path to a config file in the container (for custom configs)
@@ -100,7 +100,7 @@ source.version       | No       | Only for git. By default - `master`. Can be us
 extensions           | No       | Option for PHP-FPM and PHP-Apache services.
 pecl                 | No       | Option for PHP-FPM and PHP-Apache services
 remoteAccess         | No       | All services in a project are visible for each other inside.<br>If you want your service to be visible from the Internet use `true`
-ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)
+ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709/udp - port 7709 (UDP)
 env                  | No       | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples_1)
 volumes              |          | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)
 volumes[i].directory | No       | A path to persistent data volume
@@ -183,7 +183,7 @@ Parameter               | Required | Comments
 name                    | Yes      | The name should be unique across your account. If you use a name which is already in use, it changes to an automatically generated
 type                    | Yes      | A service you want to deploy
 version                 | Yes      | You can specify any of [supported versions](/getting-started/services/#data-services) here
-ports                   | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)
+ports                   | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709/udp - port 7709 (UDP)
 remoteAccess            | No       | All services in a project are visible for each other inside.<br>If you want your service to be visible from the Internet use `true`
 env                     | No       | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples_1)
 volumes                 |          | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)
@@ -251,7 +251,7 @@ source.type          | Yes      | Examples: `git`, `download`. If you use privat
 source.url           | Yes      | Protocols: http, https, ftp.<br>File formats: .tar.bz2, .tar.gz, .tar, .zip<br>Example: <https://wordpress.org/latest.tar.gz>
 source.version       | No       | Only for git. By default - `master`. Can be used for specifying branch, number of commit, tag.
 remoteAccess         | No       | All services in a project are visible for each other inside.<br>If you want your service to be visible from the Internet use `true`
-ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709\udp - port 7709 (UDP)
+ports                | No       | Ports of a service.<br>Examples: 8080 - port 8080 (TCP), 7709/udp - port 7709 (UDP)
 env                  | No       | Environment variables for your application. Check the way of adding environments at the [example](/getting-started/stacks/#examples_1)
 volumes              |          | A list of [Persistent data volumes](/getting-started/containers/#persistent-data)
 volumes[i].directory | No       | A path to persistent data volume
