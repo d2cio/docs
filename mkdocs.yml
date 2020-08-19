@@ -68,4 +68,4 @@ markdown_extensions:
       permalink: True
 
 
-copyright: Copyright&copy; 2018 <a href="https://d2c.io">D2C.io</a>&nbsp;&nbsp;&nbsp;<a href="/ru/">Русская версия</a>
+copyright: Copyright&copy; 2018 <a href="https://d2c.io">D2C.io</a>&nbsp;&nbsp;&nbsp; #<a href="/ru/">Русская версия</a>
