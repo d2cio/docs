@@ -6,33 +6,33 @@ D2C is a platform which automates routines in building the infrastructure for ap
 
 ## Installation
 
-D2C is a web service, and you do not need to install anything. [Sign Up](https://panel.d2c.io/register) and start creating hosts and services which your application needs.
+D2C is a web service, and you do not need to install anything. [Sign Up](https://panel.d2c.io/user/register) and start creating hosts and services which your application needs.
 
 ## What can you do with D2C.io?
 
 - [Manage hardware infrastructure](/getting-started/hosts/) using cloud (hosting) providers and/or own hosts
-- [**Containerize**](/getting-started/services/#introduction) applications (it happens automatically after creating any service)
-- [**Deploy**](/platform/deployment/) applications from git or any archive to your cloud or own hosts
-- [**Scale**](/platform/scaling/) in a single click:
-    - web-apps
-    - databases (including replication)
-    - hosts
+- [**Deploy**](/platform/deployment/):
+    - [databases](/services/services/#data-services) in StandAlone or MasterSlave/ReplicaSet configurations
+    - [application services(runtimes)](/services/services/#application-services-runtimes) from git or any archive
+    - [web-servers and Docker images](/services/services/#other-services)
+- Containerize applications (it happens automatically after creating any service)
+- [**Scale**](/platform/scaling/) services and hosts in a single click
 - [**Balance**](/platform/balancing/) applications using a pre-configured HAProxy service
 - [**Create database backups**](/platform/backups) directly to your [storage provider](/getting-started/storage-providers/) and restore when it needs
 - [**Migrate**](/platform/migration/) containers to any of your hosts
 - Check [**logs**](/platform/logs/) and [**metrics**](/platform/metrics/) of containers and hosts
-- Use a pre-configured [**private network**](/platform/private-network/) for all services
+- Get a pre-configured [**private network**](/platform/private-network/) by Weave for all hosts and services
 - [Create own stacks](/getting-started/stacks/) to simplify your deployments
 - Use [**WebHooks**](/platform/webhooks/) to automate your deployments
-- Use pre-configured **NGINX configs**
-- Use [**free TLS**](/platform/domains-and-certificates/) certificates for your domains by Let's Encrypt (works with NGINX and HAProxy)
+- Use pre-configured [NGINX](/services/other-services/nginx/) configs
+- Get [**free TLS**](/platform/domains-and-certificates/) certificates for your domains by Let's Encrypt (works with [NGINX](/services/other-services/nginx/) and [HAProxy](/services/other-services/haproxy/))
 
 ## How to get started?
 
-- [Create an account](https://panel.d2c.io/register)
-- [**Link to a cloud provider**](/getting-started/cloud-providers/) or [connect own hosts](/getting-started/hosts/#supported-operation-systems-and-requirements)
+- [Create an account](https://panel.d2c.io/user/register)
+- [**Link to a cloud provider**](/getting-started/cloud-providers/) or [connect own hosts](/getting-started/connect-own-host/#supported-operation-systems-and-requirements)
 - Create a project
-- [Choose services](/getting-started/services/) you want to deploy or use [ready to deploy stacks from the StackHub](https://d2c.io/stackhub)
+- [Choose services](/services/services/) you want to deploy or use [ready to deploy stacks from the StackHub](https://d2c.io/stackhub)
 - Configure in a simple way, without any files
 - Select hosts and deploy
-- Work on your code and use the interface for [updating your app](/getting-started/services/#actions), creating backups, checking metrics and logs
+- Work on your code and use the interface for [updating your app](/services/services/#actions-with-application-services), creating backups, checking metrics and logs

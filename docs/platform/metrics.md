@@ -5,7 +5,7 @@ You can inspect resource utilization graphs in your dashboard. This data is coll
 You can check usage of:
 
 - [**Hosts**](/getting-started/hosts/)
-- [**Containers**](/getting-started/containers/)
+- **Containers**
 
 Graphs:
 
@@ -25,8 +25,8 @@ Available by:
 
 ### Host metrics
 
-![Host metrics](../img/host_metrics.png)
+![Host metrics](../img/new_interface/host_metrics.png)
 
 ### Container metrics
 
-![Host metrics](../img/container_metrics.png)
+![Host metrics](../img/new_interface/container_metrics.png)

@@ -5,12 +5,22 @@ Cron is a time-based job scheduler. You can create and manage it at Cron tasks b
 ## How to create a cron job
 
 1. Open a service page
-2. Click **+Add task** at Cron tasks block
+2. Click on a **Database backups** tab and click **+Add task**
 3. Enter a name for a new task
 4. Choose a container
+5. Enter a command
 5. Specify time for a task using time of a host (UTC in most of the times)
-6. Enter a job
 7. Click **Save**
+
+![Cron task create](../img/new_interface/cron_task_create.png)
+
+## Logs
+
+Each Cron task logged and you can check it by clicking on **Show task log** button.
+
+![Cron task log](../img/new_interface/cron_task_log_button.png)
+
+![Cron task log](../img/new_interface/cron_task_log.png)
 
 ## Cron expression
 
@@ -46,13 +56,3 @@ Cron is a time-based job scheduler. You can create and manage it at Cron tasks b
 | Mytask         | apollo-1       | 25 11 * * *    | /var/www/apollo/script.sh  |
 
 This job will start script.sh of service apollo at 11:25 every day
-
-## Logs
-
-Each Cron task logged and you can check it by clicking on **Log** icon.
-
-### Screenshots
-
-![Tasks](../img/tasks.png)
-
-![Tasks - logs](../img/backup_log.png)

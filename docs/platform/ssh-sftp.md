@@ -13,23 +13,23 @@ If you use Windows and Putty for connecting to hosts, you can [follow this manua
 
 ## Add keys for connecting via SSH
 
-- Open [settings menu](https://panel.d2c.io/settings) or a host page
-- Find Public keys block and click **New key**
+- Open [a keys page](https://panel.d2c.io/account/keys) or a host page
+- Click **Add key**
 - Give key a name
 - Choose SSH and will it be default or not. _Default key is added to keys list when you create a new host_
 - Paste your public SSH key to a key field
-- Click **Add key**
+- Click **Confirm**
 
 After these steps, you can add your keys to new or existing hosts.
 
 ## Add keys for connecting via SFTP
 
-- Open [settings menu](https://panel.d2c.io/settings) or a host page
-- Find Public keys block and click **New key**
+- Open [a keys page](https://panel.d2c.io/account/keys) or [resizing window](/getting-started/hosts/#resizing-hosts) of a host
+- Click **Add key**
 - Give key a name
 - Choose SFTP. When you choose a service you will be redirected to that directory after connection
 - Paste your public SSH key to a key field
-- Click **Add key**
+- Click **Confirm**
 
 ## Connect to a host
 
@@ -43,7 +43,33 @@ ssh deploy@hostIP
 
 To connect via SFTP choose SSH authentication method and load your private key.
 
+## Connect to a container from outside the private network
+
+This is how to create an SSH tunnel to a certain container:
+
+1. First, ensure that you have SSH and you have generated private and public RSA keys.
+2. Next, you should add your public key to `/home/deploy/.ssh/authorized_keys` (NB: don't erase D2C public key) at host where located target container.
+3. Now you can connect to that host with your favourite  terminal and create SSH tunnels
+4. This command helps you to know IP of a container in docker network:
+
+        docker inspect -f '{{.NetworkSettings.Networks.bridge.IPAddress}}' $CONTAINER_NAME
+for example for service `Database`:
+
+        docker inspect -f '{{.NetworkSettings.Networks.bridge.IPAddress}}' database-master
+
+5. Great, now we know container IP and can create SSH tunnel via the next command on your PC:
+
+        ssh -L $LOCAL_PORT:$CONTAINER_IP:$CONTAINER_PORT deploy@$HOST_IP
+for example:
+
+        ssh -L 5432:172.17.0.6:5432 deploy@104.131.30.212
+
+6. Now you can connect to your container via localhost:$LOCAL_PORT
+
+        localhost:5432 in our example
+
 ### Screenshots
 
-![SSH and SFTP access](../img/ssh-sftp.png)
-![SSH and SFTP access](../img/ssh-sftp2.png)
+![SSH and SFTP access](../img/new_interface/add_key_window.png)
+
+![SSH and SFTP access](../img/new_interface/add_host_keys.png)

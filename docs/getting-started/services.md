@@ -18,60 +18,54 @@ The name should start with a letter and contain up to 16 characters (Latin lette
 
 Name              | Configuration             | Scalable | Supported versions
 :---------------- | :------------------------ | :------- | ------------------------------------
-**MongoDB**       | StandAlone or ReplicaSet  | Yes      | 3.0, 3.2, 3.4, 3.6, 4.0, 4.2
+**MongoDB**       | StandAlone or ReplicaSet  | Yes      | 3.6, 4.2
 **MySQL**         | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
-**MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.0, 10.1, 10.2, 10.3, 10.4
-**Percona**       | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7
-**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.0, 10.1, 10.2, 10.3, 10,4, 10.5, 11.0, 11.1, 11.5, 12.0
-**Crate**         | StandAlone                | No       | 2.3, 3.1
-**Redis**         |                           | Yes      | 2.8, 3.0, 3.2, 4.0, 5.0
+**MariaDB**       | StandAlone or MasterSlave | Yes      | 5.5, 10.4
+**Percona**       | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
+**PostgreSQL**    | StandAlone or MasterSlave | Yes      | 9.6, 10.5, 11.7, 12.0
+**Redis**         |                           | Yes      | 3.2, 4.0, 5.0
 **Memcached**     |                           | Yes      | 1.4, 1.5
-**ElasticSearch** | StandAlone                | No       | 2.4, 5.6
+**ElasticSearch** | StandAlone                | No       | 5.6, 7.7.0
 
-### Application services
+### Application services (Runtimes)
 
 Name           | Scalable | Supported versions
 :------------- | :------- | :--------------------------------
-**Node.js**    | Yes      | 6, 8, 10, 12, latest(13)
-**Python**     | Yes      | 2.7, 3.5, 3.6, 3.7
-**Go**         | Yes      | 1.7, 1.8, 1.9, 1.10, 1.11, 1.13
-**Ruby**       | Yes      | 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
-**PHP-FPM**    | Yes      | 5.6, 7.0, 7.1, 7.2, 7.3
-**APACHE+PHP** | Yes      | 5.6, 7.0, 7.1, 7.2, 7.3
+**Node.js**    | Yes      | 8, 10, 12, latest(13)
+**Python**     | Yes      | 2.7, 3.7, 3.8
+**Go**         | Yes      | 1.13, 1.14
+**Ruby**       | Yes      | 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
+**PHP+NGINX**  | Yes      | 7.2, 7.3, 7.4
+**PHP+APACHE** | Yes      | 7.2, 7.3, 7.4
 
 ### Other services
 
 Name                                         | Scalable | Supported versions          | Comments
 :------------------------------------------- | :------- | :-------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------
-**NGINX**                                    | No       | 1.13, 1.14, 1.15, 1.17 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
-**NGINX-Cluster**                            | Yes      | 1.13, 1.14, 1.15, 1.17 | NGINX-Cluster for cases when your service does not return static files or you need to serve more than one PHP-FPM container.
-**NGINX-Static**                             | Yes      | 1.13, 1.14, 1.15, 1.17 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
+**NGINX**                                    | No       | 1.16, 1.17, 1.18 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+**NGINX-Static**                             | Yes      | 1.16, 1.17, 1.18 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
 **HAProxy**                                  | No       | latest | HAProxy is a [load balancer](/platform/balancing/). May be used as edge service. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
 **Docker** (Services based on Docker Images) | Yes
 
 ## Actions
 
-Actions which have all services:
+### Basic actions
 
+- Edit
 - Update version
 - Restart
 - Stop/Start
-- Move (between projects)
+- Change projects
 - [Clone](/platform/cloning-apps/)
-- Destroy (+force destroy)
-- Destroy and redeploy. For cases when you want to start deploying service from scratch
-- Edit settings
 - [Scale](/platform/scaling/) (except some services e.g. NGINX)
-- Add [load-balancer](/platform/balancing/)
-- Execute - executing a command inside all running service containers
+- Destroy (+force destroy)
+- Deploy from scratch. For cases when you want to start deploying service from scratch
 
-![Standard service actions](../img/standart_actions.png)
+![Standard service actions](../img/new_interface/service_actions.png)
 
-Additional action with MongoDB, MySQL, MariaDB, Percona, PostgreSQL services:
+### Actions with [**application services**](/getting-started/services/#application-services)
 
-- Reset superuser password
-
-All [**application services**](/getting-started/services/#application-services) have smart update feature which you can choose separately or combine with each other:
+Smart update feature which you can choose separately or combine with each other:
 
 - Update version (data and other services have only this one)
 - Update global dependencies
@@ -79,7 +73,25 @@ All [**application services**](/getting-started/services/#application-services) 
 - Update sources
 - Include .git folder
 
-![Application actions](../img/app_actions.png)
+![Application actions](../img/new_interface/update_app_services.png)
+
+### Actions with containers
+
+- [Service Scaling](/platform/scaling/) (except some services e.g. NGINX)
+- Add [load-balancer](/platform/balancing/)
+- Log redirection
+- Execute command
+
+![Container actions](../img/new_interface/containers_actions.png)
+
+### Additional action with databases:
+
+For MongoDB, MySQL, MariaDB, Percona, PostgreSQL services:
+
+- Reset password
+- Migrate (configuration) from StandAlone to MasterSlave/ReplicaSet
+
+![Standard service actions](../img/new_interface/database_actions.png)
 
 ## Services data
 
@@ -89,20 +101,35 @@ For example, you can find sources in: `/ebs/containers/serviceName/sources`
 
 Backups: `/ebs/containers/serviceName/backup`
 
+### Persistent data
+
+D2C separates the application itself from its data. Docker volumes are used to store persistent data. Data is stored locally on the hosts. Any data which is generated by an application should be added to Persistent data volumes. **All modifications outside of these directories will be deleted after restart/rebuild/redeploy of a container/service (Docker restores the original state of a container)**.
+
+You can create new volumes using **Add volume** button.
+The host path by default is created automatically. You can change it but be careful. **It can break the whole host**.
+
+### Synchronizing
+
+We recommend storing _user generated content_ in cloud storage like [Amazon S3](https://aws.amazon.com/s3/) or CDN. Sometimes there is a need to support old technologies when data stores at hosts. For such cases you can use synchronization volumes between all containers. Simply check the volumes which you want to sync when creating or editing service. D2C uses Lsync for synchronization.
+
+![Persistent data](../img/new_interface/persistent_data.png)
+
 ## System Logs
 
 Each service has system logs (deploy logs).
 
 The line which has ellipsis marks, in the end, can be opened with a mouse click.
 
-![Build log](../img/build_log.png)
+![Build log](../img/new_interface/service_logs.png)
 
-Messages of building images consist stdout, and it also can be shown.
+## Cron tasks
 
-![Stdout log](../img/stdout.png)
+You can create and manage Cron tasks at the service page.
+
+Read more about [how to create a cron job](/platform/cron/)
 
 ### How the service page look like
 
-![Service page](../img/servicepage.jpg)
+![Service page](../img/new_interface/service_page.png)
 
-![Service page](../img/servicepage2.jpg)
+![Service page](../img/new_interface/service_page_2.png)

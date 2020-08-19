@@ -2,33 +2,36 @@
 
 Backup is a process of copying and archiving data so it may be used to restore the original after a data loss event. You can create and manage it at Cron tasks block at the service page.
 
-## Supported services
+## Backups
 
-1. MySQL
-2. Percona
-3. MariaDB
-4. PostgreSQL
-5. MongoDB
+### Supported services
 
-## Storage providers
+- [MySQL](/services/data-services/mysql-mariadb-percona/)
+- [Percona](/services/data-services/mysql-mariadb-percona/)
+- [MariaDB](/services/data-services/mysql-mariadb-percona/)
+- [PostgreSQL](/services/data-services/postgresql/)
+- [MongoDB](/services/data-services/mongodb/)
 
-1. Amazon S3
-2. Backblaze
-3. Dropbox
-4. Digital Ocean Spaces
-5. Microsoft OneDrive
-6. Hubic
-7. FTP
-8. SFTP
+### Storage providers
 
-## How to create a single backup
+- [**Amazon S3**](/getting-started/storage-providers/#amazon-s3)
+- [**Backblaze**](/getting-started/storage-providers/#backblaze)
+- [**Dropbox**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
+- [**DigitalOcean Spaces**](/getting-started/storage-providers/#digitalocean-spaces)
+- [**Microsoft OneDrive**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
+- [**Hubic**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
+- [**FTP/SFTP**](/getting-started/storage-providers/#ftpsftp)
+
+### How to create a single backup
 
 1. Open a service page
-2. Click **Backup**
+2. Click on a **Database backups** tab
 3. Choose a storage provider ([How to add a storage provider](/getting-started/storage-providers/))
-4. Click **Backup data**
+4. Click **Create backup**
 
-## How to create backups by schedule
+![Single backup](../img/new_interface/single_backup.png)
+
+### How to create backups by schedule
 
 1. Open a service page
 2. Click **+Add backup** at Cron tasks block
@@ -38,7 +41,27 @@ Backup is a process of copying and archiving data so it may be used to restore t
 6. Choose a storage provider ([How to add a storage provider](/getting-started/storage-providers/))
 7. Click **Save**
 
-## How to restore from a backup
+![Schedule backup](../img/new_interface/schedule_backup.png)
+
+### Backup logs
+
+Each backup task logged and you can check it by clicking on **Show task log** button.
+
+![Schedule backup](../img/new_interface/backup_log_button.png)
+
+![Schedule backup](../img/new_interface/backup_log.png)
+
+### How to clean up old backups from a host
+
+The easiest way is to add the next [cron task](/platform/cron/):<br>
+
+`ls -td /d2c/backup/* | tail -n +2 | xargs rm -- && echo "OK" || echo "FAIL"`
+
+It removes all backups except the last one.
+
+## Restore
+
+### How to restore from a backup
 
 !!! note
 
@@ -51,22 +74,4 @@ Backup is a process of copying and archiving data so it may be used to restore t
 5. Paste the name of the recovery file you want to restore from
 6. Click **Restore data**
 
-## Logs
-
-Each backup task logged and you can check it by clicking on **Log** icon.
-
-## Clean up old backups from a host
-
-The easiest way is to add the next [cron task](/platform/cron/):<br>
-
-`ls -td /d2c/backup/* | tail -n +2 | xargs rm -- && echo "OK" || echo "FAIL"`
-
-It removes all backups except the last one.
-
-### Screenshots
-
-![Backups](../img/backup.png)
-
-![Backups - Restore](../img/restore.png)
-
-![Backups - logs](../img/backup_log.png)
+![Schedule backup](../img/new_interface/restore_from_backup.png)
