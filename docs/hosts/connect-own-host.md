@@ -7,7 +7,7 @@ If you want to deploy services on your own in-house servers or at cloud provider
 - RAM: 0.5GB miminum, 1GB or higher recommended
 - Ubuntu 16.04/18.04 or Debian 8/9.
 - Kernel version >= 4.2. We do not recommend 4.12 and 4.13 because of their poor performance in VXLAN tunneling: 60x decrease
-- Free disk space: 5 Gb
+- Free disk space: 5 Gb minimum
 - Opened incoming SSH port
 - For the Weave network to work, you must open ports 6783, 6784 (TCP/UDP)
 - hostname should be unique and cannot be named as "localhost"
