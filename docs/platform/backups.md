@@ -14,19 +14,19 @@ Backup is a process of copying and archiving data so it may be used to restore t
 
 ### Storage providers
 
-- [**Amazon S3**](/getting-started/storage-providers/#amazon-s3)
-- [**Backblaze**](/getting-started/storage-providers/#backblaze)
-- [**Dropbox**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
-- [**DigitalOcean Spaces**](/getting-started/storage-providers/#digitalocean-spaces)
-- [**Microsoft OneDrive**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
-- [**Hubic**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
-- [**FTP/SFTP**](/getting-started/storage-providers/#ftpsftp)
+- [**Amazon S3**](/providers/storage-providers/#amazon-s3)
+- [**Backblaze**](/providers/storage-providers/#backblaze)
+- [**Dropbox**](/providers/storage-providers/#dropbox-onedrive-hubic)
+- [**DigitalOcean Spaces**](/providers/storage-providers/#digitalocean-spaces)
+- [**Microsoft OneDrive**](/providers/storage-providers/#dropbox-onedrive-hubic)
+- [**Hubic**](/providers/storage-providers/#dropbox-onedrive-hubic)
+- [**FTP/SFTP**](/providers/storage-providers/#ftpsftp)
 
 ### How to create a single backup
 
 1. Open a service page
 2. Click on a **Database backups** tab
-3. Choose a storage provider ([How to add a storage provider](/getting-started/storage-providers/))
+3. Choose a storage provider ([How to add a storage provider](/providers/storage-providers/))
 4. Click **Create backup**
 
 ![Single backup](../img/new_interface/single_backup.png)
@@ -38,7 +38,7 @@ Backup is a process of copying and archiving data so it may be used to restore t
 3. Enter a name for a new task
 4. Choose a container
 5. Specify time using time of a host (UTC in most of the times)
-6. Choose a storage provider ([How to add a storage provider](/getting-started/storage-providers/))
+6. Choose a storage provider ([How to add a storage provider](/providers/storage-providers/))
 7. Click **Save**
 
 ![Schedule backup](../img/new_interface/schedule_backup.png)

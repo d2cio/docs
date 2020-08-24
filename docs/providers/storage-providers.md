@@ -4,13 +4,13 @@ At this page, we describe how to generate credentials of storage providers and u
 
 ## Supported storage providers
 
-- [**Amazon S3**](/getting-started/storage-providers/#amazon-s3)
-- [**Backblaze**](/getting-started/storage-providers/#backblaze)
-- [**Dropbox**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
-- [**DigitalOcean Spaces**](/getting-started/storage-providers/#digitalocean-spaces)
-- [**Microsoft OneDrive**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
-- [**Hubic**](/getting-started/storage-providers/#dropbox-onedrive-hubic)
-- [**FTP/SFTP**](/getting-started/storage-providers/#ftpsftp)
+- [**Amazon S3**](/providers/storage-providers/#amazon-s3)
+- [**Backblaze**](/providers/storage-providers/#backblaze)
+- [**Dropbox**](/providers/storage-providers/#dropbox-onedrive-hubic)
+- [**DigitalOcean Spaces**](/providers/storage-providers/#digitalocean-spaces)
+- [**Microsoft OneDrive**](/providers/storage-providers/#dropbox-onedrive-hubic)
+- [**Hubic**](/providers/storage-providers/#dropbox-onedrive-hubic)
+- [**FTP/SFTP**](/providers/storage-providers/#ftpsftp)
 
 ## Dropbox, OneDrive, Hubic
 
@@ -68,7 +68,7 @@ If you do not have AWS credentials, you can create one with the AWS Management c
         }
 
 6. Click **Create policy**
-7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
+7. Now you can [Generate AWS credentials](/providers/storage-providers/#generate-aws-credentials) with your own policy
 
 ## DigitalOcean Spaces
 

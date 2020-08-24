@@ -4,11 +4,11 @@ At this page, we describe how to generate credentials of cloud providers and use
 
 ## Supported cloud providers
 
-- [**Amazon Web Services**](/getting-started/cloud-providers/#amazon-web-services)
-- [**DigitalOcean**](/getting-started/cloud-providers/#digitalocean)
-- [**Google Cloud Platform**](/getting-started/cloud-providers/#google-cloud-platform)
-- [**UpCloud**](/getting-started/cloud-providers/#upcloud)
-- [**Vultr**](/getting-started/cloud-providers/#vultr)
+- [**Amazon Web Services**](/providers/cloud-providers/#amazon-web-services)
+- [**DigitalOcean**](/providers/cloud-providers/#digitalocean)
+- [**Google Cloud Platform**](/providers/cloud-providers/#google-cloud-platform)
+- [**UpCloud**](/providers/cloud-providers/#upcloud)
+- [**Vultr**](/providers/cloud-providers/#vultr)
 
 ## Amazon Web Services
 
@@ -62,7 +62,7 @@ If you do not have AWS credentials, you can create one with the AWS Management c
         }
 
 6. Click **Create policy**
-7. Now you can [Generate AWS credentials](/getting-started/cloud-providers/#generate-aws-credentials) with your own policy
+7. Now you can [Generate AWS credentials](/providers/cloud-providers/#generate-aws-credentials) with your own policy
 
 ## Google Cloud Platform
 

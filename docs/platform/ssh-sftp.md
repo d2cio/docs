@@ -24,7 +24,7 @@ After these steps, you can add your keys to new or existing hosts.
 
 ## Add keys for connecting via SFTP
 
-- Open [a keys page](https://panel.d2c.io/account/keys) or [resizing window](/getting-started/hosts/#resizing-hosts) of a host
+- Open [a keys page](https://panel.d2c.io/account/keys) or [resizing window](/hosts/hosts/#resizing-hosts) of a host
 - Click **Add key**
 - Give key a name
 - Choose SFTP. When you choose a service you will be redirected to that directory after connection

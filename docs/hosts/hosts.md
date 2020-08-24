@@ -2,7 +2,7 @@
 
 Services can not run without a server on the Internet. D2C can automatically provide servers for you. Just provide an access token for your preferred cloud provider, and D2C will create/destroy/resize servers as you need them. Keep in mind that the cloud provider will charge you for resource usage based on your payment plan. D2C does not provide its own computing resources – it automates the provisioning process at cloud providers.
 
-Each host can be used for any [project](/getting-started/projects/) multiple times.
+Each host can be used for any project multiple times.
 
 ## Supported hosting providers and OS
 
@@ -10,15 +10,15 @@ When you create a host, we install **Ubuntu 18.04** on it.
 
 ### Providers with native support
 
-- [**Amazon Web Services**](/getting-started/cloud-providers/#amazon-web-services)
-- [**DigitalOcean**](/getting-started/cloud-providers/#digitalocean)
-- [**Google Cloud Platform**](/getting-started/cloud-providers/#google-cloud-platform)
-- [**UpCloud**](/getting-started/cloud-providers/#upcloud)
-- [**Vultr**](/getting-started/cloud-providers/#vultr)
+- [**Amazon Web Services**](/providers/cloud-providers/#amazon-web-services)
+- [**DigitalOcean**](/providers/cloud-providers/#digitalocean)
+- [**Google Cloud Platform**](/providers/cloud-providers/#google-cloud-platform)
+- [**UpCloud**](/providers/cloud-providers/#upcloud)
+- [**Vultr**](/providers/cloud-providers/#vultr)
 
 ### In-house hosts
 
-You can [connect your own host](/getting-started/connect-own-host) with Ubuntu 16.04/18.04 or Debian 8/9.
+You can [connect your own host](/hosts/connect-own-host) with Ubuntu 16.04/18.04 or Debian 8/9.
 
 ## What software will be installed on hosts?
 

@@ -5,7 +5,7 @@
 To add additional domains and TLS certificates (or create [free Let's Encrypt](/platform/domains-and-certificates/#using-free-tls-by-lets-encrypt) TLS certificates), you should have:
 
 - Host with free 80 and 443 ports
-- NGINX or HAProxy with enabled [remote access](/getting-started/creating-services/#ports) from the Internet
+- NGINX or HAProxy with enabled [remote access](/services/other-services/nginx/#network-settings) from the Internet
 
 !!! note
 
