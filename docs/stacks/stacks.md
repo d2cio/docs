@@ -48,36 +48,38 @@ You can use `null` as a value for parameters. It means that you fill in these pa
 
 ##### Data services
 
-Service           | Name in stackfile | Configuration             | Scalable | Supported versions
-:---------------- | :---------------- | :------------------------ | :------- | ---------------------
-[MongoDB](/services/data-services/mongodb/)         | mongodb           | StandAlone or ReplicaSet  | Yes      | 3.6, 4.2
-[MySQL](/services/data-services/mysql-mariadb-percona/)         | mysql             | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
-[MariaDB](/services/data-services/mysql-mariadb-percona/)       | mariadb           | StandAlone or MasterSlave | Yes      | 5.5, 10.4
-[Percona](/services/data-services/mysql-mariadb-percona/)        | percona           | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
-[PostgreSQL](/services/data-services/postgresql/)    | postgresql        | StandAlone or MasterSlave | Yes      | 9.6, 10.5, 11.7, 12.0
-[Redis](/services/data-services/redis/)          | redis             |                           | Yes      | 3.2, 4.0, 5.0
-[Memcached](/services/data-services/memcached/)     | memchached        |                           | Yes      | 1.4, 1.5
-[ElasticSearch](/services/data-services/elasticsearch/) | elasticsearch     |                           | No       | 5.6, 7.7.0
+Name                                                      | Configuration             | Scalable | Supported versions
+:-------------------------------------------------------- | :------------------------ | :------- | ---------------------
+[MongoDB](/services/data-services/mongodb/)               | StandAlone or ReplicaSet  | Yes      | 3.6, 4.2, 4.4
+[MySQL](/services/data-services/mysql-mariadb-percona/)   | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
+[MariaDB](/services/data-services/mysql-mariadb-percona/) | StandAlone or MasterSlave | Yes      | 5.5, 10.4
+[Percona](/services/data-services/mysql-mariadb-percona/) | StandAlone or MasterSlave | Yes      | 5.5, 5.6, 5.7, 8.0
+[PostgreSQL](/services/data-services/postgresql/)         | StandAlone or MasterSlave | Yes      | 9.6, 10.5, 11.7, 12.0
+[Redis](/services/data-services/redis/)                   |                           | Yes      | 3.2, 4.0, 5.0, 6.0
+[Memcached](/services/data-services/memcached/)           |                           | Yes      | 1.4, 1.5, 1.6
+[ElasticSearch](/services/data-services/elasticsearch/)   | StandAlone                | No       | 5.6, 7.7.0
+
 
 ##### Application services (Runtimes)
 
-Name           | Name in stackfile | Scalable | Supported versions
-:------------- | :---------------- | :------- | :---------------------------
-[Node.js](/services/app-services/nodejs/)    | nodejs            | Yes      | 8, 10, 12, latest(13)
-[Python](/services/app-services/python/)      | python            | Yes      | 2.7, 3.7, 3.8
-[Go](/services/app-services/go/)            | go                | Yes      | 1.13, 1.14
-[Ruby](/services/app-services/ruby/)        | ruby              | Yes      | 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
-[PHP+NGINX](/services/app-services/php-nginx/)  | phpNginx          | Yes      | 7.2, 7.3, 7.4
-[PHP+APACHE](/services/app-services/php-apache/) | phpApache         | Yes      | 7.2, 7.3, 7.4
+Name                                             | Scalable | Supported versions
+:----------------------------------------------- | :------- | :--------------------------------
+[Node.js](/services/app-services/nodejs/)        | Yes      | 8, 10, 12, latest(13)
+[Python](/services/app-services/python/)         | Yes      | 2.7, 3.7, 3.8
+[Go](/services/app-services/go/)                 | Yes      | 1.13, 1.14, 1.15
+[Ruby](/services/app-services/ruby/)             | Yes      | 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7
+[PHP+NGINX](/services/app-services/php-nginx/)   | Yes      | 7.2, 7.3, 7.4
+[PHP+APACHE](/services/app-services/php-apache/) | Yes      | 7.2, 7.3, 7.4
 
 ##### Other services
 
-Name                                         | Name in stackfile | Scalable | Supported versions
-:------------------------------------------- | :---------------- | :------- | :-----------------
-[NGINX](/services/other-services/nginx/)                                    | nginx             | No       | 1.16, 1.17, 1.18
-[NGINX-Static](/services/other-services/nginx-static/)                             | nginxStatic       | Yes      | 1.16, 1.17, 1.18
-[HAProxy](/services/other-services/haproxy/)                                  | haproxy           | No       | latest
-[Docker](/services/other-services/docker-service/) (Services based on Docker Images) | docker            | Yes      |
+Name                                                                                 | Scalable | Supported versions     | Comments
+:----------------------------------------------------------------------------------- | :------- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[NGINX](/services/other-services/nginx/)                                             | No       | 1.16, 1.17, 1.18, 1.19 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+[NGINX-Static](/services/other-services/nginx-static/)                               | Yes      | 1.16, 1.17, 1.18, 1.19 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
+[HAProxy](/services/other-services/haproxy/)                                         | No       | latest                 | HAProxy is a [load balancer](/platform/balancing/). May be used as edge service. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+[Docker](/services/other-services/docker-service/) (Services based on Docker Images) | Yes
+
 
 ### Parameters
 

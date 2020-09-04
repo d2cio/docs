@@ -97,15 +97,15 @@ If you do not have Digital Ocean Spaces credentials, you can create it with the 
 2. Move to [providers page](https://panel.d2c.io/account/providers)
 3. Click **+Add provider**
 4. Choose Backblaze
-5. Paste your Backblaze credentials (Account ID and Application Key) and click **Confirm**
+5. Paste your Backblaze credentials (Key ID and Application Key) and click **Confirm**
 
 ### Create Backbaze credentials
 
 If you do not have Backblaze credentials, you can create it with the Backblaze account
 
-1. Open the Backblaze [Buckets](https://secure.backblaze.com/b2_buckets.htm) page
-2. Click **Show Account ID and Application Key**
-3. Click **Create Application Key**. Copy Account ID and Application Key
+1. Open the Backblaze [App Keys](https://secure.backblaze.com/app_keys.htm) page
+2. Click **Add a new Application Key** or Generate New Master Application Key if you have an existing Key
+3. Copy Key ID and Application Key
 4. Then follow the Backblaze QuickStart integration
 
 ## FTP/SFTP

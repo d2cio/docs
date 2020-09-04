@@ -21,11 +21,13 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 - [**Create database backups**](/platform/backups) directly to your [storage provider](/providers/storage-providers/) and restore when it needs
 - [**Migrate**](/platform/migration/) containers to any of your hosts
 - Check [**logs**](/platform/logs/) and [**metrics**](/platform/metrics/) of containers and hosts
+- [Redirect logs](/platform/logs-redirection/) to external storages like [Elastic stack](https://d2c.io/stackhub/elastic-stack) or [Logstash with InfluxDB and Grafana](https://d2c.io/stackhub/logstash-influxdb-grafana-stack)
 - Get a pre-configured [**private network**](/platform/private-network/) by Weave for all hosts and services
 - [Create own stacks](/stacks/stacks/) to simplify your deployments
 - Use [**WebHooks**](/platform/webhooks/) to automate your deployments
 - Use pre-configured [NGINX](/services/other-services/nginx/) configs
 - Get [**free TLS**](/platform/domains-and-certificates/) certificates for your domains by Let's Encrypt (works with [NGINX](/services/other-services/nginx/) and [HAProxy](/services/other-services/haproxy/))
+- [Invite your teammates](/account/team-management/#members) and set [individual](/account/team-management/#local-rules) or [global access](/account/team-management/#global-roles) almost to any object in your D2C account
 
 ## How to get started?
 

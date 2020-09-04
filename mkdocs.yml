@@ -33,6 +33,7 @@ nav:
 - 'Providers':
   - 'Hosting providers': 'providers/cloud-providers.md'
   - 'Storage providers': 'providers/storage-providers.md'
+  - 'Log providers': 'providers/log-providers.md'
 - 'Stacks': 'stacks/stacks.md'
 - Platform features:
   - 'Deployment in depth': 'platform/deployment.md'
@@ -46,12 +47,15 @@ nav:
   - 'Cron tasks': 'platform/cron.md'
   - 'Webhooks': 'platform/webhooks.md'
   - 'Logs': 'platform/logs.md'
+  - 'Logs redirection': 'platform/logs-redirection.md'
   - 'Metrics': 'platform/metrics.md'
   - 'Cloning applications': 'platform/cloning-apps.md'
   - 'Container migration': 'platform/migration.md'
-- Account:
+- Accounts and Teams:
   - 'Settings': 'account/settings.md'
+  - 'Team management': 'account/team-management.md'
   - 'Plans and services': 'account/plan.md'
+  - 'Multiple accounts': 'account/multiple-accounts.md'
 
 theme: material
 

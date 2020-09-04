@@ -111,9 +111,7 @@ You can choose what to use for getting application sources.
 
 !!! note
 
-```
-Make sure that your application is listening on 0.0.0.0 (not 127.0.0.1) when deploying an application service
-```
+    Make sure that your application is listening on 0.0.0.0 (not 127.0.0.1) when deploying an application service
 
 ### Git
 
@@ -163,9 +161,7 @@ Start command for your application
 
 !!! note
 
-```
-If your container is stuck in restarting phase after deploying you can set start command to `sleep 1d`. After that, you can connect to a container via the terminal and check what went wrong.
-```
+    If your container is stuck in restarting phase after deploying you can set start command to `sleep 1d`. After that, you can connect to a container via the terminal and check what went wrong.
 
 ## Environment variables
 
