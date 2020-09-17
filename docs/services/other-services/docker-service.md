@@ -103,6 +103,29 @@ Devices which should be mount in a container.
 
 Example: `/dev/net/tun`
 
+### Kernel parameters (sysctls)
+
+Sets namespaced kernel parameters ([sysctls](https://docs.docker.com/engine/reference/commandline/run/#configure-namespaced-kernel-parameters-sysctls-at-runtime)) in the container.
+
+Currently supported SYSCTLS:
+
+IPC Namespace:
+
+- `kernel.msgmax`, `kernel.msgmnb`, `kernel.msgmni`, `kernel.sem`, `kernel.shmall`, `kernel.shmmax`, `kernel.shmmni`, `kernel.shm_rmid_forced`.
+- Sysctls beginning with `fs.mqueue.*`
+
+Network Namespace:
+
+- Sysctls beginning with `net.*`
+
+### Container metadata (labels)
+
+A [label](https://docs.docker.com/engine/reference/commandline/run/#set-metadata-on-container--l---label---label-file) is a `key=value` pair that applies metadata to a container.
+
+### Security options
+
+You can find more information about [Docker security configuration](https://docs.docker.com/engine/reference/run/#security-configuration) in Docker docs.
+
 ## Application settings
 
 ![Create docker service - application settings](../../img/new_interface/creating_service_docker_application_settings.png)

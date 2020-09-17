@@ -5,7 +5,7 @@ If you want to deploy services on your own in-house servers or at cloud provider
 ## Supported operation systems and requirements
 
 - RAM: 0.5GB miminum, 1GB or higher recommended
-- Ubuntu 16.04/18.04 or Debian 8/9.
+- Ubuntu 18.04/20.4 or Debian 9/10.
 - Kernel version >= 4.2. We do not recommend 4.12 and 4.13 because of their poor performance in VXLAN tunneling: 60x decrease
 - Free disk space: 5 Gb minimum
 - Opened incoming SSH port

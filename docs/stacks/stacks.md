@@ -341,6 +341,13 @@ configFiles[i].dest  | No       | Name (for default configs) or path to a config
 configFiles[i].src   | No       | A path to a config file in your stack folder
 volumesUID           | No       | User ID of service volumes
 initialCommands      | No       | Commands which are executed only once after deploying a service
+interface            | No       | You can set an interface your container should listen. Examples: `all`, `default_ipv4`, `lo`, `docker0`, `eth0`
+network              | No       | By default all the containers are running in Weave network. You can also set `Host` network for standalone containers. It removes network isolation between the container and the Docker host, and use the host’s networking directly.
+capabilities         | No       | [A full list](/other-services/docker-service/#extra-capabilities) of available capabilities
+devices              | No       | Devices which should be mount in a container. Example: `/dev/net/tun`
+securityOpts         | No       | [Security configuration](https://docs.docker.com/engine/reference/run/#security-configuration) description in Docker docs.
+sysctls              | No       | Sets namespaced kernel parameters ([sysctls](https://docs.docker.com/engine/reference/commandline/run/#configure-namespaced-kernel-parameters-sysctls-at-runtime)) in the container.
+labels               | No       | A [label](https://docs.docker.com/engine/reference/commandline/run/#set-metadata-on-container--l---label---label-file) is a `key=value` pair that applies metadata to a container.
 deployTo             | Yes      | A list of hosts for deploying a service
 
 ##### Example
@@ -397,6 +404,28 @@ deployTo:
       directory: /usr/src/taiga-back/static
   deployTo:
     - taiga
+```
+
+```yaml
+services:
+  - name: dock
+    type: docker
+    image: ubuntu
+    version: 20.04
+    network: host
+    interface: eth0
+    capabilities:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - 8086
+    remoteAccess: false
+    volumes:
+      - directory: /var/www/html
+        from: /var/www/html
+    deployTo:
+      - test
 ```
 
 #### Hosts

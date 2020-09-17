@@ -6,7 +6,7 @@ Each host can be used for any project multiple times.
 
 ## Supported hosting providers and OS
 
-When you create a host, we install **Ubuntu 18.04** on it.
+When you create a host, we install **Ubuntu 20.04** on it.
 
 ### Providers with native support
 
@@ -18,7 +18,7 @@ When you create a host, we install **Ubuntu 18.04** on it.
 
 ### In-house hosts
 
-You can [connect your own host](/hosts/connect-own-host) with Ubuntu 16.04/18.04 or Debian 8/9.
+You can [connect your own host](/hosts/connect-own-host) with Ubuntu 18.04/20.4 or Debian 9/10.
 
 ## What software will be installed on hosts?
 
