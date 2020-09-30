@@ -4,21 +4,21 @@ D2C does not provide its computing resources – it automates the provisioning p
 
 ## Plans comparison
 
-Plan                                                  | Free             | Personal | Business
-:---------------------------------------------------- |--------------    | -----    | ----
-Connected hosts                                       | [3 temporary](/hosts/hosts/#demo-hosts)      | 30       | 50  
-Priority of processes                                 | Low              | Medium     | High
-[Metrics](/platform/metrics/) retention period        | 1 hour           | 1 week   | 1 month
-[Vertical and horizontal Scaling](/platform/scaling/) | ❌               | ✅        | ✅
-[Load Balancing](/platform/balancing/)                | ❌               | ✅        | ✅
-[Container migration](/platform/migration/)           | ❌               | ✅        | ✅
-[Database Replication](/platform/scaling/)            | ❌               | ✅        | ✅
-[Webhoooks](/platform/webhooks/)                      | ❌               | ✅        | ✅
-[Global access control](/account/team-management/#global-roles) | ❌               | ✅        | ✅
-[Local access control](/account/team-management/#local-rules)  | ❌  | ❌  | ✅
-[Logs redirection](/platform/logs-redirection/)       | ❌               | ❌        | ✅
-**Extra users**                                       | Not available | **$100&nbsp;per user annually**<br>**$10&nbsp;per user monthly** | **$100&nbsp;per user annually**<br>**$10&nbsp;per user monthly**
-**Price**                                             | **$0**        | **$190&nbsp;annually**<br>**$19&nbsp;monthly** |  **$490&nbsp;annually**<br>**$49&nbsp;monthly**
+Plan                                                  | Free           | Starter            | Personal | Business
+:---------------------------------------------------- |--------------  |--------  | -----    | ----
+Connected hosts                                       | [3 temporary](/hosts/hosts/#demo-hosts)      | 1 | 30       | 50  
+Priority of processes                                 | Low            | Medium  | Medium     | High
+[Metrics](/platform/metrics/) retention period        | 1 hour         | 1 hour   | 1 week   | 1 month
+[Vertical and horizontal Scaling](/platform/scaling/) | ❌             | ✅    | ✅        | ✅
+[Load Balancing](/platform/balancing/)                | ❌             | ❌   | ✅        | ✅
+[Container migration](/platform/migration/)           | ❌             | ❌    | ✅        | ✅
+[Database Replication](/platform/scaling/)            | ❌             | ❌    | ✅        | ✅
+[Webhoooks](/platform/webhooks/)                      | ❌             | ✅  | ✅        | ✅
+[Global access control](/account/team-management/#global-roles) | ❌   | ✅            | ✅        | ✅
+[Local access control](/account/team-management/#local-rules)  | ❌    | ❌ | ❌  | ✅
+[Logs redirection](/platform/logs-redirection/)       | ❌             | ❌  | ❌        | ✅
+**Extra users**                                       | Not available | **$100&nbsp;per user annually**<br>**$10&nbsp;per user monthly**  | **$100&nbsp;per user annually**<br>**$10&nbsp;per user monthly** | **$100&nbsp;per user annually**<br>**$10&nbsp;per user monthly**
+**Price**                                             | **$0**     | **$70&nbsp;annually**<br>**$7&nbsp;monthly**   | **$190&nbsp;annually**<br>**$19&nbsp;monthly** |  **$490&nbsp;annually**<br>**$49&nbsp;monthly**
 
 
 ## Services
