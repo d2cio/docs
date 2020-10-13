@@ -38,3 +38,8 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 - Configure in a simple way, without any files
 - Select hosts and deploy
 - Work on your code and use the interface for [updating your app](/services/services/#actions-with-application-services), creating backups, checking metrics and logs
+
+## How it works scheme
+
+[Full size](../img/new_interface/how_d2c_works_en.png)
+![How D2C works scheme](../img/new_interface/how_d2c_works_en.png)

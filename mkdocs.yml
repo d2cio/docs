@@ -35,7 +35,7 @@ nav:
   - 'Storage providers': 'providers/storage-providers.md'
   - 'Log providers': 'providers/log-providers.md'
 - 'Stacks': 'stacks/stacks.md'
-- Platform features:
+- 'Platform features':
   - 'Deployment in depth': 'platform/deployment.md'
   - 'Private Network': 'platform/private-network.md'
   - 'Domains and certificates': 'platform/domains-and-certificates.md'
@@ -51,11 +51,12 @@ nav:
   - 'Metrics': 'platform/metrics.md'
   - 'Cloning applications': 'platform/cloning-apps.md'
   - 'Container migration': 'platform/migration.md'
-- Accounts and Teams:
+- 'Accounts and Teams':
   - 'Settings': 'account/settings.md'
   - 'Team management': 'account/team-management.md'
   - 'Plans and services': 'account/plan.md'
   - 'Multiple accounts': 'account/multiple-accounts.md'
+- API: api.md
 
 theme: material
 
