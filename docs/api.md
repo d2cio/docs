@@ -1,6 +1,6 @@
 # D2C API documentation
 
-The D2C API uses Swagger and available under this link [https://api-docs.d2c.io/](https://api-docs.d2c.io/).
+D2C API uses Swagger. The documentation is available under this link [https://api-docs.d2c.io/](https://api-docs.d2c.io/).
 Before you start, you need to authorize.
 
 ## Authorization
