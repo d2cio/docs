@@ -1,5 +1,5 @@
 site_name: D2C
-site_url: https://www.d2c.io
+site_url: https://d2c.io
 site_description: Project documentation of D2C.io.
 site_author: D2C.io Team
 site_dir: site
@@ -57,6 +57,7 @@ nav:
   - 'Plans and services': 'account/plan.md'
   - 'Multiple accounts': 'account/multiple-accounts.md'
 - API: api.md
+- FAQ: 'faq/faq.md'
 
 theme: material
 
@@ -71,6 +72,8 @@ markdown_extensions:
   - smarty
   - toc:
       permalink: True
+  - markdown_include.include:
+      base_path: docs
 
 
 copyright: Copyright&copy; 2020 <a href="https://d2c.io">D2C.io</a>&nbsp;&nbsp;&nbsp; #<a href="/ru/">Русская версия</a>

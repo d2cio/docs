@@ -30,9 +30,9 @@ Paste a token in the *Authorize* form:
 
     `Bearer your_token`
 
-![Authorization](../img/new_interface/api_authorization.png)
+![Authorization](/img/new_interface/api_authorization.png)
 
-![Authorization form](../img/new_interface/api_authorization_form.png)
+![Authorization form](/img/new_interface/api_authorization_form.png)
 
 ## Example
 
@@ -40,8 +40,8 @@ After authorization open a method. Let it be [https://api-docs.d2c.io/#/User/get
 
 Click **Try it out**
 
-![Example user/me](../img/new_interface/api_example_user_me.png)
+![Example user/me](/img/new_interface/api_example_user_me.png)
 
 Click **Execute** and you'll get an example with CURL:
 
-![Example user/me response](../img/new_interface/api_example_user_me_response.png)
+![Example user/me response](/img/new_interface/api_example_user_me_response.png)

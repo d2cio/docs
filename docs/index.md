@@ -41,5 +41,5 @@ D2C is a web service, and you do not need to install anything. [Sign Up](https:/
 
 ## How it works scheme
 
-[Full size](../img/new_interface/how_d2c_works_en.png)
-![How D2C works scheme](../img/new_interface/how_d2c_works_en.png)
+[Full size](/img/new_interface/how_d2c_works_en.png)
+![How D2C works scheme](/img/new_interface/how_d2c_works_en.png)

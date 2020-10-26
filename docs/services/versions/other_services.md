@@ -1,0 +1,6 @@
+Name                                                                                 | Scalable | Supported versions     | Comments
+:----------------------------------------------------------------------------------- | :------- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[NGINX](/services/other-services/nginx/)                                             | No       | 1.16, 1.17, 1.18, 1.19 | NGINX is an edge service for serving on top of stack. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+[NGINX-Static](/services/other-services/nginx-static/)                               | Yes      | 1.16, 1.17, 1.18, 1.19 | NGINX-Static returns static files (HTML, JS, CSS, images, etc.). It cannot serve other services.
+[HAProxy](/services/other-services/haproxy/)                                         | No       | latest                 | HAProxy is a [load balancer](/platform/balancing/). May be used as edge service. It can generate free [TSL certificates](/platform/domains-and-certificates/) (by Let's Encrypt).
+[Docker](/services/other-services/docker-service/) (Services based on Docker Images) | Yes
