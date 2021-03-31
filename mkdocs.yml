@@ -1,5 +1,5 @@
 site_name: D2C
-site_url: https://d2c.io
+site_url: https://docs.d2c.io
 site_description: Project documentation of D2C.io.
 site_author: D2C.io Team
 site_dir: site
@@ -60,6 +60,10 @@ nav:
 - FAQ: 'faq/faq.md'
 
 theme: material
+
+extra:
+  features:
+    - navigation.tabs
 
 extra_javascript:
   - 'scripts/extra.js'

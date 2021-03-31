@@ -56,3 +56,13 @@ This means that:
 **Answer**: You can run initial commands again using **Deploy from scratch** button.
 
 ![Deploy from scratch](../img/new_interface/deploy_from_scratch.png)
+
+## Common issues with hosts
+
+When the system disk is out of space:
+
+`sudo /usr/bin/d2c_system_cleanup.sh`
+
+When the host shows with offline status in D2C:
+
+`sudo supervisorctl restart d2c_ping`
